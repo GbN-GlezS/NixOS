@@ -10,12 +10,12 @@
 
 # Allow installation of unfree corefonts & vista-fonts packages
     nixpkgs.config.allowUnfreePredicate = pkg:
-        bultins.elem (lib.getName pkg) [ 
-            "corefonts" 
-            "vista-fonts" 
+    builtins.elem (lib.getName pkg) [
+            "corefonts"
+            "vista-fonts"
         ];
 
-    fonts.packages = with pkgs; [
+    fonts.fonts = with pkgs; [
         corefonts
         vista-fonts
     ];
