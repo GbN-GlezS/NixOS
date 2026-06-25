@@ -18,7 +18,7 @@
 
 # ### Easy-to-use paint program ###
     kdePackages.kolourpaint
-  ]
+  ];
 
 # ### Whether to enable kdeconnect ###
   programs.kdeconnect.enable = true;
