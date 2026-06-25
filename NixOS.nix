@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "colemak";
+  };
+
 # ### List of default packages to exclude from the configuration ###
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa

@@ -24,7 +24,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./IdeaCentre.nix      # Autologin de tu hermana
+          ./Idea.nix      # Autologin de tu hermana
           ({ networking.hostName = "IdeaCentre"; })
         ];
       };
@@ -34,7 +34,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./IdeaPad.nix         # Autologin de tu mamá + fix TPM
+          ./Idea.nix         # Autologin de tu mamá + fix TPM
           ({ networking.hostName = "IdeaPad"; })
         ];
       };
