@@ -1,12 +1,6 @@
 { pkgs, lib, ... }:
 
 {
-# ### Inicio de Sesión Automático (SDDM + KDE Plasma) ###
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "nixos";
-  };
-
 # ### Which X11 packages to exclude from the default environment ###
   services.xserver.excludePackages = with pkgs; [ xterm ];
 
