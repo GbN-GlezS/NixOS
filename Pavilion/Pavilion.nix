@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
 
 {
+  networking.hostName = "Pavilion"; # Define your hostname.
+
   environment.systemPackages = with pkgs; [
 # ### Play music from the Spotify music service ###
     spotify

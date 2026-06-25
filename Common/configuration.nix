@@ -11,15 +11,13 @@
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       ./Common.nix
-      ./NixOS.nix
-      ./Virtualization.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "NixOS"; # Define your hostname.
+  # networking.hostName = "NixOS"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -83,7 +81,7 @@
   };
 
   # Install firefox.
-####  programs.firefox.enable = true;
+  # programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  networking.hostName = "NixOS"; # Define your hostname.
+
   environment.systemPackages = with pkgs; [
 # ### GNU Image Manipulation Program ###
     gimp

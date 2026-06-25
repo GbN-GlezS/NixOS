@@ -1,6 +1,8 @@
 { pkgs, lib, ... }:
 
 {
+  networking.hostName = "IdeaPad"; # Define your hostname.
+
 # ### Inicio de Sesión Automático (SDDM + KDE Plasma) ###
   services.displayManager.autoLogin = {
     enable = true;
