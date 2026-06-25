@@ -18,6 +18,9 @@
 
 # ### Easy-to-use paint program ###
     kdePackages.kolourpaint
+
+# Distributed version control system.
+    git
   ];
 
 # ### Whether to enable kdeconnect ###
