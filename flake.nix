@@ -12,36 +12,40 @@
       NixOS = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix   # Archivo base suelto en la raíz
-          ./NixOS.nix           # Gimp, Kolourpaint, etc.
-          ./Virtualization.nix  # QEMU/KVM
+          ./configuration.nix   # Base de tu S.O.
+          ./NixOS.nix           # Gimp, Kolourpaint, Spotify
+          ./Virtualization.nix  # Entorno QEMU/KVM
+          ({ networking.hostName = "NixOS"; }) # Inyección nativa de hostName
         ];
       };
 
       # 2. La de tu hermana (IdeaCentre)
-      IdeaCentreHost = nixpkgs.lib.nixosSystem {
+      IdeaCentre = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
           ./IdeaCentre.nix      # Autologin de tu hermana
+          ({ networking.hostName = "IdeaCentre"; })
         ];
       };
 
       # 3. La de tu mamá (IdeaPad)
-      IdeaPadHost = nixpkgs.lib.nixosSystem {
+      IdeaPad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
           ./IdeaPad.nix         # Autologin de tu mamá + fix TPM
+          ({ networking.hostName = "IdeaPad"; })
         ];
       };
 
       # 4. La de tu prima (Pavilion)
-      PavilionHost = nixpkgs.lib.nixosSystem {
+      Pavilion = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./Pavilion.nix        # Spotify + Firewall de tu prima
+          ./Pavilion.nix        # Spotify + Firewall local
+          ({ networking.hostName = "Pavilion"; })
         ];
       };
 
