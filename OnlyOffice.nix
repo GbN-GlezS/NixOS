@@ -15,7 +15,7 @@
             "vista-fonts"
         ];
 
-    fonts.fonts = with pkgs; [
+    fonts.packages = with pkgs; [
         corefonts
         vista-fonts
     ];
