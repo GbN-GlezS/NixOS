@@ -19,6 +19,7 @@
           ./Spotify.nix         # Spotify + Firewall local abierto para ti
           ./NixOS.nix           # Tus herramientas (Gimp, Kolourpaint, Colemak)
           ./Virtualization.nix  # Entorno QEMU/KVM
+          ./VSCode.nix          # Code editor developed by Microsoft
           ({ networking.hostName = "NixOS"; })
         ];
       };
