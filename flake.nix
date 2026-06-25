@@ -13,9 +13,13 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix   # Base de tu S.O.
-          ./NixOS.nix           # Gimp, Kolourpaint, Spotify
+          ./Boot.nix            # Silent boot y animación Plymouth para ti
+          ./Common.nix          # Brave, Papirus, Bibata
+          ./OnlyOffice.nix      # OnlyOffice + fuentes Microsoft para tu productividad
+          ./Spotify.nix         # Spotify + Firewall local abierto para ti
+          ./NixOS.nix           # Tus herramientas (Gimp, Kolourpaint, Colemak)
           ./Virtualization.nix  # Entorno QEMU/KVM
-          ({ networking.hostName = "NixOS"; }) # Inyección nativa de hostName
+          ({ networking.hostName = "NixOS"; })
         ];
       };
 
@@ -24,7 +28,10 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./Idea.nix      # Autologin de tu hermana
+          ./Boot.nix            # Animación fluida de arranque para ella
+          ./Common.nix          # Entorno común básico
+          ./OnlyOffice.nix      # OnlyOffice para sus tareas académicas
+          ./Idea.nix            # Autologin + Fix de teclado Latam y TPM unificado
           ({ networking.hostName = "IdeaCentre"; })
         ];
       };
@@ -34,7 +41,10 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./Idea.nix         # Autologin de tu mamá + fix TPM
+          ./Boot.nix            # Animación fluida de arranque para ella
+          ./Common.nix
+          ./OnlyOffice.nix      # OnlyOffice para sus documentos
+          ./Idea.nix            # Autologin + Fix de teclado Latam y TPM unificado
           ({ networking.hostName = "IdeaPad"; })
         ];
       };
@@ -44,7 +54,10 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./Pavilion.nix        # Spotify + Firewall local
+          ./Boot.nix            # Animación fluida de arranque para ella
+          ./Common.nix
+          ./Spotify.nix         # Tu prima solo ocupa Spotify con su Firewall abierto
+          ./Pavilion.nix        # Exclusiones de paquetes locales
           ({ networking.hostName = "Pavilion"; })
         ];
       };
