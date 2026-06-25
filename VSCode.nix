@@ -4,16 +4,21 @@
 
 {
   environment.systemPackages = with pkgs; [
-    # Versión FHS: Ideal para que extensiones de Python, C++, etc., ejecuten binarios nativos
-    vscode.fhs
+    # VS Code FHS con extensión Nix IDE preinstalada
+    (vscode-with-extensions.override {
+      vscode = vscode.fhs;
+      vscodeExtensions = with vscode-extensions; [
+        jnoortheen.nix-ide
+      ];
+    })
   ];
 
   # --- OPTIMIZACIONES DE LA WIKI OFICIAL ---
 
-  # 1. Habilitar nix-ld para resolver bibliotecas dinámicas (Evita fallos en extensiones complejas)
+  # 1. Habilitar nix-ld para resolver bibliotecas dinámicas
   programs.nix-ld.enable = true;
 
-  # 2. Forzar ejecución nativa en Wayland (Ozone) para máxima fluidez en KDE Plasma 6
+  # 2. Forzar ejecución nativa en Wayland (Ozone)
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
