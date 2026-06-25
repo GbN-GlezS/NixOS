@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
 # ### Inicio de Sesión Automático (SDDM + KDE Plasma) ###
