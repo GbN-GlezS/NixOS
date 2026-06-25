@@ -9,6 +9,7 @@
     discover
     khelpcenter
     okular
+    qrca
   ];
 
   environment.systemPackages = with pkgs; [

@@ -1,6 +1,11 @@
 { pkgs, ... }:
 
 {
+# ### List of default packages to exclude from the configuration ###
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    elisa
+  ];
+
   environment.systemPackages = with pkgs; [
 # ### GNU Image Manipulation Program ###
     gimp
