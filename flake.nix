@@ -39,6 +39,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.nixos = ./Home-NixOS.nix;
+                backupFileExtension = "backup";
               };
             }
           ];
