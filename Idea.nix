@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  systemd.tpm2.enable = false; # Whether to enable systemd TPM2 support.
+  boot.initrd.systemd.tpm2.enable = false; # Whether to enable systemd initrd TPM2 support.
+
   # Configure keymap in X11.
   services.xserver.xkb = {
     layout = "latam"; # X keyboard layout, or multiple keyboard layouts separated by commas.
@@ -13,6 +16,8 @@
     enable = true; # Automatically log in as services.displayManager.autoLogin.user.
   };
 
-  systemd.tpm2.enable = false; # Whether to enable systemd TPM2 support.
-  boot.initrd.systemd.tpm2.enable = false; # Whether to enable systemd initrd TPM2 support.
+  # The set of packages that appear in /run/current-system/sw.
+  environment.systemPackages = with pkgs; [
+    kamoso # Application to take pictures and videos with your webcam.
+  ];
 }
