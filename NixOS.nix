@@ -3,8 +3,8 @@
 {
   # Configure keymap in X11.
   services.xserver.xkb = {
-    layout = "us";
-    variant = "colemak";
+    layout = "us"; # X keyboard layout, or multiple keyboard layouts separated by commas.
+    variant = "colemak"; # X keyboard variant.
   };
 
   # List of default packages to exclude from the configuration.
@@ -15,8 +15,8 @@
   # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration.
   environment.systemPackages = with pkgs; [
     gimp # GNU Image Manipulation Program.
-    kdePackages.kolourpaint # Easy-to-use paint program.
     git # Distributed version control system.
+    kdePackages.kolourpaint # Easy-to-use paint program.
   ];
 
   programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
