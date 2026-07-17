@@ -12,7 +12,7 @@
     elisa # Simple music player aiming to provide a nice experience for its users.
   ];
 
-  # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration.
+  # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
     gimp # GNU Image Manipulation Program.
     git # Distributed version control system.
