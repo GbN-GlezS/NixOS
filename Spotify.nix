@@ -3,7 +3,7 @@
 { pkgs, ... }:
 
 {
-  # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration.
+  # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
     spotify # Play music from the Spotify music service.
   ];
