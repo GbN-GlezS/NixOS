@@ -18,7 +18,6 @@
       "rd.systemd.show_status=auto"
     ];
 
-    # Timeout (in seconds) until loader boots the default menu item.
-    loader.timeout = 0;
+    loader.timeout = 0; # Timeout (in seconds) until loader boots the default menu item.
   };
 }
