@@ -1,19 +1,18 @@
 { pkgs, ... }:
 
 {
-  # Configure keymap in X11
+  # Configure keymap in X11.
   services.xserver.xkb = {
-    layout = "latam";
-    variant = "";
+    layout = "latam"; # X keyboard layout, or multiple keyboard layouts separated by commas.
+    variant = ""; # X keyboard variant.
   };
 
-  # Inicio de Sesión Automático (SDDM + KDE Plasma)
+  # Auto login configuration attrset.
   services.displayManager.autoLogin = {
-    enable = true;
-    user = "nixos";
+    user = "nixos"; # User to be used for the automatic login.
+    enable = true; # Automatically log in as services.displayManager.autoLogin.user.
   };
 
-  # A start job is running for /dev/tpm*
-  systemd.tpm2.enable = false;
-  boot.initrd.systemd.tpm2.enable = false;
+  systemd.tpm2.enable = false; # Whether to enable systemd TPM2 support.
+  boot.initrd.systemd.tpm2.enable = false; # Whether to enable systemd initrd TPM2 support.
 }
