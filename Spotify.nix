@@ -3,12 +3,11 @@
 { pkgs, ... }:
 
 {
-  # Play music from the Spotify music service.
+  # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration.
   environment.systemPackages = with pkgs; [
-    spotify
+    spotify # Play music from the Spotify music service.
   ];
 
-  # Local discovery
-  networking.firewall.allowedTCPPorts = [ 57621 ];
-  networking.firewall.allowedUDPPorts = [ 5353 ];
+  networking.firewall.allowedTCPPorts = [ 57621 ]; # List of TCP ports on which incoming connections are accepted.
+  networking.firewall.allowedUDPPorts = [ 5353 ]; # List of open UDP ports.
 }
