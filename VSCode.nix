@@ -3,24 +3,23 @@
 { pkgs, ... }:
 
 {
+  # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
-    # VS Code FHS con extensión Nix IDE preinstalada
     (vscode-with-extensions.override {
-      vscode = vscode.fhs;
+      vscode = vscode.fhs; # Code editor developed by Microsoft.
       vscodeExtensions = with vscode-extensions; [
-        jnoortheen.nix-ide
+        jnoortheen.nix-ide # Nix language support with formatting and error report.
       ];
     })
-    nixfmt
+
+    nil # Yet another language server for Nix.
+    nixfmt # Official formatter for Nix code.
   ];
 
-  # --- OPTIMIZACIONES DE LA WIKI OFICIAL ---
-
-  # 1. Habilitar nix-ld para resolver bibliotecas dinámicas
-  programs.nix-ld.enable = true;
-
-  # 2. Forzar ejecución nativa en Wayland (Ozone)
+  # A set of environment variables used in the global environment.
   environment.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
+    NIXOS_OZONE_WL = 1;
   };
+
+  programs.nix-ld.enable = true; # Whether to enable nix-ld.
 }
