@@ -14,6 +14,7 @@
   # List of default packages to exclude from the configuration.
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     discover # Helps you find and install applications, games, and tools.
+    kate # Advanced text editor.
     khelpcenter # Software documentation viewer.
     okular # KDE document viewer.
     qrca # QR code scanner for Plasma Mobile.
