@@ -22,8 +22,8 @@
 
   # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration
   environment.systemPackages = with pkgs; [
+    bibata-cursors # Material Based Cursor Theme.
     brave # Privacy-oriented browser for Desktop and Laptop computers.
     papirus-icon-theme # Pixel perfect icon theme for Linux.
-    bibata-cursors # Material Based Cursor Theme.
   ];
 }
