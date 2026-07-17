@@ -49,7 +49,7 @@
     spice
     spice-gtk
     spice-protocol
-    virtio-win   # drivers VirtIO para guests Windows
+    virtio-win # drivers VirtIO para guests Windows
   ];
 
   # ---------------------------------------------------------------
