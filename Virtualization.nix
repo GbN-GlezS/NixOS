@@ -1,3 +1,4 @@
+# https://wiki.nixos.org/wiki/Virt-manager
 # Virtualization.nix
 # Configuración de QEMU/KVM con Virt-Manager para NixOS
 # Importado desde configuration.nix
@@ -5,10 +6,7 @@
 { config, pkgs, ... }:
 
 {
-  # ---------------------------------------------------------------
-  # Virt-Manager: interfaz gráfica para crear y administrar VMs
-  # ---------------------------------------------------------------
-  programs.virt-manager.enable = true;
+  programs.virt-manager.enable = true; # Whether to enable virt-manager, an UI for managing virtual machines in libvirt.
 
   # ---------------------------------------------------------------
   # Libvirtd: demonio que administra QEMU/KVM
@@ -37,19 +35,18 @@
   # ---------------------------------------------------------------
   # IMPORTANTE: cambia "nixos" por tu nombre de usuario si es distinto
   users.groups.libvirtd.members = [ "nixos" ];
-  users.users."nixos".extraGroups = [ "libvirtd" ];
+  users.users.nixos.extraGroups = [ "libvirtd" ];
 
   # ---------------------------------------------------------------
   # Paquetes adicionales
   # ---------------------------------------------------------------
   environment.systemPackages = with pkgs; [
-    qemu
-    virt-manager
-    virt-viewer
-    spice
-    spice-gtk
-    spice-protocol
-    virtio-win # drivers VirtIO para guests Windows
+    qemu # Generic and open source machine emulator and virtualizer.
+    virt-manager # Desktop user interface for managing virtual machines.
+    virt-viewer # Viewer for remote virtual machines.
+    spice # Complete open source solution for interaction with virtualized desktop devices.
+    spice-gtk # GTK 3 SPICE widget.
+    spice-protocol # Protocol headers for the SPICE protocol.
   ];
 
   # ---------------------------------------------------------------
