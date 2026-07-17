@@ -1,4 +1,5 @@
 # https://wiki.nixos.org/wiki/Visual_Studio_Code
+# https://github.com/nix-community/vscode-nix-ide
 
 { pkgs, ... }:
 
