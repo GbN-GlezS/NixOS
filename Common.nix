@@ -6,10 +6,10 @@
 }:
 
 {
-  # ### Which X11 packages to exclude from the default environment ###
+  # Which X11 packages to exclude from the default environment
   services.xserver.excludePackages = with pkgs; [ xterm ];
 
-  # ### List of default packages to exclude from the configuration ###
+  # List of default packages to exclude from the configuration
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     #discover
     khelpcenter
@@ -18,10 +18,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # ### Navegador Web ###
+    # Navegador Web
     brave
 
-    # ### Personalización KDE ###
+    # Personalización KDE
     papirus-icon-theme
     bibata-cursors
   ];
