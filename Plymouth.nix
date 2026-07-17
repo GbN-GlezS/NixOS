@@ -1,24 +1,24 @@
 # https://wiki.nixos.org/wiki/Plymouth
 
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   boot = {
     plymouth = {
-      enable = true;
+      enable = true; # Whether to enable Plymouth boot splash screen.
     };
 
-    # Enable "Silent boot"
-    consoleLogLevel = 0;
-    initrd.verbose = false;
+    consoleLogLevel = 0; # The kernel console loglevel.
+    initrd.verbose = false; # Verbosity of the initrd.
 
+    # Parameters added to the kernel command line.
     kernelParams = [
       "quiet"
       "rd.udev.log_level=3"
       "rd.systemd.show_status=auto"
     ];
 
-    # Hide the OS choice for bootloaders.
-    # It's still possible to open the bootloader list by pressing any key
-    # It will just not appear on screen unless a key is pressed
+    # Timeout (in seconds) until loader boots the default menu item.
     loader.timeout = 0;
   };
 }
