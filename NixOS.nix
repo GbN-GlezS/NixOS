@@ -1,30 +1,23 @@
 { pkgs, ... }:
 
 {
-  # Configure keymap in X11
+  # Configure keymap in X11.
   services.xserver.xkb = {
     layout = "us";
     variant = "colemak";
   };
 
-  # List of default packages to exclude from the configuration
+  # List of default packages to exclude from the configuration.
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    elisa
+    elisa # Simple music player aiming to provide a nice experience for its users.
   ];
 
-  services.flatpak.enable = true;
-
+  # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration.
   environment.systemPackages = with pkgs; [
-    # GNU Image Manipulation Program
-    gimp
-
-    # Easy-to-use paint program
-    kdePackages.kolourpaint
-
-    # Distributed version control system.
-    git
+    gimp # GNU Image Manipulation Program.
+    kdePackages.kolourpaint # Easy-to-use paint program.
+    git # Distributed version control system.
   ];
 
-  # Whether to enable kdeconnect
-  programs.kdeconnect.enable = true;
+  programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
 }
