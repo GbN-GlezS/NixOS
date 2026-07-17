@@ -11,6 +11,7 @@
         jnoortheen.nix-ide
       ];
     })
+    nixfmt-rfc-style
   ];
 
   # --- OPTIMIZACIONES DE LA WIKI OFICIAL ---
