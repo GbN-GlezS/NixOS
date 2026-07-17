@@ -3,7 +3,7 @@
 { pkgs, lib, ... }:
 
 {
-  # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration.
+  # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
     onlyoffice-desktopeditors # Office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents.
   ];
