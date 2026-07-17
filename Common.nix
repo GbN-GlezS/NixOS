@@ -6,23 +6,23 @@
 }:
 
 {
-  # Which X11 packages to exclude from the default environment
-  services.xserver.excludePackages = with pkgs; [ xterm ];
-
-  # List of default packages to exclude from the configuration
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    #discover
-    khelpcenter
-    okular
-    qrca
+  # Which X11 packages to exclude from the default environment.
+  services.xserver.excludePackages = with pkgs; [
+    xterm # Terminal emulator for the X Window System.
   ];
 
-  environment.systemPackages = with pkgs; [
-    # Navegador Web
-    brave
+  # List of default packages to exclude from the configuration.
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    discover # Helps you find and install applications, games, and tools.
+    khelpcenter # Software documentation viewer.
+    okular # KDE document viewer.
+    qrca # QR code scanner for Plasma Mobile.
+  ];
 
-    # Personalización KDE
-    papirus-icon-theme
-    bibata-cursors
+  # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration
+  environment.systemPackages = with pkgs; [
+    brave # Privacy-oriented browser for Desktop and Laptop computers.
+    papirus-icon-theme # Pixel perfect icon theme for Linux.
+    bibata-cursors # Material Based Cursor Theme.
   ];
 }
