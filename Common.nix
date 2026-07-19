@@ -18,8 +18,6 @@
     discover # Helps you find and install applications, games, and tools.
     kate # Advanced text editor.
     khelpcenter # Software documentation viewer.
-    kwalletmanager # Tool to manage the passwords on your system.
-    okular # KDE document viewer.
     qrca # QR code scanner for Plasma Mobile.
   ];
 
