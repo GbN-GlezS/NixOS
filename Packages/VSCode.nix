@@ -13,6 +13,7 @@
       ];
     })
 
+    git # Distributed version control system.
     nil # Yet another language server for Nix.
     nixfmt # Official formatter for Nix code.
   ];
