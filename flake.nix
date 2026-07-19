@@ -8,6 +8,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   outputs =
@@ -15,6 +21,7 @@
       self,
       nixpkgs,
       home-manager,
+      plasma-manager,
       ...
     }@inputs:
     {
@@ -38,8 +45,10 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.nixos = ./Home-NixOS.nix;
                 backupFileExtension = "backup";
+                overwriteBackup = true;
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+                users.nixos = ./Home-NixOS.nix;
               };
             }
           ];
@@ -60,6 +69,9 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
+                overwriteBackup = true;
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = ./Home-IdeaCentre.nix;
               };
             }
@@ -81,6 +93,9 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
+                overwriteBackup = true;
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = ./Home-IdeaPad.nix;
               };
             }
@@ -102,12 +117,14 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
+                overwriteBackup = true;
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = ./Home-Pavilion.nix;
               };
             }
           ];
         };
-
       };
     };
 }
