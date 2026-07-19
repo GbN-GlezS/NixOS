@@ -16,7 +16,7 @@ let
 in
 
 {
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     bibata-cursors # Material Based Cursor Theme.
@@ -48,21 +48,40 @@ in
     };
   };
 
-  # CRITICAL: Forces KDE Plasma to index the newly generated desktop entries immediately
-  home.activation.kde-service-cache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ -x "$(command -v kbuildsycoca6)" ]; then
-      XDG_DATA_DIRS="${config.home.profileDirectory}/share:\$XDG_DATA_DIRS" kbuildsycoca6 --noincremental > /dev/null 2>&1 || true
-    fi
-  '';
-
   programs.plasma = {
     enable = true;
     overrideConfig = true;
 
     configFile."kdeglobals"."General"."AccentColor" = "61,174,233";
     configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = "61,174,233";
+
     configFile."kdeglobals"."KDE"."widgetStyle" = "Breeze";
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
+
+    workspace = {
+      colorScheme = "BreezeDark";
+      theme = "dark";
+      iconTheme = "Papirus-Dark";
+
+      cursor = {
+        theme = "Bibata-Modern-Ice";
+        size = 16;
+      };
+
+      windowDecorations = {
+        library = "org.kde.breeze";
+        theme = "Breeze";
+      };
+
+      splashScreen = {
+        theme = "None";
+      };
+    };
+
+    configFile."kdeglobals"."General"."XftAntialias" = true;
+    configFile."kdeglobals"."General"."XftSubPixel" = "rgb";
+    configFile."kdeglobals"."General"."AntiAliasingExcludeRangeEnabled" = false;
+    configFile."kdeglobals"."General"."XftHintStyle" = "hintslight";
 
     fonts = {
       general = {
@@ -91,26 +110,6 @@ in
       };
     };
 
-    workspace = {
-      colorScheme = "BreezeDark";
-      theme = "default";
-      iconTheme = "Papirus-Dark";
-
-      cursor = {
-        theme = "Bibata-Modern-Ice";
-        size = 16;
-      };
-
-      windowDecorations = {
-        library = "org.kde.breeze";
-        theme = "Breeze";
-      };
-
-      splashScreen = {
-        theme = "None";
-      };
-    };
-
     panels = [
       {
         location = "bottom";
@@ -133,34 +132,14 @@ in
   };
 
   xdg.desktopEntries = {
-    "brave-whatsapp" = {
-      name = "WhatsApp";
-      exec = "brave --app=https://web.whatsapp.com/";
-      icon = "whatsapp";
+    "brave-chatgpt" = {
+      name = "ChatGPT";
+      exec = "brave --app=https://chatgpt.com/";
+      icon = "${./Icons/ChatGPT-Dark.svg}";
       terminal = false;
       categories = [
         "Network"
-        "InstantMessaging"
-      ];
-    };
-    "brave-youtube" = {
-      name = "YouTube";
-      exec = "brave --app=https://www.youtube.com/";
-      icon = "youtube";
-      terminal = false;
-      categories = [
-        "Network"
-        "Video"
-      ];
-    };
-    "brave-github" = {
-      name = "GitHub";
-      exec = "brave --app=https://github.com/";
-      icon = "github";
-      terminal = false;
-      categories = [
-        "Network"
-        "Development"
+        "Utility"
       ];
     };
     "brave-gemini" = {
@@ -173,14 +152,34 @@ in
         "Utility"
       ];
     };
-    "brave-chatgpt" = {
-      name = "ChatGPT";
-      exec = "brave --app=https://chatgpt.com/";
-      icon = "${./Icons/ChatGPT-Dark.svg}";
+    "brave-github" = {
+      name = "GitHub";
+      exec = "brave --app=https://github.com/";
+      icon = "github";
+      terminal = false;
+      categories = [
+        "Development"
+        "Network"
+        "Utility"
+      ];
+    };
+    "brave-whatsapp" = {
+      name = "WhatsApp";
+      exec = "brave --app=https://web.whatsapp.com/";
+      icon = "whatsapp";
       terminal = false;
       categories = [
         "Network"
-        "Utility"
+      ];
+    };
+    "brave-youtube" = {
+      name = "YouTube";
+      exec = "brave --app=https://www.youtube.com/";
+      icon = "youtube";
+      terminal = false;
+      categories = [
+        "Network"
+        "AudioVideo"
       ];
     };
   };
