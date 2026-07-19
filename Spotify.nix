@@ -10,4 +10,9 @@
 
   networking.firewall.allowedTCPPorts = [ 57621 ]; # List of TCP ports on which incoming connections are accepted.
   networking.firewall.allowedUDPPorts = [ 5353 ]; # List of open UDP ports.
+
+  # List of default packages to exclude from the configuration.
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    elisa # Simple music player aiming to provide a nice experience for its users.
+  ];
 }
