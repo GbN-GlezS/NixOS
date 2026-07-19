@@ -31,13 +31,13 @@
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
-            ./Plymouth.nix
+            ./Hosts/NixOS.nix
             ./Common.nix
-            ./OnlyOffice.nix
-            ./Spotify.nix
-            ./NixOS.nix
-            ./Virtualization.nix
-            ./VSCode.nix
+            ./Boot/Plymouth.nix
+            ./Packages/OnlyOffice.nix
+            ./Packages/Spotify.nix
+            ./Packages/VirtManager.nix
+            ./Packages/VSCode.nix
             ({ networking.hostName = "NixOS"; })
 
             home-manager.nixosModules.default
@@ -48,7 +48,7 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = ./Home-NixOS.nix;
+                users.nixos = ./Home-Manager/NixOS.nix;
               };
             }
           ];
@@ -58,10 +58,11 @@
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
-            ./Plymouth.nix
+            ./Hosts/Idea.nix
+            ./Boot/Plymouth.nix
             ./Common.nix
-            ./OnlyOffice.nix
-            ./Idea.nix
+            ./Packages/OnlyOffice.nix
+            ./Packages/VSCode.nix
             ({ networking.hostName = "IdeaCentre"; })
 
             home-manager.nixosModules.default
@@ -72,7 +73,7 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = ./Home-IdeaCentre.nix;
+                users.nixos = ./Home-Manager/IdeaCentre.nix;
               };
             }
           ];
@@ -82,10 +83,11 @@
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
-            ./Plymouth.nix
+            ./Hosts/Idea.nix
+            ./Boot/Plymouth.nix
             ./Common.nix
-            ./OnlyOffice.nix
-            ./Idea.nix
+            ./Packages/OnlyOffice.nix
+            ./Packages/VSCode.nix
             ({ networking.hostName = "IdeaPad"; })
 
             home-manager.nixosModules.default
@@ -96,7 +98,7 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = ./Home-IdeaPad.nix;
+                users.nixos = ./Home-Manager/IdeaPad.nix;
               };
             }
           ];
@@ -106,10 +108,11 @@
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
-            ./Plymouth.nix
+            ./Hosts/Pavilion.nix
+            ./Boot/Plymouth.nix
             ./Common.nix
-            ./Spotify.nix
-            ./Pavilion.nix
+            ./Packages/Spotify.nix
+            ./Packages/VSCode.nix
             ({ networking.hostName = "Pavilion"; })
 
             home-manager.nixosModules.default
@@ -120,7 +123,7 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = ./Home-Pavilion.nix;
+                users.nixos = ./Home-Manager/Pavilion.nix;
               };
             }
           ];
