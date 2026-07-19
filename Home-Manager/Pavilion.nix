@@ -16,7 +16,7 @@ let
 in
 
 {
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     bibata-cursors # Material Based Cursor Theme.
@@ -126,14 +126,34 @@ in
   };
 
   xdg.desktopEntries = {
-    "brave-whatsapp" = {
-      name = "WhatsApp";
-      exec = "brave --app=https://web.whatsapp.com/";
-      icon = "whatsapp";
+    "brave-canva" = {
+      name = "Canva";
+      exec = "brave --app=https://www.canva.com/";
+      icon = "${./Icons/Canva.svg}";
+      terminal = false;
+      categories = [
+        "Graphics"
+        "Network"
+      ];
+    };
+    "brave-chatgpt" = {
+      name = "ChatGPT";
+      exec = "brave --app=https://chatgpt.com/";
+      icon = "${./Icons/ChatGPT-Dark.svg}";
       terminal = false;
       categories = [
         "Network"
-        "InstantMessaging"
+        "Utility"
+      ];
+    };
+    "brave-classroom" = {
+      name = "Classroom";
+      exec = "brave --app=https://classroom.google.com/";
+      icon = "${./Icons/Classroom.svg}";
+      terminal = false;
+      categories = [
+        "Education"
+        "Network"
       ];
     };
     "brave-gemini" = {
@@ -146,34 +166,13 @@ in
         "Utility"
       ];
     };
-    "brave-chatgpt" = {
-      name = "ChatGPT";
-      exec = "brave --app=https://chatgpt.com/";
-      icon = "${./Icons/ChatGPT-Light.svg}";
+    "brave-whatsapp" = {
+      name = "WhatsApp";
+      exec = "brave --app=https://web.whatsapp.com/";
+      icon = "whatsapp";
       terminal = false;
       categories = [
         "Network"
-        "Utility"
-      ];
-    };
-    "brave-canva" = {
-      name = "Canva";
-      exec = "brave --app=https://www.canva.com/";
-      icon = "${./Icons/Canva.svg}";
-      terminal = false;
-      categories = [
-        "Network"
-        "Graphics"
-      ];
-    };
-    "brave-classroom" = {
-      name = "Google Classroom";
-      exec = "brave --app=https://classroom.google.com/";
-      icon = "${./Icons/Classroom.svg}";
-      terminal = false;
-      categories = [
-        "Network"
-        "Education"
       ];
     };
   };
