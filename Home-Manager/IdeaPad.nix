@@ -6,14 +6,11 @@
 }:
 
 let
-  papirus-custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
-    # Blazing fast: disables the heavy Nix post-build scanning phases for static assets
+  papirus-icon-theme-custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
     dontFixup = true;
-
     postInstall = (oldAttrs.postInstall or "") + ''
       export XDG_DATA_HOME=$out/share
-      ${pkgs.papirus-folders}/bin/papirus-folders -o -C pink -t Papirus
-      ${pkgs.papirus-folders}/bin/papirus-folders -o -C pink -t Papirus-Dark
+      ${pkgs.papirus-folders}/bin/papirus-folders -o -C blue -t Papirus-Dark
     '';
   });
 in
@@ -25,9 +22,8 @@ in
     bibata-cursors # Material Based Cursor Theme.
     inter # Typeface specially designed for user interfaces.
     jetbrains-mono # Typeface made for developers.
-    papirus-icon-theme # Pixel perfect icon theme for Linux.
+    papirus-icon-theme-custom # Pixel perfect icon theme for Linux.
     papirus-folders # Tool to change papirus icon theme color.
-    papirus-custom
   ];
 
   home.pointerCursor = {
@@ -43,7 +39,7 @@ in
     enable = true;
     iconTheme = {
       name = "Papirus-Dark";
-      package = papirus-custom;
+      package = papirus-icon-theme-custom;
     };
     font = {
       name = "Inter";
@@ -52,12 +48,19 @@ in
     };
   };
 
+  # CRITICAL: Forces KDE Plasma to index the newly generated desktop entries immediately
+  home.activation.kde-service-cache = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ -x "$(command -v kbuildsycoca6)" ]; then
+      XDG_DATA_DIRS="${config.home.profileDirectory}/share:\$XDG_DATA_DIRS" kbuildsycoca6 --noincremental > /dev/null 2>&1 || true
+    fi
+  '';
+
   programs.plasma = {
     enable = true;
     overrideConfig = true;
 
-    configFile."kdeglobals"."General"."AccentColor" = "233,58,154";
-    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = "233,58,154";
+    configFile."kdeglobals"."General"."AccentColor" = "61,174,233";
+    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = "61,174,233";
     configFile."kdeglobals"."KDE"."widgetStyle" = "Breeze";
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
 
@@ -95,7 +98,7 @@ in
 
       cursor = {
         theme = "Bibata-Modern-Ice";
-        size = 24;
+        size = 16;
       };
 
       windowDecorations = {
@@ -140,10 +143,30 @@ in
         "InstantMessaging"
       ];
     };
+    "brave-youtube" = {
+      name = "YouTube";
+      exec = "brave --app=https://www.youtube.com/";
+      icon = "youtube";
+      terminal = false;
+      categories = [
+        "Network"
+        "Video"
+      ];
+    };
+    "brave-github" = {
+      name = "GitHub";
+      exec = "brave --app=https://github.com/";
+      icon = "github";
+      terminal = false;
+      categories = [
+        "Network"
+        "Development"
+      ];
+    };
     "brave-gemini" = {
       name = "Gemini";
       exec = "brave --app=https://gemini.google.com/";
-      icon = "google-gemini";
+      icon = "${./Icons/Gemini.svg}";
       terminal = false;
       categories = [
         "Network"
@@ -153,7 +176,7 @@ in
     "brave-chatgpt" = {
       name = "ChatGPT";
       exec = "brave --app=https://chatgpt.com/";
-      icon = "chatgpt";
+      icon = "${./Icons/ChatGPT-Dark.svg}";
       terminal = false;
       categories = [
         "Network"
