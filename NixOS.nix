@@ -7,11 +7,6 @@
     variant = "colemak"; # X keyboard variant.
   };
 
-  # List of default packages to exclude from the configuration.
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    elisa # Simple music player aiming to provide a nice experience for its users.
-  ];
-
   # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
     gimp # GNU Image Manipulation Program.
