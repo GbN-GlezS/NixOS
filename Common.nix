@@ -16,14 +16,13 @@
     discover # Helps you find and install applications, games, and tools.
     kate # Advanced text editor.
     khelpcenter # Software documentation viewer.
+    kwalletmanager # Tool to manage the passwords on your system.
     okular # KDE document viewer.
     qrca # QR code scanner for Plasma Mobile.
   ];
 
   # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration
   environment.systemPackages = with pkgs; [
-    bibata-cursors # Material Based Cursor Theme.
     brave # Privacy-oriented browser for Desktop and Laptop computers.
-    papirus-icon-theme # Pixel perfect icon theme for Linux.
   ];
 }
