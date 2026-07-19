@@ -18,6 +18,7 @@
     git # Distributed version control system.
     kdePackages.kolourpaint # Easy-to-use paint program.
     kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
+    kdePackages.skanpage # Utility to scan images and multi-page documents.
   ];
 
   programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
