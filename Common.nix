@@ -16,6 +16,7 @@
   # List of default packages to exclude from the configuration.
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     discover # Helps you find and install applications, games, and tools.
+    okular # KDE document viewer.
     kate # Advanced text editor.
     khelpcenter # Software documentation viewer.
     qrca # QR code scanner for Plasma Mobile.
@@ -24,6 +25,5 @@
   # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration
   environment.systemPackages = with pkgs; [
     brave # Privacy-oriented browser for Desktop and Laptop computers.
-    haruna # Open source video player built with Qt/QML and libmpv.
   ];
 }
