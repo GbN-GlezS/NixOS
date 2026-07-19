@@ -62,7 +62,6 @@
             ./Boot/Plymouth.nix
             ./Common.nix
             ./Packages/OnlyOffice.nix
-            ./Packages/VSCode.nix
             ({ networking.hostName = "IdeaCentre"; })
 
             home-manager.nixosModules.default
@@ -87,7 +86,6 @@
             ./Boot/Plymouth.nix
             ./Common.nix
             ./Packages/OnlyOffice.nix
-            ./Packages/VSCode.nix
             ({ networking.hostName = "IdeaPad"; })
 
             home-manager.nixosModules.default
@@ -112,7 +110,7 @@
             ./Boot/Plymouth.nix
             ./Common.nix
             ./Packages/Spotify.nix
-            ./Packages/VSCode.nix
+            ./Packages/OnlyOffice.nix
             ({ networking.hostName = "Pavilion"; })
 
             home-manager.nixosModules.default
