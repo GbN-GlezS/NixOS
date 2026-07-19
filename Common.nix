@@ -16,7 +16,7 @@
   # List of default packages to exclude from the configuration.
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     discover # Helps you find and install applications, games, and tools.
-    okular # KDE document viewer.
+    elisa # Simple music player aiming to provide a nice experience for its users.
     kate # Advanced text editor.
     khelpcenter # Software documentation viewer.
     qrca # QR code scanner for Plasma Mobile.
