@@ -24,5 +24,6 @@
   # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration
   environment.systemPackages = with pkgs; [
     brave # Privacy-oriented browser for Desktop and Laptop computers.
+    haruna # Open source video player built with Qt/QML and libmpv.
   ];
 }

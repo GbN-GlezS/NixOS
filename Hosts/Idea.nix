@@ -18,7 +18,6 @@
 
   # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
-    haruna # Open source video player built with Qt/QML and libmpv.
     kdePackages.kamoso # Application to take pictures and videos with your webcam.
   ];
 }
