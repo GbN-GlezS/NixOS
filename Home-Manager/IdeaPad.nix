@@ -16,7 +16,7 @@ let
 in
 
 {
-  home.stateVersion = "25.05";
+  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     bibata-cursors # Material Based Cursor Theme.
@@ -126,14 +126,14 @@ in
   };
 
   xdg.desktopEntries = {
-    "brave-whatsapp" = {
-      name = "WhatsApp";
-      exec = "brave --app=https://web.whatsapp.com/";
-      icon = "whatsapp";
+    "brave-chatgpt" = {
+      name = "ChatGPT";
+      exec = "brave --app=https://chatgpt.com/";
+      icon = "${./Icons/ChatGPT-Dark.svg}";
       terminal = false;
       categories = [
         "Network"
-        "InstantMessaging"
+        "Utility"
       ];
     };
     "brave-gemini" = {
@@ -146,14 +146,13 @@ in
         "Utility"
       ];
     };
-    "brave-chatgpt" = {
-      name = "ChatGPT";
-      exec = "brave --app=https://chatgpt.com/";
-      icon = "${./Icons/ChatGPT-Dark.svg}";
+    "brave-whatsapp" = {
+      name = "WhatsApp";
+      exec = "brave --app=https://web.whatsapp.com/";
+      icon = "whatsapp";
       terminal = false;
       categories = [
         "Network"
-        "Utility"
       ];
     };
   };
