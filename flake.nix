@@ -54,6 +54,15 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 overwriteBackup = true;
+
+                extraSpecialArgs = {
+                  themeColor = "blue";
+                  iconVariant = "Papirus-Dark";
+                  cursorTheme = "Bibata-Modern-Ice";
+                  accentColor = "61,174,233";
+                  lookAndFeel = "org.kde.breezedark.desktop";
+                };
+
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
@@ -67,7 +76,6 @@
           ];
         };
 
-        # IdeaCentre, IdeaPad, and Pavilion use the defaults defined in configuration.nix
         IdeaCentre = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
@@ -85,6 +93,13 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 overwriteBackup = true;
+
+                extraSpecialArgs = {
+                  iconVariant = "Papirus-Dark";
+                  cursorTheme = "Bibata-Modern-Ice";
+                  lookAndFeel = "org.kde.breezedark.desktop";
+                };
+
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [

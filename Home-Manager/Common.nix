@@ -1,24 +1,47 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  themeColor ? "pink",
+  iconVariant ? "Papirus-Light",
+  cursorTheme ? "Bibata-Modern-Classic",
+  accentColor ? "233,58,154",
+  lookAndFeel ? "org.kde.breeze.desktop",
+  ...
+}:
 
+let
+  papirus-icon-theme-custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
+    dontFixup = true;
+    postInstall = (oldAttrs.postInstall or "") + ''
+      export XDG_DATA_HOME=$out/share
+      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${themeColor} -t ${iconVariant}
+    '';
+  });
+in
 {
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
-    bibata-cursors # Material Based Cursor Theme.
-    inter # Typeface specially designed for user interfaces.
-    jetbrains-mono # Typeface made for developers.
-    papirus-folders # Tool to change papirus icon theme color.
+    bibata-cursors
+    inter
+    jetbrains-mono
+    papirus-folders
+    papirus-icon-theme-custom
   ];
 
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;
     x11.enable = true;
+    name = cursorTheme;
     package = pkgs.bibata-cursors;
     size = 16;
   };
 
   gtk = {
+    iconTheme = {
+      name = iconVariant;
+      package = papirus-icon-theme-custom;
+    };
     font = {
       name = "Inter";
       size = 10;
@@ -30,8 +53,16 @@
     enable = true;
     overrideConfig = true;
 
+    configFile."kdeglobals"."General"."AccentColor" = accentColor;
+    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = accentColor;
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
     configFile."ksplashrc"."KSplash"."Theme" = "None";
+
+    workspace = {
+      lookAndFeel = lookAndFeel;
+      iconTheme = iconVariant;
+      cursor.theme = cursorTheme;
+    };
 
     fonts = {
       general = {
