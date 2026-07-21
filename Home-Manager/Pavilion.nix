@@ -25,7 +25,7 @@ in
 
     workspace = {
       colorScheme = "BreezeLight";
-      theme = "breeze-light";
+      lookAndFeel = "org.kde.breeze.desktop";
       iconTheme = "Papirus-Light";
       cursor.theme = "Bibata-Modern-Classic";
     };
