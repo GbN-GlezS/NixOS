@@ -53,7 +53,7 @@ in
 
     workspace = {
       colorScheme = "BreezeDark";
-      theme = "dark";
+      theme = "default";
       iconTheme = "Papirus-Dark";
 
       cursor = {
