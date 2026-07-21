@@ -11,8 +11,6 @@ let
 in
 
 {
-  home.stateVersion = "26.05";
-
   home.packages = with pkgs; [
     bibata-cursors # Material Based Cursor Theme.
     inter # Typeface specially designed for user interfaces.

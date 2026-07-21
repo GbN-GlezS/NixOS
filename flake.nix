@@ -48,7 +48,12 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = ./Home-Manager/NixOS.nix;
+                users.nixos = {
+                  imports = [
+                    ./Home-Manager/NixOS.nix
+                    ./Home-Manager/Common.nix
+                  ];
+                };
               };
             }
           ];
@@ -72,7 +77,12 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = ./Home-Manager/IdeaCentre.nix;
+                users.nixos = {
+                  imports = [
+                    ./Home-Manager/IdeaCentre.nix
+                    ./Home-Manager/Common.nix
+                  ];
+                };
               };
             }
           ];
@@ -96,7 +106,12 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = ./Home-Manager/IdeaPad.nix;
+                users.nixos = {
+                  imports = [
+                    ./Home-Manager/IdeaPad.nix
+                    ./Home-Manager/Common.nix
+                  ];
+                };
               };
             }
           ];
@@ -121,7 +136,12 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = ./Home-Manager/Pavilion.nix;
+                users.nixos = {
+                  imports = [
+                    ./Home-Manager/Pavilion.nix
+                    ./Home-Manager/Common.nix
+                  ];
+                };
               };
             }
           ];
