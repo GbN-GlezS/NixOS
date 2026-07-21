@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   papirus-icon-theme-custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
@@ -12,14 +12,7 @@ in
 {
   home.packages = [ papirus-icon-theme-custom ];
 
-  home.pointerCursor = {
-    enable = true;
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 16;
-  };
+  home.pointerCursor.name = "Bibata-Modern-Classic";
 
   gtk.iconTheme = {
     name = "Papirus-Light";
@@ -34,11 +27,7 @@ in
       colorScheme = "BreezeLight";
       theme = "default";
       iconTheme = "Papirus-Light";
-
-      cursor = {
-        theme = "Bibata-Modern-Classic";
-        size = 16;
-      };
+      cursor.theme = "Bibata-Modern-Classic";
     };
   };
 
