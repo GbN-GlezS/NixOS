@@ -39,6 +39,7 @@
     configFile."kdeglobals"."KDE"."widgetStyle" = "Fusion";
 
     # Window Decorations (Plastik)
+    configFile."kwinrc"."org.kde.kdecoration2"."library" = "org.kde.plastik";
     configFile."kwinrc"."org.kde.kdecoration2"."theme" = "Plastik";
 
     # Plasma Style (Breeze Dark)
