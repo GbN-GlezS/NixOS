@@ -26,6 +26,7 @@
     {
       nixosConfigurations = {
 
+        # NixOS deviates from the defaults, so specialArgs is declared here
         NixOS = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
@@ -66,15 +67,9 @@
           ];
         };
 
+        # IdeaCentre, IdeaPad, and Pavilion use the defaults defined in configuration.nix
         IdeaCentre = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-
-          specialArgs = {
-            sysLocale = "es_MX.UTF-8";
-            kbdLayout = "latam";
-            kbdVariant = "";
-          };
-
           modules = [
             ./configuration.nix
             ./Hosts/Idea.nix
@@ -104,13 +99,6 @@
 
         IdeaPad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-
-          specialArgs = {
-            sysLocale = "es_MX.UTF-8";
-            kbdLayout = "latam";
-            kbdVariant = "";
-          };
-
           modules = [
             ./configuration.nix
             ./Hosts/Idea.nix
@@ -140,13 +128,6 @@
 
         Pavilion = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-
-          specialArgs = {
-            sysLocale = "es_MX.UTF-8";
-            kbdLayout = "latam";
-            kbdVariant = "";
-          };
-
           modules = [
             ./configuration.nix
             ./Hosts/Pavilion.nix

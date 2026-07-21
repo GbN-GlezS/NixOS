@@ -5,9 +5,9 @@
 {
   config,
   pkgs,
-  sysLocale,
-  kbdLayout,
-  kbdVariant,
+  sysLocale ? "es_MX.UTF-8",
+  kbdLayout ? "latam",
+  kbdVariant ? "",
   ...
 }:
 
