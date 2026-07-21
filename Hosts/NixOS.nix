@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 {
-  # Configure keymap in X11.
-  services.xserver.xkb = {
-    layout = "us"; # X keyboard layout, or multiple keyboard layouts separated by commas.
-    variant = "colemak"; # X keyboard variant.
-  };
-
   # List of default packages to exclude from the configuration.
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     okular # KDE document viewer.

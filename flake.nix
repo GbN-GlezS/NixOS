@@ -34,6 +34,8 @@
             ./Hosts/NixOS.nix
             ./Common.nix
             ./Boot/Plymouth.nix
+            "./Boot/Language (en-US).nix"
+            "./Boot/Keymap (us-colemak).nix"
             ./Packages/OnlyOffice.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
@@ -66,6 +68,8 @@
             ./configuration.nix
             ./Hosts/Idea.nix
             ./Boot/Plymouth.nix
+            "./Boot/Language (es-MX).nix"
+            "./Boot/Keymap (latam).nix"
             ./Common.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "IdeaCentre"; })
@@ -89,12 +93,17 @@
           ];
         };
 
+
+        
+
         IdeaPad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
             ./configuration.nix
             ./Hosts/Idea.nix
             ./Boot/Plymouth.nix
+            "./Boot/Language (es-MX).nix"
+            "./Boot/Keymap (latam).nix"
             ./Common.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "IdeaPad"; })
@@ -124,6 +133,8 @@
             ./configuration.nix
             ./Hosts/Pavilion.nix
             ./Boot/Plymouth.nix
+            "./Boot/Language (es-MX).nix"
+            "./Boot/Keymap (latam).nix"
             ./Common.nix
             ./Packages/Spotify.nix
             ./Packages/OnlyOffice.nix

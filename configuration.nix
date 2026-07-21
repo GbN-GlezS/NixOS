@@ -33,7 +33,7 @@
   time.timeZone = "America/Mexico_City";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  # i18n.defaultLocale = "";
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
