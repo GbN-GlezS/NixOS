@@ -17,6 +17,7 @@ let
     '';
   });
 in
+
 {
   home.stateVersion = "26.05";
 
