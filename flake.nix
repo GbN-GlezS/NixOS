@@ -28,13 +28,18 @@
 
         NixOS = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
+          specialArgs = {
+            sysLocale = "en_US.UTF-8";
+            kbdLayout = "us";
+            kbdVariant = "colemak";
+          };
+
           modules = [
             ./configuration.nix
             ./Hosts/NixOS.nix
             ./Common.nix
             ./Boot/Plymouth.nix
-            (./. + "/Boot/Language (en-US).nix")
-            (./. + "/Boot/Keymap (us-colemak).nix")
             ./Packages/OnlyOffice.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
@@ -63,12 +68,17 @@
 
         IdeaCentre = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
+          specialArgs = {
+            sysLocale = "es_MX.UTF-8";
+            kbdLayout = "latam";
+            kbdVariant = "";
+          };
+
           modules = [
             ./configuration.nix
             ./Hosts/Idea.nix
             ./Boot/Plymouth.nix
-            (./. + "/Boot/Language (es-MX).nix")
-            (./. + "/Boot/Keymap (latam).nix")
             ./Common.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "IdeaCentre"; })
@@ -94,12 +104,17 @@
 
         IdeaPad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
+          specialArgs = {
+            sysLocale = "es_MX.UTF-8";
+            kbdLayout = "latam";
+            kbdVariant = "";
+          };
+
           modules = [
             ./configuration.nix
             ./Hosts/Idea.nix
             ./Boot/Plymouth.nix
-            (./. + "/Boot/Language (es-MX).nix")
-            (./. + "/Boot/Keymap (latam).nix")
             ./Common.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "IdeaPad"; })
@@ -125,12 +140,17 @@
 
         Pavilion = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
+          specialArgs = {
+            sysLocale = "es_MX.UTF-8";
+            kbdLayout = "latam";
+            kbdVariant = "";
+          };
+
           modules = [
             ./configuration.nix
             ./Hosts/Pavilion.nix
             ./Boot/Plymouth.nix
-            (./. + "/Boot/Language (es-MX).nix")
-            (./. + "/Boot/Keymap (latam).nix")
             ./Common.nix
             ./Packages/Spotify.nix
             ./Packages/OnlyOffice.nix

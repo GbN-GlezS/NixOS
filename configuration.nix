@@ -2,7 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  sysLocale,
+  kbdLayout,
+  kbdVariant,
+  ...
+}:
 
 {
   nix.settings.experimental-features = [
@@ -33,7 +40,7 @@
   time.timeZone = "America/Mexico_City";
 
   # Select internationalisation properties.
-  # i18n.defaultLocale = "";
+  i18n.defaultLocale = sysLocale;
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
@@ -44,10 +51,10 @@
   services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
-  # services.xserver.xkb = {
-  #   layout = "";
-  #   variant = "";
-  # };
+  services.xserver.xkb = {
+    layout = kbdLayout;
+    variant = kbdVariant;
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
