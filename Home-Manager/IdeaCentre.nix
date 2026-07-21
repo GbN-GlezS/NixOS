@@ -37,7 +37,7 @@ in
 
       cursor = {
         theme = "Bibata-Modern-Classic";
-        size = 24;
+        size = 16;
       };
     };
   };
