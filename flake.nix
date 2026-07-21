@@ -23,7 +23,7 @@
       home-manager,
       plasma-manager,
       ...
-    }@inputs:
+    }:
     {
       nixosConfigurations = {
 
