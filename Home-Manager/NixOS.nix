@@ -34,11 +34,11 @@ in
     enable = true;
     package = pkgs.vscode.fhs;
 
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
     ];
 
-    userSettings = {
+    profiles.default.userSettings = {
       "[nix]" = {
         "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "jnoortheen.nix-ide";
