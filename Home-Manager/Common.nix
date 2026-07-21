@@ -20,6 +20,10 @@
 
   gtk = {
     enable = true;
+    theme = {
+      name = "Breeze";
+      package = pkgs.kdePackages.breeze-gtk;
+    };
     font = {
       name = "Inter";
       size = 10;
