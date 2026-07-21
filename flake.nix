@@ -52,6 +52,7 @@
                   imports = [
                     ./Home-Manager/NixOS.nix
                     ./Home-Manager/Common.nix
+                    ./Packages/VSCode.nix
                   ];
                 };
               };
