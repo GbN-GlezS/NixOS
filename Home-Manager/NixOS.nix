@@ -24,8 +24,8 @@ in
     configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = "61,174,233";
 
     workspace = {
-      colorScheme = "BreezeDark";
       lookAndFeel = "org.kde.breezedark.desktop";
+      colorScheme = "BreezeDark";
       iconTheme = "Papirus-Dark";
       cursor.theme = "Bibata-Modern-Ice";
     };
