@@ -10,6 +10,14 @@
     papirus-folders # Tool to change papirus icon theme color.
   ];
 
+  home.pointerCursor = {
+    enable = true;
+    gtk.enable = true;
+    x11.enable = true;
+    package = pkgs.bibata-cursors;
+    size = 16;
+  };
+
   gtk = {
     enable = true;
     font = {
