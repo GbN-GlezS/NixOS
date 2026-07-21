@@ -30,6 +30,31 @@ in
     };
   };
 
+  programs.vscode = {
+    enable = true;
+    package = pkgs.vscode.fhs;
+
+    extensions = with pkgs.vscode-extensions; [
+      jnoortheen.nix-ide
+    ];
+
+    userSettings = {
+      "[nix]" = {
+        "editor.formatOnSave" = true;
+        "editor.defaultFormatter" = "jnoortheen.nix-ide";
+      };
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nil";
+      "nix.serverSettings" = {
+        "nil" = {
+          "formatting" = {
+            "command" = [ "nixfmt" ];
+          };
+        };
+      };
+    };
+  };
+
   xdg.desktopEntries = {
     "brave-github" = {
       name = "GitHub";
