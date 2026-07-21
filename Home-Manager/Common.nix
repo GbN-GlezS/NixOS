@@ -36,8 +36,8 @@
     overrideConfig = true;
 
     configFile."kdeglobals"."KDE"."widgetStyle" = "Breeze";
+    configFile."plasmarc"."Theme"."name" = "breeze";
     configFile."kwinrc"."org.kde.kdecoration2"."theme" = "Breeze";
-    configFile."plasmarc"."Theme"."name" = "breeze-dark";
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
     configFile."ksplashrc"."KSplash"."Theme" = "None";
 
