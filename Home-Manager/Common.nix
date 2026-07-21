@@ -34,6 +34,11 @@
     configFile."kdeglobals"."KDE"."widgetStyle" = "Breeze";
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
 
+    configFile."kdeglobals"."General"."XftAntialias" = true;
+    configFile."kdeglobals"."General"."XftSubPixel" = "rgb";
+    configFile."kdeglobals"."General"."AntiAliasingExcludeRangeEnabled" = false;
+    configFile."kdeglobals"."General"."XftHintStyle" = "hintslight";
+
     fonts = {
       general = {
         family = "Inter";

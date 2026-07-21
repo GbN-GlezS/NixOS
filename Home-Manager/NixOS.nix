@@ -23,11 +23,6 @@ in
     configFile."kdeglobals"."General"."AccentColor" = "61,174,233";
     configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = "61,174,233";
 
-    configFile."kdeglobals"."General"."XftAntialias" = true;
-    configFile."kdeglobals"."General"."XftSubPixel" = "rgb";
-    configFile."kdeglobals"."General"."AntiAliasingExcludeRangeEnabled" = false;
-    configFile."kdeglobals"."General"."XftHintStyle" = "hintslight";
-
     workspace = {
       colorScheme = "BreezeDark";
       lookAndFeel = "org.kde.breezedark.desktop";
