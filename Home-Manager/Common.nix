@@ -35,12 +35,12 @@
     enable = true;
     overrideConfig = true;
 
-    # Application Style (Fusion)
-    configFile."kdeglobals"."KDE"."widgetStyle" = "Fusion";
+    # Application Style (Breeze)
+    configFile."kdeglobals"."KDE"."widgetStyle" = "Breeze";
 
-    # Window Decorations (Plastik)
-    configFile."kwinrc"."org.kde.kdecoration2"."library" = "org.kde.plastik";
-    configFile."kwinrc"."org.kde.kdecoration2"."theme" = "Plastik";
+    # Window Decorations (Breeze)
+    configFile."kwinrc"."org.kde.kdecoration2"."library" = "org.kde.breeze";
+    configFile."kwinrc"."org.kde.kdecoration2"."theme" = "Breeze";
 
     # Plasma Style (Breeze Dark)
     configFile."plasmarc"."Theme"."name" = "breeze-dark";
