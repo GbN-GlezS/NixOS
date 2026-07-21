@@ -30,7 +30,7 @@ in
 
     workspace = {
       colorScheme = "BreezeDark";
-      theme = "default";
+      theme = "breeze-dark";
       iconTheme = "Papirus-Dark";
       cursor.theme = "Bibata-Modern-Ice";
     };

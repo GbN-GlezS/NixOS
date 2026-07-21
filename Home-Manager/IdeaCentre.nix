@@ -25,7 +25,7 @@ in
 
     workspace = {
       colorScheme = "BreezeLight";
-      theme = "default";
+      theme = "breeze-light";
       iconTheme = "Papirus-Light";
       cursor.theme = "Bibata-Modern-Classic";
     };
