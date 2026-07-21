@@ -33,6 +33,7 @@
 
     configFile."kdeglobals"."KDE"."widgetStyle" = "Breeze";
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
+    configFile."ksplashrc"."KSplash"."Theme" = "None";
 
     configFile."kdeglobals"."General"."XftAntialias" = true;
     configFile."kdeglobals"."General"."XftSubPixel" = "rgb";
@@ -63,16 +64,6 @@
       windowTitle = {
         family = "Inter";
         pointSize = 10;
-      };
-    };
-
-    workspace = {
-      windowDecorations = {
-        library = "org.kde.breeze";
-        theme = "Breeze";
-      };
-      splashScreen = {
-        theme = "None";
       };
     };
 
