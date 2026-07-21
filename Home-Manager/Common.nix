@@ -35,17 +35,9 @@
     enable = true;
     overrideConfig = true;
 
-    # Application Style (Breeze)
     configFile."kdeglobals"."KDE"."widgetStyle" = "Breeze";
-
-    # Window Decorations (Breeze)
-    configFile."kwinrc"."org.kde.kdecoration2"."library" = "org.kde.breeze";
     configFile."kwinrc"."org.kde.kdecoration2"."theme" = "Breeze";
-
-    # Plasma Style (Breeze Dark)
     configFile."plasmarc"."Theme"."name" = "breeze-dark";
-
-    # Sounds and Splash Screen
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
     configFile."ksplashrc"."KSplash"."Theme" = "None";
 
