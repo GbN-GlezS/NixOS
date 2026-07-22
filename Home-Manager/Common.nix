@@ -61,7 +61,7 @@ in
 
     workspace = {
       lookAndFeel = "org.kde.breeze" + lookAndFeel + ".desktop";
-      iconTheme = iconVariant;
+      iconTheme = "Papirus-" + iconVariant;
       cursor.theme = "Bibata-Modern-" + cursorTheme;
     };
 
