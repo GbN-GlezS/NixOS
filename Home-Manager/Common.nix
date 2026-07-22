@@ -1,10 +1,10 @@
 {
   pkgs,
-  themeColor,
-  iconVariant,
+  ThemeColor,
+  IconVariant,
   CursorVariant,
-  accentColor,
-  lookAndFeel,
+  AccentColor,
+  LookAndFeel,
   ...
 }:
 
@@ -13,7 +13,7 @@ let
     dontFixup = true;
     postInstall = (oldAttrs.postInstall or "") + ''
       export XDG_DATA_HOME=$out/share
-      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${themeColor} -t ${"Papirus-" + iconVariant}
+      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t ${"Papirus-" + IconVariant}
     '';
   });
 in
@@ -40,7 +40,7 @@ in
 
   gtk = {
     iconTheme = {
-      name = "Papirus-" + iconVariant;
+      name = "Papirus-" + IconVariant;
       package = papirus-icon-theme-custom;
     };
     font = {
@@ -54,14 +54,14 @@ in
     enable = true;
     overrideConfig = true;
 
-    configFile."kdeglobals"."General"."AccentColor" = accentColor;
-    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = accentColor;
+    configFile."kdeglobals"."General"."AccentColor" = AccentColor;
+    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = AccentColor;
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
     configFile."ksplashrc"."KSplash"."Theme" = "None";
 
     workspace = {
-      lookAndFeel = "org.kde.breeze" + lookAndFeel + ".desktop";
-      iconTheme = "Papirus-" + iconVariant;
+      lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
+      iconTheme = "Papirus-" + IconVariant;
       cursor.theme = "Bibata-Modern-" + CursorVariant;
     };
 

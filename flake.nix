@@ -55,11 +55,11 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  themeColor = "blue";
-                  iconVariant = "Dark";
+                  ThemeColor = "blue";
+                  IconVariant = "Dark";
                   CursorVariant = "Ice";
-                  accentColor = "61,174,233";
-                  lookAndFeel = "dark";
+                  AccentColor = "61,174,233";
+                  LookAndFeel = "dark";
                 };
 
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
@@ -101,11 +101,11 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  themeColor = "pink";
-                  iconVariant = "Dark";
+                  ThemeColor = "pink";
+                  IconVariant = "Dark";
                   CursorVariant = "Ice";
-                  accentColor = "233,58,154";
-                  lookAndFeel = "dark";
+                  AccentColor = "233,58,154";
+                  LookAndFeel = "dark";
                 };
 
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
@@ -146,11 +146,11 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  themeColor = "pink";
-                  iconVariant = "Light";
+                  ThemeColor = "pink";
+                  IconVariant = "Light";
                   CursorVariant = "Classic";
-                  accentColor = "233,58,154";
-                  lookAndFeel = "";
+                  AccentColor = "233,58,154";
+                  LookAndFeel = "";
                 };
 
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
@@ -192,11 +192,11 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  themeColor = "pink";
-                  iconVariant = "Light";
+                  ThemeColor = "pink";
+                  IconVariant = "Light";
                   CursorVariant = "Classic";
-                  accentColor = "233,58,154";
-                  lookAndFeel = "";
+                  AccentColor = "233,58,154";
+                  LookAndFeel = "";
                 };
 
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
