@@ -8,7 +8,6 @@
   sysLocale,
   kbdLayout,
   kbdVariant,
-  kbdKeyMap,
   ...
 }:
 
