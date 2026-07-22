@@ -15,7 +15,6 @@ let
     dontFixup = true;
     postInstall = (oldAttrs.postInstall or "") + ''
       export XDG_DATA_HOME="$out/share"
-
       ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus
       ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus-${IconVariant}
     '';
