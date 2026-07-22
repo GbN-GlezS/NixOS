@@ -26,7 +26,6 @@
     {
       nixosConfigurations = {
 
-        # NixOS deviates from the defaults, so specialArgs is declared here
         NixOS = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
@@ -95,8 +94,10 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
+                  themeColor = "pink";
                   iconVariant = "Dark";
                   cursorTheme = "Ice";
+                  accentColor = "233,58,154";
                   lookAndFeel = "dark";
                 };
 
@@ -129,6 +130,15 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 overwriteBackup = true;
+
+                extraSpecialArgs = {
+                  themeColor = "pink";
+                  iconVariant = "Light";
+                  cursorTheme = "Classic";
+                  accentColor = "233,58,154";
+                  lookAndFeel = "";
+                };
+
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
@@ -159,6 +169,15 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 overwriteBackup = true;
+
+                extraSpecialArgs = {
+                  themeColor = "pink";
+                  iconVariant = "Light";
+                  cursorTheme = "Classic";
+                  accentColor = "233,58,154";
+                  lookAndFeel = "";
+                };
+
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [

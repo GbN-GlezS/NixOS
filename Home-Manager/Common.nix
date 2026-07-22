@@ -1,9 +1,9 @@
 {
   pkgs,
-  themeColor ? "pink",
-  iconVariant ? "Light",
-  cursorTheme ? "Classic",
-  accentColor ? "233,58,154",
+  themeColor,
+  iconVariant,
+  cursorTheme,
+  accentColor,
   lookAndFeel,
   ...
 }:
