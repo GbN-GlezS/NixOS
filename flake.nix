@@ -102,10 +102,10 @@
 
                 extraSpecialArgs = {
                   ThemeColor = "pink";
-                  IconVariant = "Dark";
-                  CursorVariant = "Ice";
+                  IconVariant = "Light";
+                  CursorVariant = "Classic";
                   AccentColor = "233,58,154";
-                  LookAndFeel = "dark";
+                  LookAndFeel = "";
                 };
 
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
@@ -147,10 +147,10 @@
 
                 extraSpecialArgs = {
                   ThemeColor = "pink";
-                  IconVariant = "Light";
-                  CursorVariant = "Classic";
+                  IconVariant = "Dark";
+                  CursorVariant = "Ice";
                   AccentColor = "233,58,154";
-                  LookAndFeel = "";
+                  LookAndFeel = "dark";
                 };
 
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
