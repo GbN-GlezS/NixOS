@@ -162,6 +162,20 @@ in
       ];
     };
 
+    "brave-meet" = {
+      name = "Meet";
+      genericName = "Video Conferencing";
+      comment = "Open Meet as an application";
+      exec = "brave --start-maximized --app=https://meet.google.com/";
+      icon = "google-meet";
+      terminal = false;
+      type = "Application";
+      categories = [
+        "Network"
+        "VideoConference"
+      ];
+    };
+
     "brave-whatsapp" = {
       name = "WhatsApp";
       genericName = "Messaging application";
