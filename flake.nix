@@ -57,7 +57,7 @@
                 extraSpecialArgs = {
                   themeColor = "blue";
                   iconVariant = "Dark";
-                  cursorTheme = "Ice";
+                  CursorVariant = "Ice";
                   accentColor = "61,174,233";
                   lookAndFeel = "dark";
                 };
@@ -103,7 +103,7 @@
                 extraSpecialArgs = {
                   themeColor = "pink";
                   iconVariant = "Dark";
-                  cursorTheme = "Ice";
+                  CursorVariant = "Ice";
                   accentColor = "233,58,154";
                   lookAndFeel = "dark";
                 };
@@ -148,7 +148,7 @@
                 extraSpecialArgs = {
                   themeColor = "pink";
                   iconVariant = "Light";
-                  cursorTheme = "Classic";
+                  CursorVariant = "Classic";
                   accentColor = "233,58,154";
                   lookAndFeel = "";
                 };
@@ -194,7 +194,7 @@
                 extraSpecialArgs = {
                   themeColor = "pink";
                   iconVariant = "Light";
-                  cursorTheme = "Classic";
+                  CursorVariant = "Classic";
                   accentColor = "233,58,154";
                   lookAndFeel = "";
                 };
