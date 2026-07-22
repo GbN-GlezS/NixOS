@@ -65,6 +65,7 @@ in
 
     configFile."kwinrc"."NightColor"."Active" = true;
     configFile."kwinrc"."NightColor"."Mode" = "Location";
+    configFile."kwinrc"."NightColor"."LocationMode" = "Automatic";
     configFile."kwinrc"."NightColor"."DayTemperature" = 6500;
     configFile."kwinrc"."NightColor"."NightTemperature" = 3750;
 
