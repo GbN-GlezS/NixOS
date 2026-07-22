@@ -57,7 +57,7 @@
 
                 extraSpecialArgs = {
                   themeColor = "blue";
-                  iconVariant = "-Dark";
+                  iconVariant = "Dark";
                   cursorTheme = "Ice";
                   accentColor = "61,174,233";
                   lookAndFeel = "dark";
@@ -95,7 +95,7 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  iconVariant = "-Dark";
+                  iconVariant = "Dark";
                   cursorTheme = "Ice";
                   lookAndFeel = "dark";
                 };
@@ -129,11 +129,6 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 overwriteBackup = true;
-
-                extraSpecialArgs = {
-                  iconVariant = "-Light";
-                };
-
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
@@ -164,11 +159,6 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 overwriteBackup = true;
-
-                extraSpecialArgs = {
-                  iconVariant = "-Light";
-                };
-
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
