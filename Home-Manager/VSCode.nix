@@ -23,6 +23,7 @@
           };
         };
       };
+      "git.enableSmartCommit" = true;
     };
   };
 }
