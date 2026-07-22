@@ -57,7 +57,7 @@
 
                 extraSpecialArgs = {
                   themeColor = "blue";
-                  iconVariant = "Dark";
+                  iconVariant = "-Dark";
                   cursorTheme = "Ice";
                   accentColor = "61,174,233";
                   lookAndFeel = "dark";
@@ -95,7 +95,7 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  iconVariant = "Dark";
+                  iconVariant = "-Dark";
                   cursorTheme = "Ice";
                   lookAndFeel = "dark";
                 };

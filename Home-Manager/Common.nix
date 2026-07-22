@@ -1,7 +1,7 @@
 {
   pkgs,
   themeColor ? "pink",
-  iconVariant ? "Light",
+  iconVariant,
   cursorTheme ? "Classic",
   accentColor ? "233,58,154",
   lookAndFeel,
@@ -13,7 +13,7 @@ let
     dontFixup = true;
     postInstall = (oldAttrs.postInstall or "") + ''
       export XDG_DATA_HOME=$out/share
-      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${themeColor} -t ${"Papirus-" + iconVariant}
+      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${themeColor} -t ${"Papirus" + iconVariant}
     '';
   });
 in
@@ -40,7 +40,7 @@ in
 
   gtk = {
     iconTheme = {
-      name = "Papirus-" + iconVariant;
+      name = "Papirus" + iconVariant;
       package = papirus-icon-theme-custom;
     };
     font = {
@@ -61,7 +61,7 @@ in
 
     workspace = {
       lookAndFeel = "org.kde.breeze" + lookAndFeel + ".desktop";
-      iconTheme = "Papirus-" + iconVariant;
+      iconTheme = "Papirus" + iconVariant;
       cursor.theme = "Bibata-Modern-" + cursorTheme;
     };
 
