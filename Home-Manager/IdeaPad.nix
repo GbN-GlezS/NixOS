@@ -1,6 +1,10 @@
 { ... }:
 
 {
-  # Desactivar Baloo (indexador de archivos) declarativamente
-  configFile."baloorc"."Basic Settings"."Indexing-Enabled" = false;
+  programs.plasma = {
+    enable = true;
+
+    # Desactivar Baloo (indexador de archivos) declarativamente
+    configFile."baloorc"."Basic Settings"."Indexing-Enabled" = false;
+  };
 }
