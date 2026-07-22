@@ -129,6 +129,11 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 overwriteBackup = true;
+
+                extraSpecialArgs = {
+                  iconVariant = "-Light";
+                };
+
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
@@ -159,6 +164,11 @@
                 useUserPackages = true;
                 backupFileExtension = "backup";
                 overwriteBackup = true;
+
+                extraSpecialArgs = {
+                  iconVariant = "-Light";
+                };
+
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
