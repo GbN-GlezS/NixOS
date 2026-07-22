@@ -34,11 +34,6 @@ in
     papirus-icon-theme-custom # Pixel perfect icon theme for Linux.
   ];
 
-  configFile."kwinrc"."NightColor"."Active" = true;
-  configFile."kwinrc"."NightColor"."Mode" = "Location";
-  configFile."kwinrc"."NightColor"."DayTemperature" = 6500;
-  configFile."kwinrc"."NightColor"."NightTemperature" = 4500;
-
   # Cursor configuration.
   home.pointerCursor = {
     enable = true;
@@ -67,6 +62,11 @@ in
   programs.plasma = {
     enable = true;
     overrideConfig = true;
+
+    configFile."kwinrc"."NightColor"."Active" = true;
+    configFile."kwinrc"."NightColor"."Mode" = "Location";
+    configFile."kwinrc"."NightColor"."DayTemperature" = 6500;
+    configFile."kwinrc"."NightColor"."NightTemperature" = 4500;
 
     workspace = {
       lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
