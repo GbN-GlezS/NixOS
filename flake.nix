@@ -58,7 +58,7 @@
                 extraSpecialArgs = {
                   themeColor = "blue";
                   iconVariant = "Dark";
-                  cursorTheme = "Bibata-Modern-Ice";
+                  cursorTheme = "Ice";
                   accentColor = "61,174,233";
                   lookAndFeel = "org.kde.breezedark.desktop";
                 };
@@ -96,7 +96,7 @@
 
                 extraSpecialArgs = {
                   iconVariant = "Dark";
-                  cursorTheme = "Bibata-Modern-Ice";
+                  cursorTheme = "Ice";
                   lookAndFeel = "org.kde.breezedark.desktop";
                 };
 
