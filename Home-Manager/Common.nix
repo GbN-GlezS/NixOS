@@ -53,134 +53,101 @@ in
       package = pkgs.inter;
     };
   };
-}
 
-  {
-    home.stateVersion = "26.05";
+  programs.plasma = {
+    enable = true;
+    overrideConfig = true;
 
-    home.packages = with pkgs; [
-      bibata-cursors
-      inter
-      jetbrains-mono
-      papirus-folders
-      papirus-icon-theme-custom
+    workspace = {
+      lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
+      iconTheme = "Papirus-" + IconVariant;
+
+      cursor = {
+        theme = "Bibata-Modern-" + CursorVariant;
+        size = CursorSize;
+      };
+    };
+
+    configFile."kdeglobals"."General"."AccentColor" = AccentColor;
+    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = AccentColor;
+    configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
+    configFile."ksplashrc"."KSplash"."Theme" = "None";
+
+    fonts = {
+      general = {
+        family = "Inter";
+        pointSize = FontSize;
+      };
+      fixedWidth = {
+        family = "JetBrains Mono";
+        pointSize = FontSize;
+      };
+      small = {
+        family = "Inter";
+        pointSize = FontSize * 0.8;
+      };
+      toolbar = {
+        family = "Inter";
+        pointSize = FontSize;
+      };
+      menu = {
+        family = "Inter";
+        pointSize = FontSize;
+      };
+      windowTitle = {
+        family = "Inter";
+        pointSize = FontSize;
+      };
+    };
+
+    panels = [
+      {
+        location = "bottom";
+        alignment = "center";
+        lengthMode = "fill";
+        hiding = "dodgewindows";
+        opacity = "adaptive";
+        floating = true;
+        height = 35;
+
+        widgets = [
+          "org.kde.plasma.kickoff"
+          "org.kde.plasma.icontasks"
+          "org.kde.plasma.panelspacer"
+          "org.kde.plasma.systemtray"
+          "org.kde.plasma.digitalclock"
+        ];
+      }
     ];
+  };
 
-    home.pointerCursor = {
-      enable = true;
-      gtk.enable = true;
-      x11.enable = true;
-      name = "Bibata-Modern-" + CursorVariant;
-      package = pkgs.bibata-cursors;
-      size = CursorSize;
-    };
-
-    gtk = {
-      iconTheme = {
-        name = "Papirus-" + IconVariant;
-        package = papirus-icon-theme-custom;
-      };
-      font = {
-        name = "Inter";
-        size = FontSize;
-        package = pkgs.inter;
-      };
-    };
-
-    programs.plasma = {
-      enable = true;
-      overrideConfig = true;
-
-      workspace = {
-        lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
-        iconTheme = "Papirus-" + IconVariant;
-
-        cursor = {
-          theme = "Bibata-Modern-" + CursorVariant;
-          size = CursorSize;
-        };
-      };
-
-      configFile."kdeglobals"."General"."AccentColor" = AccentColor;
-      configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = AccentColor;
-      configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
-      configFile."ksplashrc"."KSplash"."Theme" = "None";
-
-      fonts = {
-        general = {
-          family = "Inter";
-          pointSize = FontSize;
-        };
-        fixedWidth = {
-          family = "JetBrains Mono";
-          pointSize = FontSize;
-        };
-        small = {
-          family = "Inter";
-          pointSize = FontSize * 0.8;
-        };
-        toolbar = {
-          family = "Inter";
-          pointSize = FontSize;
-        };
-        menu = {
-          family = "Inter";
-          pointSize = FontSize;
-        };
-        windowTitle = {
-          family = "Inter";
-          pointSize = FontSize;
-        };
-      };
-
-      panels = [
-        {
-          location = "bottom";
-          alignment = "center";
-          lengthMode = "fill";
-          hiding = "dodgewindows";
-          opacity = "adaptive";
-          floating = true;
-          height = 35;
-
-          widgets = [
-            "org.kde.plasma.kickoff"
-            "org.kde.plasma.icontasks"
-            "org.kde.plasma.panelspacer"
-            "org.kde.plasma.systemtray"
-            "org.kde.plasma.digitalclock"
-          ];
-        }
+  xdg.desktopEntries = {
+    "brave-chatgpt" = {
+      name = "ChatGPT";
+      exec = "brave --app=https://chatgpt.com/";
+      icon = "${./Icons/ChatGPT-Dark.svg}";
+      terminal = false;
+      categories = [
+        "Network"
+        "Utility"
       ];
     };
-
-    xdg.desktopEntries = {
-      "brave-chatgpt" = {
-        name = "ChatGPT";
-        exec = "brave --app=https://chatgpt.com/";
-        icon = "${./Icons/ChatGPT-Dark.svg}";
-        terminal = false;
-        categories = [
-          "Network"
-          "Utility"
-        ];
-      };
-      "brave-gemini" = {
-        name = "Gemini";
-        exec = "brave --app=https://gemini.google.com/";
-        icon = "${./Icons/Gemini.svg}";
-        terminal = false;
-        categories = [
-          "Network"
-          "Utility"
-        ];
-      };
-      "brave-whatsapp" = {
-        name = "WhatsApp";
-        exec = "brave --app=https://web.whatsapp.com/";
-        icon = "whatsapp";
-        terminal = false;
-        categories = [ "Network" ];
-      };
+    "brave-gemini" = {
+      name = "Gemini";
+      exec = "brave --app=https://gemini.google.com/";
+      icon = "${./Icons/Gemini.svg}";
+      terminal = false;
+      categories = [
+        "Network"
+        "Utility"
+      ];
     };
-  }
+    "brave-whatsapp" = {
+      name = "WhatsApp";
+      exec = "brave --app=https://web.whatsapp.com/";
+      icon = "whatsapp";
+      terminal = false;
+      categories = [ "Network" ];
+    };
+  };
+}
