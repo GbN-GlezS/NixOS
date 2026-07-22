@@ -12,6 +12,7 @@
         "Network"
       ];
     };
+
     "brave-classroom" = {
       name = "Classroom";
       exec = "brave --app=https://classroom.google.com/";

@@ -13,6 +13,31 @@
         "Utility"
       ];
     };
+
+    "brave-mynixos" = {
+      name = "MyNixOS";
+      exec = "brave --app=https://mynixos.com/";
+      icon = "nix-snowflake";
+      terminal = false;
+      categories = [
+        "Development"
+        "Documentation"
+        "Network"
+      ];
+    };
+
+    "brave-nixos-wiki" = {
+      name = "NixOS Wiki";
+      exec = "brave --app=https://wiki.nixos.org/wiki/NixOS_Wiki";
+      icon = "nix-snowflake";
+      terminal = false;
+      categories = [
+        "Development"
+        "Documentation"
+        "Network"
+      ];
+    };
+
     "brave-youtube" = {
       name = "YouTube";
       exec = "brave --app=https://www.youtube.com/";
