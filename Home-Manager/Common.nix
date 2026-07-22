@@ -46,7 +46,6 @@ in
     };
     font = {
       name = "Inter";
-      size = 10;
       package = pkgs.inter;
     };
   };
@@ -71,30 +70,12 @@ in
     configFile."ksplashrc"."KSplash"."Theme" = "None";
 
     fonts = {
-      general = {
-        family = "Inter";
-        pointSize = 10;
-      };
-      fixedWidth = {
-        family = "JetBrains Mono";
-        pointSize = 10;
-      };
-      small = {
-        family = "Inter";
-        pointSize = 8;
-      };
-      toolbar = {
-        family = "Inter";
-        pointSize = 10;
-      };
-      menu = {
-        family = "Inter";
-        pointSize = 10;
-      };
-      windowTitle = {
-        family = "Inter";
-        pointSize = 10;
-      };
+      general.family = "Inter";
+      fixedWidth.family = "JetBrains Mono";
+      small.family = "Inter";
+      toolbar.family = "Inter";
+      menu.family = "Inter";
+      windowTitle.family = "Inter";
     };
 
     panels = [
