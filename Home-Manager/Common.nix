@@ -58,7 +58,6 @@ in
     configFile."kdeglobals"."General"."AccentColor" = AccentColor;
     configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = AccentColor;
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
-    configFile."ksplashrc"."KSplash"."Theme" = "None";
 
     workspace = {
       lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
@@ -68,9 +67,9 @@ in
         theme = "Bibata-Modern-" + CursorVariant;
         size = CursorSize;
       };
-
-      splashScreen.theme = "None";
     };
+
+    configFile."ksplashrc"."KSplash"."Theme" = "None";
 
     fonts = {
       general = {
