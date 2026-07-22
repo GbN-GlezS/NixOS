@@ -57,6 +57,7 @@
                   IconVariant = "Dark";
                   CursorVariant = "Ice";
                   CursorSize = 16;
+                  FontSize = 10;
                   AccentColor = "61,174,233";
                   LookAndFeel = "dark";
                 };
@@ -104,6 +105,7 @@
                   IconVariant = "Light";
                   CursorVariant = "Classic";
                   CursorSize = 16;
+                  FontSize = 10;
                   AccentColor = "233,58,154";
                   LookAndFeel = "";
                 };
@@ -150,6 +152,7 @@
                   IconVariant = "Dark";
                   CursorVariant = "Ice";
                   CursorSize = 16;
+                  FontSize = 10;
                   AccentColor = "233,58,154";
                   LookAndFeel = "dark";
                 };
@@ -197,6 +200,7 @@
                   IconVariant = "Light";
                   CursorVariant = "Classic";
                   CursorSize = 16;
+                  FontSize = 10;
                   AccentColor = "233,58,154";
                   LookAndFeel = "";
                 };

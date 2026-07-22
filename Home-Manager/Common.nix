@@ -4,6 +4,7 @@
   IconVariant,
   CursorVariant,
   CursorSize,
+  FontSize,
   AccentColor,
   LookAndFeel,
   ...
@@ -46,6 +47,7 @@ in
     };
     font = {
       name = "Inter";
+      size = FontSize;
       package = pkgs.inter;
     };
   };
@@ -70,12 +72,30 @@ in
     configFile."ksplashrc"."KSplash"."Theme" = "None";
 
     fonts = {
-      general.family = "Inter";
-      fixedWidth.family = "JetBrains Mono";
-      small.family = "Inter";
-      toolbar.family = "Inter";
-      menu.family = "Inter";
-      windowTitle.family = "Inter";
+      general = {
+        family = "Inter";
+        pointSize = FontSize;
+      };
+      fixedWidth = {
+        family = "JetBrains Mono";
+        pointSize = FontSize;
+      };
+      small = {
+        family = "Inter";
+        pointSize = FontSize * 0.8;
+      };
+      toolbar = {
+        family = "Inter";
+        pointSize = FontSize;
+      };
+      menu = {
+        family = "Inter";
+        pointSize = FontSize;
+      };
+      windowTitle = {
+        family = "Inter";
+        pointSize = FontSize;
+      };
     };
 
     panels = [
