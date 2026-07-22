@@ -68,6 +68,8 @@ in
         theme = "Bibata-Modern-" + CursorVariant;
         size = CursorSize;
       };
+
+      splashScreen.theme = "None";
     };
 
     fonts = {
