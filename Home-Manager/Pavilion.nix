@@ -7,7 +7,7 @@
       name = "Canva";
       genericName = "Graphic design platform";
       comment = "Open Canva as an application";
-      exec = "brave --app=https://www.canva.com/";
+      exec = "brave --start-maximized --app=https://www.canva.com/";
       icon = "${./Icons/Canva.svg}";
       terminal = false;
       type = "Application";
@@ -21,7 +21,7 @@
       name = "Classroom";
       genericName = "Virtual classroom platform";
       comment = "Open Google Classroom as an application";
-      exec = "brave --app=https://classroom.google.com/";
+      exec = "brave --start-maximized --app=https://classroom.google.com/";
       icon = "${./Icons/Classroom.svg}";
       terminal = false;
       type = "Application";
