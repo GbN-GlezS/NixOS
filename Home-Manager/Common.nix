@@ -55,10 +55,6 @@ in
     enable = true;
     overrideConfig = true;
 
-    configFile."kdeglobals"."General"."AccentColor" = AccentColor;
-    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = AccentColor;
-    configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
-
     workspace = {
       lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
       iconTheme = "Papirus-" + IconVariant;
@@ -69,6 +65,9 @@ in
       };
     };
 
+    configFile."kdeglobals"."General"."AccentColor" = AccentColor;
+    configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = AccentColor;
+    configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
     configFile."ksplashrc"."KSplash"."Theme" = "None";
 
     fonts = {
