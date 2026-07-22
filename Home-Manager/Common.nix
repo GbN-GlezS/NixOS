@@ -66,7 +66,7 @@ in
     configFile."kwinrc"."NightColor"."Active" = true;
     configFile."kwinrc"."NightColor"."Mode" = "Location";
     configFile."kwinrc"."NightColor"."DayTemperature" = 6500;
-    configFile."kwinrc"."NightColor"."NightTemperature" = 4500;
+    configFile."kwinrc"."NightColor"."NightTemperature" = 3750;
 
     workspace = {
       lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
