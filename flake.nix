@@ -77,6 +77,13 @@
 
         IdeaCentre = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
+          specialArgs = {
+            sysLocale = "es_MX.UTF-8";
+            kbdLayout = "latam";
+            kbdVariant = "";
+          };
+
           modules = [
             ./configuration.nix
             ./Hosts/Idea.nix
@@ -115,6 +122,13 @@
 
         IdeaPad = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
+          specialArgs = {
+            sysLocale = "es_MX.UTF-8";
+            kbdLayout = "latam";
+            kbdVariant = "";
+          };
+
           modules = [
             ./configuration.nix
             ./Hosts/Idea.nix
@@ -153,6 +167,13 @@
 
         Pavilion = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+
+          specialArgs = {
+            sysLocale = "es_MX.UTF-8";
+            kbdLayout = "latam";
+            kbdVariant = "";
+          };
+
           modules = [
             ./configuration.nix
             ./Hosts/Pavilion.nix

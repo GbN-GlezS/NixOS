@@ -3,11 +3,10 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 {
-  config,
   pkgs,
-  sysLocale ? "es_MX.UTF-8",
-  kbdLayout ? "latam",
-  kbdVariant ? "",
+  sysLocale,
+  kbdLayout,
+  kbdVariant,
   ...
 }:
 
