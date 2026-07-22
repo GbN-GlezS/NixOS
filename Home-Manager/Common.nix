@@ -4,7 +4,7 @@
   iconVariant ? "Light",
   cursorTheme ? "Classic",
   accentColor ? "233,58,154",
-  lookAndFeel ? "",
+  lookAndFeel,
   ...
 }:
 
