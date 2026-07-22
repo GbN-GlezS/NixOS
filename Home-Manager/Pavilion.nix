@@ -1,6 +1,9 @@
 { ... }:
 
 {
+  # Desactivar Baloo (indexador de archivos) declarativamente
+  configFile."baloorc"."Basic Settings"."Indexing-Enabled" = false;
+
   # Desktop Entries allow applications to be shown in your desktop environment's app launcher.
   xdg.desktopEntries = {
     "brave-canva" = {
