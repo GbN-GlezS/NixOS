@@ -56,6 +56,7 @@
                   ThemeColor = "blue";
                   IconVariant = "Dark";
                   CursorVariant = "Ice";
+                  CursorSize = 16;
                   AccentColor = "61,174,233";
                   LookAndFeel = "dark";
                 };
@@ -102,6 +103,7 @@
                   ThemeColor = "pink";
                   IconVariant = "Light";
                   CursorVariant = "Classic";
+                  CursorSize = 16;
                   AccentColor = "233,58,154";
                   LookAndFeel = "";
                 };
@@ -147,6 +149,7 @@
                   ThemeColor = "pink";
                   IconVariant = "Dark";
                   CursorVariant = "Ice";
+                  CursorSize = 16;
                   AccentColor = "233,58,154";
                   LookAndFeel = "dark";
                 };
@@ -193,6 +196,7 @@
                   ThemeColor = "pink";
                   IconVariant = "Light";
                   CursorVariant = "Classic";
+                  CursorSize = 16;
                   AccentColor = "233,58,154";
                   LookAndFeel = "";
                 };

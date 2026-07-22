@@ -3,6 +3,7 @@
   ThemeColor,
   IconVariant,
   CursorVariant,
+  CursorSize,
   AccentColor,
   LookAndFeel,
   ...
@@ -35,7 +36,7 @@ in
     x11.enable = true;
     name = "Bibata-Modern-" + CursorVariant;
     package = pkgs.bibata-cursors;
-    size = 16;
+    size = CursorSize;
   };
 
   gtk = {
@@ -62,7 +63,11 @@ in
     workspace = {
       lookAndFeel = "org.kde.breeze" + LookAndFeel + ".desktop";
       iconTheme = "Papirus-" + IconVariant;
-      cursor.theme = "Bibata-Modern-" + CursorVariant;
+
+      cursor = {
+        theme = "Bibata-Modern-" + CursorVariant;
+        size = CursorSize;
+      };
     };
 
     fonts = {
