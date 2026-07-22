@@ -22,16 +22,18 @@ let
 in
 
 {
-  home.stateVersion = "26.05";
+  home.stateVersion = "26.05"; # It is occasionally necessary for Home Manager to change configuration defaults in a way that is incompatible with stateful data.
 
+  # The set of packages to appear in the user environment.
   home.packages = with pkgs; [
-    bibata-cursors
-    inter
-    jetbrains-mono
-    papirus-folders
-    papirus-icon-theme-custom
+    bibata-cursors # Material Based Cursor Theme.
+    inter # Typeface specially designed for user interfaces.
+    jetbrains-mono # Typeface made for developers.
+    papirus-folders # Tool to change papirus icon theme color.
+    papirus-icon-theme-custom # Pixel perfect icon theme for Linux.
   ];
 
+  # Cursor configuration.
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;
@@ -42,10 +44,13 @@ in
   };
 
   gtk = {
+    enable = true;
+
     iconTheme = {
       name = "Papirus-" + IconVariant;
       package = papirus-icon-theme-custom;
     };
+
     font = {
       name = "Inter";
       size = FontSize;
