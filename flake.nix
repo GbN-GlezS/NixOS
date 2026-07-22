@@ -60,7 +60,7 @@
                   iconVariant = "Dark";
                   cursorTheme = "Ice";
                   accentColor = "61,174,233";
-                  lookAndFeel = "org.kde.breezedark.desktop";
+                  lookAndFeel = "dark";
                 };
 
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
@@ -97,7 +97,7 @@
                 extraSpecialArgs = {
                   iconVariant = "Dark";
                   cursorTheme = "Ice";
-                  lookAndFeel = "org.kde.breezedark.desktop";
+                  lookAndFeel = "dark";
                 };
 
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];

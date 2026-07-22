@@ -4,7 +4,7 @@
   iconVariant ? "Light",
   cursorTheme ? "Classic",
   accentColor ? "233,58,154",
-  lookAndFeel ? "org.kde.breeze.desktop",
+  lookAndFeel ? "",
   ...
 }:
 
@@ -60,7 +60,7 @@ in
     configFile."ksplashrc"."KSplash"."Theme" = "None";
 
     workspace = {
-      lookAndFeel = lookAndFeel;
+      lookAndFeel = "org.kde.breeze" + lookAndFeel + ".desktop";
       iconTheme = iconVariant;
       cursor.theme = "Bibata-Modern-" + cursorTheme;
     };
