@@ -5,7 +5,7 @@ let
   photoGimpSrc = pkgs.fetchzip {
     url = "https://github.com/Diolinux/PhotoGIMP/releases/download/3.0/PhotoGIMP-linux.zip";
     # Hash SHA256 para garantizar la integridad reproducible de Nix
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # (Ver nota abajo para obtener tu hash)
+    hash = "sha256-g7JNSr6LczV0uHvy5UjRwDwVkWTGMFRd0bW9RaBoDjM=";
   };
 in
 {
