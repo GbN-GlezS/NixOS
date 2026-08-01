@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   systemd.tpm2.enable = false; # Whether to enable systemd TPM2 support.
