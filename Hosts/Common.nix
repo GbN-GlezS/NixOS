@@ -121,6 +121,16 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true; # Habilita la resolución de nombres .local en el sistema
+    publish = {
+      enable = true;
+      addresses = true; # Publica la dirección IP de la máquina
+      domain = true;
+    };
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
