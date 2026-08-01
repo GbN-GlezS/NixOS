@@ -156,14 +156,10 @@
   services.openssh.enable = true;
 
   services.avahi = {
-    enable = true;
-    nssmdns4 = true; # Habilita la resolución de nombres .local en el sistema
-    openFirewall = true; # Opens UDP port 5353 in the NixOS firewall
-    publish = {
-      enable = true;
-      addresses = true; # Publica la dirección IP de la máquina
-      domain = true;
-    };
+    enable = true; # Whether to run the Avahi daemon, which allows Avahi clients to use Avahi's service discovery facilities and also allows the local machine to advertise its presence and services (through the mDNS responder implemented by avahi-daemon).
+    nssmdns4 = true; # Whether to enable the mDNS NSS (Name Service Switch) plug-in for IPv4.
+    nssmdns6 = true; # Whether to enable the mDNS NSS (Name Service Switch) plug-in for IPv6.
+    openFirewall = true; # Whether to open the firewall for UDP port 5353.
   };
 
   # Open ports in the firewall.
