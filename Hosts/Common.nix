@@ -34,7 +34,19 @@
 
   environment.interactiveShellInit = ''
     deploy() {
-      nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --sudo
+      if [ -z "$1" ]; then
+        echo "Uso: deploy <NombreHost> (ej. deploy ThinkPad)"
+        return 1
+      fi
+
+      # Mantiene las mayúsculas para el Flake, pero pasa a minúsculas solo el host de red mDNS
+      local target_host
+      target_host=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+
+      nixos-rebuild switch \
+        --flake .#"$1" \
+        --target-host nixos@"$target_host".local \
+        --elevate=sudo
     }
   '';
 
