@@ -32,14 +32,15 @@
     }
   ];
 
-  # Se aplica a Bash y Zsh automáticamente sin duplicar código
   environment.interactiveShellInit = ''
     deploy() {
-      local host="''${1:-$(hostname)}"
-      if [ "$host" = "$(hostname)" ]; then
-        sudo nixos-rebuild switch --flake .#"$host"
+      if [ $# -eq 0 ]; then
+        sudo nixos-rebuild switch --flake .#$(hostname)
       else
-        nixos-rebuild switch --flake .#"$host" --target-host nixos@"$host".local --sudo
+        nixos-rebuild switch \
+          --flake .#"$1" \
+          --target-host "nixos@$1.local" \
+          --sudo
       fi
     }
   '';
