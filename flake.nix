@@ -41,7 +41,7 @@
             ./Boot/Plymouth.nix
             ./Packages/OnlyOffice.nix
             ./Packages/Spotify.nix
-            ./Packages/VirtManager.nix
+            #./Packages/VirtManager.nix
             ({ networking.hostName = "ThinkPad"; })
 
             home-manager.nixosModules.default
