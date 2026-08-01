@@ -22,10 +22,6 @@
       ...
     }:
 
-    let
-      StateVersion = "26.05";
-    in
-
     {
       nixosConfigurations = {
 
@@ -33,7 +29,6 @@
           system = "x86_64-linux";
 
           specialArgs = {
-            inherit StateVersion;
             sysLocale = "en_US.UTF-8";
             kbdLayout = "us";
             kbdVariant = "";
@@ -59,7 +54,6 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  inherit StateVersion;
                   ThemeColor = "blue";
                   IconVariant = "Dark";
                   CursorVariant = "Ice";
@@ -86,7 +80,6 @@
           system = "x86_64-linux";
 
           specialArgs = {
-            inherit StateVersion;
             sysLocale = "es_MX.UTF-8";
             kbdLayout = "latam";
             kbdVariant = "";
@@ -109,7 +102,6 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  inherit StateVersion;
                   ThemeColor = "pink";
                   IconVariant = "Light";
                   CursorVariant = "Classic";
@@ -135,7 +127,6 @@
           system = "x86_64-linux";
 
           specialArgs = {
-            inherit StateVersion;
             sysLocale = "es_MX.UTF-8";
             kbdLayout = "latam";
             kbdVariant = "";
@@ -158,7 +149,6 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  inherit StateVersion;
                   ThemeColor = "pink";
                   IconVariant = "Dark";
                   CursorVariant = "Ice";
@@ -184,7 +174,6 @@
           system = "x86_64-linux";
 
           specialArgs = {
-            inherit StateVersion;
             sysLocale = "es_MX.UTF-8";
             kbdLayout = "latam";
             kbdVariant = "";
@@ -208,7 +197,6 @@
                 overwriteBackup = true;
 
                 extraSpecialArgs = {
-                  inherit StateVersion;
                   ThemeColor = "pink";
                   IconVariant = "Light";
                   CursorVariant = "Classic";
