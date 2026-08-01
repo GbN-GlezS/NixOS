@@ -1,6 +1,6 @@
 # https://wiki.nixos.org/wiki/Plymouth
 
-{ pkgs, ... }:
+{ ... }:
 
 {
   boot = {
