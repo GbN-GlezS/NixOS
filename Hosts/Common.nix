@@ -35,7 +35,13 @@
     }
   ];
 
-  # Custom shell functions and aliases
+  # Custom shell functions for Zsh and Bash
+  programs.zsh.interactiveShellInit = ''
+    deploy() {
+      nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --sudo
+    }
+  '';
+
   programs.bash.interactiveShellInit = ''
     deploy() {
       nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --sudo
