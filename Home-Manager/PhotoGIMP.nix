@@ -3,7 +3,6 @@
 { pkgs, ... }:
 
 let
-  # Definimos la descarga del relase oficial de PhotoGIMP
   PhotoGIMP = pkgs.fetchzip {
     url = "https://github.com/Diolinux/PhotoGIMP/releases/download/3.0/PhotoGIMP-linux.zip";
     hash = "sha256-g7JNSr6LczV0uHvy5UjRwDwVkWTGMFRd0bW9RaBoDjM=";
