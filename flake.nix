@@ -37,7 +37,7 @@
           modules = [
             ./configuration.nix
             ./Hosts/ThinkPad.nix
-            ./Common.nix
+            ./Hosts/Common.nix
             ./Boot/Plymouth.nix
             ./Packages/OnlyOffice.nix
             ./Packages/Spotify.nix
@@ -89,7 +89,7 @@
             ./configuration.nix
             ./Hosts/Idea.nix
             ./Boot/Plymouth.nix
-            ./Common.nix
+            ./Hosts/Common.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "IdeaCentre"; })
 
@@ -136,7 +136,7 @@
             ./configuration.nix
             ./Hosts/Idea.nix
             ./Boot/Plymouth.nix
-            ./Common.nix
+            ./Hosts/Common.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "IdeaPad"; })
 
@@ -183,7 +183,7 @@
             ./configuration.nix
             ./Hosts/Pavilion.nix
             ./Boot/Plymouth.nix
-            ./Common.nix
+            ./Hosts/Common.nix
             ./Packages/Spotify.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "Pavilion"; })
