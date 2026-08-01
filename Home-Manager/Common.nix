@@ -1,5 +1,4 @@
 {
-  StateVersion,
   pkgs,
   ThemeColor,
   IconVariant,
