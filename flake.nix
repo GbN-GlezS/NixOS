@@ -42,7 +42,6 @@
             ./Packages/OnlyOffice.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
-            ./Packages/VSCode.nix
             ({ networking.hostName = "ThinkPad"; })
 
             home-manager.nixosModules.default

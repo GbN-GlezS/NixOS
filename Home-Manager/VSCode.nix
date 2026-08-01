@@ -1,19 +1,34 @@
 { pkgs, ... }:
 
 {
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscode.fhs;
+  # The set of packages to appear in the user environment.
+  home.packages = with pkgs; [
+    git # Distributed version control system.
+    nil # Yet another language server for Nix.
+    nixfmt # Official formatter for Nix code.
+  ];
 
+  # Environment variables to always set at login.
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
+  programs.vscode = {
+    enable = true; # Whether to enable VSCode editor.
+    package = pkgs.vscode.fhs; # The vscode package to use.
+
+    # The extensions Visual Studio Code should be started with.
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
+      jnoortheen.nix-ide # Nix language support with formatting and error report.
     ];
 
+    # Configuration written to Visual Studio Code's settings.json.
     profiles.default.userSettings = {
       "[nix]" = {
         "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "jnoortheen.nix-ide";
       };
+
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";
       "nix.serverSettings" = {
@@ -23,6 +38,7 @@
           };
         };
       };
+
       "git.enableSmartCommit" = true;
     };
   };

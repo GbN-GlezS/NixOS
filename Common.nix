@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./Packages/VSCode.nix ];
-
   # Which X11 packages to exclude from the default environment.
   services.xserver.excludePackages = with pkgs; [
     xterm # Terminal emulator for the X Window System.

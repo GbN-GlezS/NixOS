@@ -14,4 +14,6 @@
   ];
 
   programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
+
+  programs.nix-ld.enable = true; # Whether to enable nix-ld.
 }
