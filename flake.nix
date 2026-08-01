@@ -66,7 +66,7 @@
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Home-ThinkPad.nix
-                    ./Home-Manager/Hosts/Home-Common.nix
+                    ./Home-Manager/Home-Common.nix
                     ./Home-Manager/Packages/Home-VSCode.nix
                     ./Home-Manager/Packages/Home-PhotoGIMP.nix
                   ];
@@ -115,7 +115,7 @@
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Home-IdeaCentre.nix
-                    ./Home-Manager/Hosts/Home-Common.nix
+                    ./Home-Manager/Home-Common.nix
                   ];
                 };
               };
@@ -162,7 +162,7 @@
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Home-IdeaPad.nix
-                    ./Home-Manager/Hosts/Home-Common.nix
+                    ./Home-Manager/Home-Common.nix
                   ];
                 };
               };
@@ -209,7 +209,7 @@
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Home-Pavilion.nix
-                    ./Home-Manager/Hosts/Home-Common.nix
+                    ./Home-Manager/Home-Common.nix
                   ];
                 };
               };
