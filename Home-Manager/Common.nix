@@ -22,7 +22,7 @@ let
 in
 
 {
-  home.stateVersion = 26.05; # It is occasionally necessary for Home Manager to change configuration defaults in a way that is incompatible with stateful data.
+  home.stateVersion = "26.05"; # It is occasionally necessary for Home Manager to change configuration defaults in a way that is incompatible with stateful data.
 
   # The set of packages to appear in the user environment.
   home.packages = with pkgs; [
