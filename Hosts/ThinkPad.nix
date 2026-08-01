@@ -7,11 +7,10 @@
   ];
 
   # The set of packages that appear in /run/current-system/sw.
-  environment.systemPackages = with pkgs; [
-    git # Distributed version control system.
-    kdePackages.kolourpaint # Easy-to-use paint program.
-    kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
-    kdePackages.skanpage # Utility to scan images and multi-page documents.
+  environment.systemPackages = with pkgs.kdePackages; [
+    kolourpaint # Easy-to-use paint program.
+    partitionmanager # Manage the disk devices, partitions and file systems on your computer.
+    skanpage # Utility to scan images and multi-page documents.
   ];
 
   programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
