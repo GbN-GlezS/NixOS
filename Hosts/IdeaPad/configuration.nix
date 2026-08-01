@@ -1,6 +1,11 @@
 { ... }:
 
 {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
   systemd.tpm2.enable = false; # Whether to enable systemd TPM2 support.
   boot.initrd.systemd.tpm2.enable = false; # Whether to enable systemd initrd TPM2 support.
 
