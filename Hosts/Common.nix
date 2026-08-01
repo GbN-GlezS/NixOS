@@ -17,10 +17,7 @@
       "flakes"
     ];
 
-    trusted-users = [
-      "root"
-      "nixos"
-    ];
+    trusted-users = [ "nixos" ]; # root ya es trusted por defecto
   };
 
   security.sudo.extraRules = [
@@ -35,16 +32,15 @@
     }
   ];
 
-  # Custom shell functions for Zsh and Bash
-  programs.zsh.interactiveShellInit = ''
+  # Se aplica a Bash y Zsh automáticamente sin duplicar código
+  environment.interactiveShellInit = ''
     deploy() {
-      nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --sudo
-    }
-  '';
-
-  programs.bash.interactiveShellInit = ''
-    deploy() {
-      nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --sudo
+      local host="''${1:-$(hostname)}"
+      if [ "$host" = "$(hostname)" ]; then
+        sudo nixos-rebuild switch --flake .#"$host"
+      else
+        nixos-rebuild switch --flake .#"$host" --target-host nixos@"$host".local --sudo
+      fi
     }
   '';
 
