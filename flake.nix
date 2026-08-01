@@ -65,10 +65,10 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/ThinkPad.nix
-                    ./Home-Manager/Common.nix
-                    ./Home-Manager/VSCode.nix
-                    ./Home-Manager/PhotoGIMP.nix
+                    ./Home-Manager/Home-ThinkPad.nix
+                    ./Home-Manager/Home-Common.nix
+                    ./Home-Manager/Home-VSCode.nix
+                    ./Home-Manager/Home-PhotoGIMP.nix
                   ];
                 };
               };
@@ -114,8 +114,8 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/IdeaCentre.nix
-                    ./Home-Manager/Common.nix
+                    ./Home-Manager/Home-IdeaCentre.nix
+                    ./Home-Manager/Home-Common.nix
                   ];
                 };
               };
@@ -161,8 +161,8 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/IdeaPad.nix
-                    ./Home-Manager/Common.nix
+                    ./Home-Manager/Home-IdeaPad.nix
+                    ./Home-Manager/Home-Common.nix
                   ];
                 };
               };
@@ -181,7 +181,6 @@
 
           modules = [
             ./configuration.nix
-            ./Hosts/Pavilion.nix
             ./Boot/Plymouth.nix
             ./Hosts/Common.nix
             ./Packages/Spotify.nix
@@ -209,8 +208,8 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/Pavilion.nix
-                    ./Home-Manager/Common.nix
+                    ./Home-Manager/Home-Pavilion.nix
+                    ./Home-Manager/Home-Common.nix
                   ];
                 };
               };
