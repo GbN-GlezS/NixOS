@@ -131,6 +131,7 @@
   services.avahi = {
     enable = true;
     nssmdns4 = true; # Habilita la resolución de nombres .local en el sistema
+    openFirewall = true; # Opens UDP port 5353 in the NixOS firewall
     publish = {
       enable = true;
       addresses = true; # Publica la dirección IP de la máquina
