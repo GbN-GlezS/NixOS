@@ -34,14 +34,7 @@
 
   environment.interactiveShellInit = ''
     deploy() {
-      if [ $# -eq 0 ]; then
-        sudo nixos-rebuild switch --flake .#$(hostname)
-      else
-        nixos-rebuild switch \
-          --flake .#"$1" \
-          --target-host "nixos@$1.local" \
-          --sudo
-      fi
+      nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --sudo
     }
   '';
 
