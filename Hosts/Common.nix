@@ -23,6 +23,18 @@
     ];
   };
 
+  security.sudo.extraRules = [
+    {
+      users = [ "nixos" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
