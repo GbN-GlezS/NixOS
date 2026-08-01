@@ -35,6 +35,13 @@
     }
   ];
 
+  # Custom shell functions and aliases
+  programs.bash.interactiveShellInit = ''
+    deploy() {
+      nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --sudo
+    }
+  '';
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
