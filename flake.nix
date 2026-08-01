@@ -36,7 +36,7 @@
             inherit StateVersion;
             sysLocale = "en_US.UTF-8";
             kbdLayout = "us";
-            kbdVariant = "colemak";
+            kbdVariant = "";
           };
 
           modules = [
@@ -48,7 +48,7 @@
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
             ./Packages/VSCode.nix
-            ({ networking.hostName = "NixOS"; })
+            ({ networking.hostName = "ThinkPad"; })
 
             home-manager.nixosModules.default
             {
@@ -72,7 +72,7 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/NixOS.nix
+                    ./Home-Manager/ThinkPad.nix
                     ./Home-Manager/Common.nix
                     ./Home-Manager/VSCode.nix
                   ];
