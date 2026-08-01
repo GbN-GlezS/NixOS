@@ -25,57 +25,6 @@
     {
       nixosConfigurations = {
 
-        ThinkPad = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-
-          specialArgs = {
-            sysLocale = "en_US.UTF-8";
-            kbdLayout = "us";
-            kbdVariant = "";
-          };
-
-          modules = [
-            ./configuration.nix
-            ./Hosts/ThinkPad.nix
-            ./Hosts/Common.nix
-            ./Boot/Plymouth.nix
-            ./Packages/OnlyOffice.nix
-            ./Packages/Spotify.nix
-            #./Packages/VirtManager.nix
-            ({ networking.hostName = "ThinkPad"; })
-
-            home-manager.nixosModules.default
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                backupFileExtension = "backup";
-                overwriteBackup = true;
-
-                extraSpecialArgs = {
-                  ThemeColor = "blue";
-                  IconVariant = "Dark";
-                  CursorVariant = "Ice";
-                  CursorSize = 16;
-                  FontSize = 10;
-                  AccentColor = "61,174,233";
-                  LookAndFeel = "dark";
-                };
-
-                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-                users.nixos = {
-                  imports = [
-                    ./Home-Manager/Hosts/ThinkPad.nix
-                    ./Home-Manager/Hosts/Common.nix
-                    ./Home-Manager/Packages/VSCode.nix
-                    ./Home-Manager/Packages/PhotoGIMP.nix
-                  ];
-                };
-              };
-            }
-          ];
-        };
-
         IdeaCentre = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
@@ -86,10 +35,9 @@
           };
 
           modules = [
-            ./configuration.nix
-            ./Hosts/Idea.nix
-            ./Boot/Plymouth.nix
+            ./Hosts/IdeaCentre/configuration.nix
             ./Hosts/Common.nix
+            ./Boot/Plymouth.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "IdeaCentre"; })
 
@@ -133,10 +81,9 @@
           };
 
           modules = [
-            ./configuration.nix
-            ./Hosts/Idea.nix
-            ./Boot/Plymouth.nix
+            ./Hosts/IdeaPad/configuration.nix
             ./Hosts/Common.nix
+            ./Boot/Plymouth.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "IdeaPad"; })
 
@@ -180,9 +127,9 @@
           };
 
           modules = [
-            ./configuration.nix
-            ./Boot/Plymouth.nix
+            ./Hosts/Pavilion/configuration.nix
             ./Hosts/Common.nix
+            ./Boot/Plymouth.nix
             ./Packages/Spotify.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = "Pavilion"; })
@@ -216,6 +163,57 @@
             }
           ];
         };
+
+        ThinkPad = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+
+          specialArgs = {
+            sysLocale = "en_US.UTF-8";
+            kbdLayout = "us";
+            kbdVariant = "";
+          };
+
+          modules = [
+            ./Hosts/ThinkPad/configuration.nix
+            ./Hosts/Common.nix
+            ./Boot/Plymouth.nix
+            ./Packages/OnlyOffice.nix
+            ./Packages/Spotify.nix
+            #./Packages/VirtManager.nix
+            ({ networking.hostName = "ThinkPad"; })
+
+            home-manager.nixosModules.default
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "backup";
+                overwriteBackup = true;
+
+                extraSpecialArgs = {
+                  ThemeColor = "blue";
+                  IconVariant = "Dark";
+                  CursorVariant = "Ice";
+                  CursorSize = 16;
+                  FontSize = 10;
+                  AccentColor = "61,174,233";
+                  LookAndFeel = "dark";
+                };
+
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+                users.nixos = {
+                  imports = [
+                    ./Home-Manager/Hosts/ThinkPad.nix
+                    ./Home-Manager/Hosts/Common.nix
+                    ./Home-Manager/Packages/VSCode.nix
+                    ./Home-Manager/Packages/PhotoGIMP.nix
+                  ];
+                };
+              };
+            }
+          ];
+        };
+
       };
     };
 }
