@@ -16,7 +16,7 @@
       genericName = "Graphic design platform";
       comment = "Open Canva as an application";
       exec = "brave --start-maximized --app=https://www.canva.com/";
-      icon = "${./Icons/Canva.svg}";
+      icon = "${../Icons/Canva.svg}";
       terminal = false;
       type = "Application";
       categories = [
@@ -30,7 +30,7 @@
       genericName = "Virtual classroom platform";
       comment = "Open Google Classroom as an application";
       exec = "brave --start-maximized --app=https://classroom.google.com/";
-      icon = "${./Icons/Classroom.svg}";
+      icon = "${../Icons/Classroom.svg}";
       terminal = false;
       type = "Application";
       categories = [

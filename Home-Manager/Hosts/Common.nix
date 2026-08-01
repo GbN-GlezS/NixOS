@@ -138,7 +138,7 @@ in
       genericName = "AI assistant";
       comment = "Open ChatGPT as an application";
       exec = "brave --start-maximized --app=https://chatgpt.com/";
-      icon = "${./Icons/ChatGPT-Dark.svg}";
+      icon = "${../Icons/ChatGPT-Dark.svg}";
       terminal = false;
       type = "Application";
       categories = [
@@ -152,7 +152,7 @@ in
       genericName = "AI assistant";
       comment = "Open Gemini as an application";
       exec = "brave --start-maximized --app=https://gemini.google.com/";
-      icon = "${./Icons/Gemini.svg}";
+      icon = "${../Icons/Gemini.svg}";
       terminal = false;
       type = "Application";
       categories = [

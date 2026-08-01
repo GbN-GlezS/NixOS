@@ -65,10 +65,10 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/Home-ThinkPad.nix
-                    ./Home-Manager/Home-Common.nix
-                    ./Home-Manager/Packages/Home-VSCode.nix
-                    ./Home-Manager/Packages/Home-PhotoGIMP.nix
+                    ./Home-Manager/ThinkPad.nix
+                    ./Home-Manager/Common.nix
+                    ./Home-Manager/Packages/VSCode.nix
+                    ./Home-Manager/Packages/PhotoGIMP.nix
                   ];
                 };
               };
@@ -114,8 +114,8 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/Home-IdeaCentre.nix
-                    ./Home-Manager/Home-Common.nix
+                    ./Home-Manager/IdeaCentre.nix
+                    ./Home-Manager/Common.nix
                   ];
                 };
               };
@@ -161,8 +161,8 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/Home-IdeaPad.nix
-                    ./Home-Manager/Home-Common.nix
+                    ./Home-Manager/IdeaPad.nix
+                    ./Home-Manager/Common.nix
                   ];
                 };
               };
@@ -208,8 +208,8 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/Home-Pavilion.nix
-                    ./Home-Manager/Home-Common.nix
+                    ./Home-Manager/Pavilion.nix
+                    ./Home-Manager/Common.nix
                   ];
                 };
               };
