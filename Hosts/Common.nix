@@ -34,7 +34,7 @@
 
   environment.interactiveShellInit = ''
     deploy() {
-      nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --sudo
+      nixos-rebuild switch --flake .#"$1" --target-host nixos@"$1".local --use-remote-sudo
     }
   '';
 
