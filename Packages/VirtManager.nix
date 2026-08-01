@@ -3,7 +3,7 @@
 # Configuración de QEMU/KVM con Virt-Manager para NixOS
 # Importado desde configuration.nix
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.virt-manager.enable = true; # Whether to enable virt-manager, an UI for managing virtual machines in libvirt.
