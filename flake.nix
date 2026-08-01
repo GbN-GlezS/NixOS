@@ -41,7 +41,7 @@
 
           modules = [
             ./configuration.nix
-            ./Hosts/NixOS.nix
+            ./Hosts/ThinkPad.nix
             ./Common.nix
             ./Boot/Plymouth.nix
             ./Packages/OnlyOffice.nix
