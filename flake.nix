@@ -69,6 +69,7 @@
                     ./Home-Manager/ThinkPad.nix
                     ./Home-Manager/Common.nix
                     ./Home-Manager/VSCode.nix
+                    ./Home-Manager/PhotoGIMP.nix
                   ];
                 };
               };

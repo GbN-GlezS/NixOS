@@ -8,7 +8,6 @@
 
   # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
-    gimp # GNU Image Manipulation Program.
     git # Distributed version control system.
     kdePackages.kolourpaint # Easy-to-use paint program.
     kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
