@@ -32,7 +32,15 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+
+    # Mapeo de hosts locales para despliegues SSH rápidos sin mDNS
+    hosts = {
+      "192.168.1.70" = [ "IdeaPad" ];
+      "192.168.1.157" = [ "ThinkPad" ];
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "America/Mexico_City";
