@@ -47,7 +47,7 @@
           modules = [
             ./Hosts/${hostName}/configuration.nix
             ./Hosts/Common.nix
-            ./Boot/Plymouth.nix
+            ./System/Plymouth.nix
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
             ({ networking.hostName = hostName; })
@@ -121,6 +121,7 @@
           extraSystemModules = [
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
+            ./System/Hyprland.nix
           ];
           extraHomeModules = [
             ./Home-Manager/Packages/VSCode.nix
