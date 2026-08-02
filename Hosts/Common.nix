@@ -34,19 +34,19 @@
 
   environment.interactiveShellInit = ''
     deploy() {
-      if [ -z "$1" ]; then
-        echo "Uso: deploy <NombreHost> (ej. deploy ThinkPad)"
-        return 1
+      [ -z "$1" ] && { echo "Uso: deploy <NombreHost> (ej. deploy ThinkPad)"; return 1; }
+
+      if [ "$1" = "$(hostname)" ]; then
+        # Local deployment
+        sudo nixos-rebuild switch --flake .#"$1"
+      else
+        # Remote deployment over mDNS
+        local target_host=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+        nixos-rebuild switch \
+          --flake .#"$1" \
+          --target-host "nixos@$target_host.local" \
+          --use-remote-sudo
       fi
-
-      # Mantiene las mayúsculas para el Flake, pero pasa a minúsculas solo el host de red mDNS
-      local target_host
-      target_host=$(echo "$1" | tr '[:upper:]' '[:lower:]')
-
-      nixos-rebuild switch \
-        --flake .#"$1" \
-        --target-host nixos@"$target_host".local \
-        --elevate=sudo
     }
   '';
 
