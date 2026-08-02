@@ -49,7 +49,6 @@
             ./Hosts/Common.nix
             ./Boot/Plymouth.nix
             ./Services/Avahi.nix
-            ./Packages/OnlyOffice.nix
             ({ networking.hostName = hostName; })
           ]
           ++ extraSystemModules
@@ -80,6 +79,7 @@
                   imports = [
                     ./Home-Manager/Hosts/${hostName}.nix
                     ./Home-Manager/Hosts/Common.nix
+                    ./Home-Manager/Packages/OnlyOffice.nix
                   ]
                   ++ extraHomeModules;
                 };
