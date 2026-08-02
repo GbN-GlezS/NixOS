@@ -11,12 +11,13 @@
 }:
 
 let
-  papirus-icon-theme-custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
+  Papirus-Icon-Theme-Custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
     dontFixup = true;
     postInstall = (oldAttrs.postInstall or "") + ''
       export XDG_DATA_HOME="$out/share"
       ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus
-      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus-${IconVariant}
+      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus-Dark    
+      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus-Light
     '';
   });
 in
@@ -30,7 +31,7 @@ in
     inter # Typeface specially designed for user interfaces.
     jetbrains-mono # Typeface made for developers.
     papirus-folders # Tool to change papirus icon theme color.
-    papirus-icon-theme-custom # Pixel perfect icon theme for Linux.
+    Papirus-Icon-Theme-Custom # Pixel perfect icon theme for Linux.
   ];
 
   # Cursor configuration.
@@ -48,7 +49,7 @@ in
 
     iconTheme = {
       name = "Papirus-" + IconVariant;
-      package = papirus-icon-theme-custom;
+      package = Papirus-Icon-Theme-Custom;
     };
 
     font = {
