@@ -2,11 +2,10 @@
 
 {
   nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-generations old";
+    automatic = true; # Automatically run the garbage collector at a specific time.
+    dates = "daily"; # How often or when garbage collection is performed.
+    options = "--delete-generations old"; # Options given to nix-collect-garbage when the garbage collector is run automatically.
   };
 
-  # Opcional: optimiza el almacenamiento enlazando archivos idénticos diariamente
-  nix.settings.auto-optimise-store = true;
+  nix.settings.auto-optimise-store = true; # If set to true, Nix automatically detects files in the store that have identical contents, and replaces them with hard links to a single copy.
 }
