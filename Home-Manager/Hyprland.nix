@@ -6,10 +6,9 @@
   home.packages = with pkgs; [
     kitty
     fuzzel
-    waybar
   ];
 
-  services.waybar = {
+  programs.waybar = {
     enable = true;
     systemd.enable = true;
   };
@@ -23,11 +22,10 @@
       bind = [
         "$mod, Return, exec, kitty"
         "$mod, D, exec, fuzzel"
-        "$mod, Q, killactive"
       ];
 
-      monitor = [
-        ",preferred,auto,1"
+      exec-once = [
+        "waybar"
       ];
     };
   };
