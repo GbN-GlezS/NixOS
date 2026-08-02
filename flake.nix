@@ -44,7 +44,7 @@
           };
 
           modules = [
-            ./Hosts/${hostName}/configuration.nix
+            #./Hosts/${hostName}/configuration.nix
             #./Hosts/Common.nix
             ./System/Plymouth.nix
             #./Services/Avahi.nix
