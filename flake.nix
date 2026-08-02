@@ -48,7 +48,7 @@
             ./Hosts/${hostName}/configuration.nix
             ./Hosts/Common.nix
             ./Boot/Plymouth.nix
-            ./Packages/Tailscale.nix
+            ./Services/Avahi.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = hostName; })
           ]
