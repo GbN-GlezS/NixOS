@@ -49,6 +49,7 @@
             ./Hosts/Common.nix
             ./Boot/Plymouth.nix
             ./Services/Avahi.nix
+            ./Services/GarbageCollector.nix
             ({ networking.hostName = hostName; })
           ]
           ++ extraSystemModules
