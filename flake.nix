@@ -47,8 +47,8 @@
             ./Hosts/${hostName}/configuration.nix
             #./Hosts/Common.nix
             ./System/Plymouth.nix
-            ./Services/Avahi.nix
-            ./Services/GarbageCollector.nix
+            #./Services/Avahi.nix
+            #./Services/GarbageCollector.nix
             ({ networking.hostName = hostName; })
           ]
           ++ extraSystemModules
@@ -79,7 +79,7 @@
                   imports = [
                     ./Home-Manager/Hosts/${hostName}.nix
                     #./Home-Manager/Hosts/Common.nix
-                    ./Home-Manager/Packages/OnlyOffice.nix
+                    #./Home-Manager/Packages/OnlyOffice.nix
                   ]
                   ++ extraHomeModules;
                 };
@@ -118,14 +118,14 @@
           AccentColor = "61,174,233";
           LookAndFeel = "dark";
           extraSystemModules = [
-            ./Packages/Spotify.nix
-            ./Packages/VirtManager.nix
+            #./Packages/Spotify.nix
+            #./Packages/VirtManager.nix
             ./Hosts/no-desktop.nix
             ./System/Hyprland.nix
           ];
           extraHomeModules = [
-            ./Home-Manager/Packages/VSCode.nix
-            ./Home-Manager/Packages/PhotoGIMP.nix
+            #./Home-Manager/Packages/VSCode.nix
+            #./Home-Manager/Packages/PhotoGIMP.nix
             ./Home-Manager/Hyprland.nix
           ];
         };
