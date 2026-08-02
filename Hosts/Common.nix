@@ -32,15 +32,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking = {
-    networkmanager.enable = true;
-
-    # Mapeo de hosts locales para despliegues SSH rápidos sin mDNS
-    hosts = {
-      "192.168.1.70" = [ "IdeaPad" ];
-      "192.168.1.157" = [ "ThinkPad" ];
-    };
-  };
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Mexico_City";
@@ -134,13 +126,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  services.avahi = {
-    enable = true; # Whether to run the Avahi daemon, which allows Avahi clients to use Avahi's service discovery facilities and also allows the local machine to advertise its presence and services (through the mDNS responder implemented by avahi-daemon).
-    nssmdns4 = true; # Whether to enable the mDNS NSS (Name Service Switch) plug-in for IPv4.
-    nssmdns6 = true; # Whether to enable the mDNS NSS (Name Service Switch) plug-in for IPv6.
-    openFirewall = true; # Whether to open the firewall for UDP port 5353.
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

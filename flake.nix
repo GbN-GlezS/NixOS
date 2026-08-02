@@ -48,6 +48,7 @@
             ./Hosts/${hostName}/configuration.nix
             ./Hosts/Common.nix
             ./Boot/Plymouth.nix
+            ./Packages/Tailscale.nix
             ./Packages/OnlyOffice.nix
             ({ networking.hostName = hostName; })
           ]
