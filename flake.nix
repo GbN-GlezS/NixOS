@@ -118,7 +118,10 @@
           CursorVariant = "Ice";
           AccentColor = "61,174,233";
           LookAndFeel = "dark";
-          extraSystemModules = [ ./Packages/Spotify.nix ];
+          extraSystemModules = [
+            ./Packages/Spotify.nix
+            ./Packages/VirtManager.nix
+          ];
           extraHomeModules = [
             ./Home-Manager/Packages/VSCode.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
