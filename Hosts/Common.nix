@@ -11,44 +11,10 @@
 }:
 
 {
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-
-    trusted-users = [ "nixos" ]; # root ya es trusted por defecto
-  };
-
-  security.sudo.extraRules = [
-    {
-      users = [ "nixos" ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
   ];
-
-  environment.interactiveShellInit = ''
-    deploy() {
-      [ -z "$1" ] && { echo "Uso: deploy <NombreHost> (ej. deploy ThinkPad)"; return 1; }
-
-      if [ "$1" = "$(hostname)" ]; then
-        # Local deployment
-        sudo nixos-rebuild switch --flake .#"$1"
-      else
-        # Remote deployment over mDNS
-        local target_host=$(echo "$1" | tr '[:upper:]' '[:lower:]')
-        nixos-rebuild switch \
-          --flake .#"$1" \
-          --target-host "nixos@$target_host.local" \
-          --use-remote-sudo
-      fi
-    }
-  '';
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
