@@ -12,7 +12,7 @@
 
   # Attribute set of files to link into the user home.
   home.file = {
-    ".local/share/fonts/corefonts".source = "${pkgs.corefonts}/share/fonts/truetype";
-    ".local/share/fonts/vista-fonts".source = "${pkgs.vista-fonts}/share/fonts/truetype";
+    ".local/share/fonts/corefonts".source = "${pkgs.corefonts}/share/fonts/truetype"; # Path of the source file or directory.
+    ".local/share/fonts/vista-fonts".source = "${pkgs.vista-fonts}/share/fonts/truetype"; # Path of the source file or directory.
   };
 }
