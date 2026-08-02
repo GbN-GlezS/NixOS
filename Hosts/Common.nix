@@ -99,6 +99,8 @@
     ];
   };
 
+  security.sudo.wheelNeedsPassword = false; # Whether users of the wheel group must provide a password to run commands as super user via sudo.
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
