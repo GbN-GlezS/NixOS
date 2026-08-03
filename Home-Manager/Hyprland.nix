@@ -1,32 +1,18 @@
 { pkgs, ... }:
 
 {
-  home.stateVersion = "26.05";
-
-  home.packages = with pkgs; [
-    kitty
-    fuzzel
-  ];
-
-  programs.waybar = {
-    enable = true;
-    systemd.enable = true;
-  };
-
+  # Habilitar Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
+  };
 
-    settings = {
-      "$mod" = "SUPER";
+  # Configuración e instalación de Waybar
+  programs.waybar = {
+    enable = true;
+  };
 
-      bind = [
-        "$mod, Return, exec, kitty"
-        "$mod, D, exec, fuzzel"
-      ];
-
-      exec-once = [
-        "waybar"
-      ];
-    };
+  # Configuración e instalación de Kitty
+  programs.kitty = {
+    enable = true;
   };
 }
