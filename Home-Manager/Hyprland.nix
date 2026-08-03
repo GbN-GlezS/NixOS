@@ -3,8 +3,14 @@
 {
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
-  home.stateVersion = "26.05";
+  home.stateVersion = "24.05";
 
+  # Instalación del explorador de archivos (Thunar)
+  home.packages = with pkgs; [
+    xfce.thunar
+  ];
+
+  # Configuración de Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "hyprlang";
@@ -14,6 +20,7 @@
 
       bind = [
         "$mainMod, Q, exec, kitty"
+        "$mainMod, E, exec, thunar" # Atajo para abrir el explorador de archivos
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
       ];
@@ -29,6 +36,7 @@
     };
   };
 
+  # Configuración de Kitty
   programs.kitty = {
     enable = true;
   };
