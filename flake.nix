@@ -79,6 +79,7 @@
                   imports = [
                     ./Home-Manager/Hosts/${hostName}.nix
                     ./Home-Manager/Hosts/Common.nix
+                    ./Home-Manager/Packages/DesktopEntries.nix
                     ./Home-Manager/Packages/OnlyOffice.nix
                   ]
                   ++ extraHomeModules;
