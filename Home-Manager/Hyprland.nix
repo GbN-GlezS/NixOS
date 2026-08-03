@@ -5,15 +5,14 @@
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "26.05";
 
-  # Aplicaciones del usuario
+  # Aplicaciones del usuario (usando pkgs.thunar en lugar de xfce.thunar)
   home.packages = with pkgs; [
-    xfce.thunar
+    thunar
   ];
 
   # Menú de aplicaciones (Rofi)
   programs.rofi = {
     enable = true;
-    # No es necesario especificar package, usará pkgs.rofi automáticamente
   };
 
   # Terminal Kitty
@@ -21,12 +20,12 @@
     enable = true;
   };
 
-  # Barra de estado Waybar
+  # Barra de estado Waybar (actualizado a targets como lista)
   programs.waybar = {
     enable = true;
     systemd = {
       enable = true;
-      target = "graphical-session.target";
+      targets = [ "graphical-session.target" ];
     };
   };
 
