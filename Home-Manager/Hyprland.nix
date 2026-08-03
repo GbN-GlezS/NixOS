@@ -10,10 +10,10 @@
     xfce.thunar
   ];
 
-  # Menú de aplicaciones (Rofi Wayland)
+  # Menú de aplicaciones (Rofi)
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    # No es necesario especificar package, usará pkgs.rofi automáticamente
   };
 
   # Terminal Kitty
@@ -30,7 +30,7 @@
     };
   };
 
-  # Configuración de Hyprland (Sintaxis extraConfig para evadir errores de parser Lua)
+  # Configuración de Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
 
