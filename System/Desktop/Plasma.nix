@@ -1,6 +1,6 @@
 # https://wiki.nixos.org/wiki/KDE
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Definition of systemd service units; see systemd.service(5).
@@ -11,8 +11,8 @@
 
   # List of default packages to exclude from the configuratio
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    elisa # Simple music player aiming to provide a nice experience for its users.
-    konsole # Terminal emulator by KDE.
-    plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
+    # elisa # Simple music player aiming to provide a nice experience for its users.
+    # konsole # Terminal emulator by KDE.
+    # plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
   ];
 }
