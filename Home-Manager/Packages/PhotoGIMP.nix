@@ -11,8 +11,8 @@ in
 
 {
   # The set of packages to appear in the user environment.
-  home.packages = [
-    pkgs.gimp # GNU Image Manipulation Program.
+  home.packages = with pkgs; [
+    gimp # GNU Image Manipulation Program.
   ];
 
   # Attribute set of files to link into the user home.
