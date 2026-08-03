@@ -49,19 +49,6 @@
     xterm # Terminal emulator for the X Window System.
   ];
 
-  # Enable the KDE Plasma Desktop Environment.
-  # services.displayManager.sddm.enable = true;
-  # services.desktopManager.plasma6.enable = true;
-
-  # List of default packages to exclude from the configuration.
-  # environment.plasma6.excludePackages = with pkgs.kdePackages; [
-  #   discover # Helps you find and install applications, games, and tools.
-  #   elisa # Simple music player aiming to provide a nice experience for its users.
-  #   kate # Advanced text editor.
-  #   khelpcenter # Software documentation viewer.
-  #   qrca # QR code scanner for Plasma Mobile.
-  # ];
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = kbdLayout;
