@@ -5,37 +5,23 @@
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "26.05";
 
-  # Instalación de paquetes de usuario
+  # Aplicaciones del usuario
   home.packages = with pkgs; [
     xfce.thunar
   ];
 
-  # Configuración de Rofi (Menú de aplicaciones para Wayland)
+  # Menú de aplicaciones (Rofi Wayland)
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;
   };
 
-  # Configuración de Hyprland
-  wayland.windowManager.hyprland = {
+  # Terminal Kitty
+  programs.kitty = {
     enable = true;
-    configType = "hyprlang";
-
-    settings = {
-      "$mainMod" = "SUPER";
-
-      bind = [
-        "$mainMod, Q, exec, kitty"
-        "$mainMod, E, exec, thunar"
-        "$mainMod, R, exec, rofi -show drun" # Menú de aplicaciones con SUPER + R
-        "$mainMod, SPACE, exec, rofi -show drun" # Opción alternativa con SUPER + Espacio
-        "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
-      ];
-    };
   };
 
-  # Configuración e integración de Waybar vía systemd
+  # Barra de estado Waybar
   programs.waybar = {
     enable = true;
     systemd = {
@@ -44,8 +30,20 @@
     };
   };
 
-  # Configuración de Kitty
-  programs.kitty = {
+  # Configuración de Hyprland (Sintaxis extraConfig para evadir errores de parser Lua)
+  wayland.windowManager.hyprland = {
     enable = true;
+
+    extraConfig = ''
+      $mainMod = SUPER
+
+      # Atajos de teclado
+      bind = $mainMod, Q, exec, kitty
+      bind = $mainMod, E, exec, thunar
+      bind = $mainMod, R, exec, rofi -show drun
+      bind = $mainMod, SPACE, exec, rofi -show drun
+      bind = $mainMod, C, killactive,
+      bind = $mainMod, M, exit,
+    '';
   };
 }
