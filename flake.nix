@@ -77,7 +77,7 @@
                 sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/Hosts/${hostName}.nix
+                    #./Home-Manager/Hosts/${hostName}.nix
                     #./Home-Manager/Hosts/Common.nix
                     #./Home-Manager/Packages/OnlyOffice.nix
                   ]
