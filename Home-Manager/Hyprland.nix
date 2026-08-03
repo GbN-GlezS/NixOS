@@ -3,7 +3,7 @@
 {
   home.username = "nixos";
   home.homeDirectory = "/home/nixos";
-  home.stateVersion = "26.05"; # Se mantiene intacto según requerimiento
+  home.stateVersion = "26.05"; # Mantenido según tu requerimiento
 
   # Aplicaciones del usuario
   home.packages = with pkgs; [
@@ -29,7 +29,9 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    # Al ser stateVersion >= 26.05, estructuramos settings de forma limpia
+    # OBLIGATORIO para stateVersion >= 26.05 si usas sintaxis de hyprland.conf ($ variables)
+    configType = "hyprlang";
+
     settings = {
       "$mainMod" = "SUPER";
 
