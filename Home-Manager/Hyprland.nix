@@ -33,24 +33,26 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    # 1. Usar el paquete y portal de NixOS UWSM
     package = null;
     portalPackage = null;
-
-    # 2. OBLIGATORIO: Desactivar systemd en HM para no generar conflicto con UWSM
     systemd.enable = false;
 
-    # 3. Formato de configuración plano
     configType = "hyprlang";
 
     settings = {
       "$mainMod" = "SUPER";
 
+      # Importar entorno de D-Bus y systemd para que Rofi y Thunar encuentren XDG_DATA_DIRS
+      exec-once = [
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_DATA_DIRS PATH"
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_DATA_DIRS PATH"
+      ];
+
       bind = [
-        "$mainMod, Q, exec, ${pkgs.kitty}/bin/kitty"
-        "$mainMod, E, exec, ${pkgs.thunar}/bin/thunar"
-        "$mainMod, R, exec, ${pkgs.rofi}/bin/rofi -show drun"
-        "$mainMod, SPACE, exec, ${pkgs.rofi}/bin/rofi -show drun"
+        "$mainMod, Q, exec, kitty"
+        "$mainMod, E, exec, thunar"
+        "$mainMod, R, exec, rofi -show drun"
+        "$mainMod, space, exec, rofi -show drun" # Corregido a minúsculas 'space'
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
       ];

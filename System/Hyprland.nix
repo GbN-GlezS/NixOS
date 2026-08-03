@@ -7,6 +7,11 @@
     withUWSM = true;
   };
 
+  # Integración de sistema para Thunar y servicios D-Bus/GVfs
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+  services.gvfs.enable = true;
+
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
