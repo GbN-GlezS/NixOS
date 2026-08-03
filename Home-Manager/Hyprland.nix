@@ -8,6 +8,7 @@
   # Instalación del explorador de archivos (Thunar)
   home.packages = with pkgs; [
     xfce.thunar
+    brave
   ];
 
   # Configuración de Hyprland
