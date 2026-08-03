@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/nixos";
   home.stateVersion = "26.05";
 
-  # Aplicaciones del usuario (usando pkgs.thunar en lugar de xfce.thunar)
+  # Aplicaciones del usuario
   home.packages = with pkgs; [
     thunar
   ];
@@ -20,7 +20,7 @@
     enable = true;
   };
 
-  # Barra de estado Waybar (actualizado a targets como lista)
+  # Barra de estado Waybar
   programs.waybar = {
     enable = true;
     systemd = {
@@ -32,6 +32,9 @@
   # Configuración de Hyprland
   wayland.windowManager.hyprland = {
     enable = true;
+
+    # Forzar el formato hyprlang tradicional para ignorar la generación de Lua
+    configType = "hyprlang";
 
     extraConfig = ''
       $mainMod = SUPER
