@@ -11,8 +11,8 @@
 
   # List of default packages to exclude from the configuratio
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
-    konsole # Terminal emulator by KDE.
     elisa # Simple music player aiming to provide a nice experience for its users.
+    konsole # Terminal emulator by KDE.
+    plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
   ];
 }
