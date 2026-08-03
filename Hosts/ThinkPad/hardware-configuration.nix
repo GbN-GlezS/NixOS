@@ -5,6 +5,7 @@
 {
   config,
   lib,
+  pkgs,
   modulesPath,
   ...
 }:
@@ -19,8 +20,7 @@
     "ehci_pci"
     "xhci_pci_renesas"
     "xhci_pci"
-    "usb_storage"
-    "sd_mod"
+    "usbhid"
     "rtsx_pci_sdmmc"
   ];
   boot.initrd.kernelModules = [ ];
