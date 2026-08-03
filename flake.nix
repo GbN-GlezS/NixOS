@@ -46,7 +46,7 @@
           modules = [
             #./Hosts/${hostName}/configuration.nix
             #./Hosts/Common.nix
-            ./System/Plymouth.nix
+            #./System/Plymouth.nix
             #./Services/Avahi.nix
             #./Services/GarbageCollector.nix
             ({ networking.hostName = hostName; })
