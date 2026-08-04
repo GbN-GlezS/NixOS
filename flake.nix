@@ -67,7 +67,7 @@
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Hosts/${hostName}.nix
-                    #./Home-Manager/Hosts/Common.nix
+                    ./Home-Manager/Hosts/Common.nix
                     ./Home-Manager/Packages/DesktopEntries.nix
                     ./Home-Manager/Packages/OnlyOffice.nix
                   ]
@@ -102,6 +102,9 @@
             ./System/Desktop/Plasma.nix
             ./Packages/Spotify.nix
           ];
+          extraHomeModules = [
+            ./Home-Manager/Plasma.nix
+          ];
           extraHomeArgs = {
             ThemeColor = "pink";
             IconVariant = "Light";
@@ -122,6 +125,7 @@
             ./Packages/VirtManager.nix
           ];
           extraHomeModules = [
+            ./Home-Manager/Plasma.nix
             ./Home-Manager/Hyprland.nix
             ./Home-Manager/Packages/VSCode.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
