@@ -1,6 +1,6 @@
 # https://wiki.nixos.org/wiki/PipeWire
 
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   # Disable PulseAudio to prevent conflicts with PipeWire
