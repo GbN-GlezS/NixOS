@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  services.openssh.enable = true; # Whether to enable the OpenSSH secure shell daemon, which allows secure remote logins.
+
   services.avahi = {
     enable = true; # Whether to run the Avahi daemon, which allows Avahi clients to use Avahi's service discovery facilities and also allows the local machine to advertise its presence and services (through the mDNS responder implemented by avahi-daemon).
     nssmdns4 = true; # Whether to enable the mDNS NSS (Name Service Switch) plug-in for IPv4.
