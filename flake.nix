@@ -88,7 +88,7 @@
           ];
           extraHomeModules = [
             plasma-manager.homeModules.plasma-manager
-            ./Home-Manager/Plasma.nix
+            ./Home-Manager/Hosts/Plasma.nix
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -107,7 +107,7 @@
           ];
           extraHomeModules = [
             plasma-manager.homeModules.plasma-manager
-            ./Home-Manager/Plasma.nix
+            ./Home-Manager/Hosts/Plasma.nix
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -127,7 +127,7 @@
           ];
           extraHomeModules = [
             plasma-manager.homeModules.plasma-manager
-            ./Home-Manager/Plasma.nix
+            ./Home-Manager/Hosts/Plasma.nix
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -151,7 +151,7 @@
           ];
           extraHomeModules = [
             plasma-manager.homeModules.plasma-manager
-            ./Home-Manager/Plasma.nix
+            ./Home-Manager/Hosts/Plasma.nix
             ./Home-Manager/Hyprland.nix
             ./Home-Manager/Packages/VSCode.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
