@@ -157,11 +157,11 @@
             ./System/Desktop/Hyprland.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
+            stylix.nixosModules.stylix
           ];
           extraHomeModules = [
             #plasma-manager.homeModules.plasma-manager
             caelestia-shell.homeManagerModules.default
-            stylix.nixosModules.stylix
             #./Home-Manager/Desktop/Plasma.nix
             #./Home-Manager/Desktop/Hyprland.nix
             ./Home-Manager/Desktop/caelestia-shell.nix
