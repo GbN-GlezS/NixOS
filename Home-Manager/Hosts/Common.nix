@@ -11,11 +11,16 @@
 let
   Papirus-Icon-Theme-Custom = pkgs.papirus-icon-theme.overrideAttrs (oldAttrs: {
     dontFixup = true;
+    nativeBuildInputs = (oldAttrs.nativeBuildInputs or [ ]) ++ [ pkgs.papirus-folders ];
     postInstall = (oldAttrs.postInstall or "") + ''
       export XDG_DATA_HOME="$out/share"
-      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus
-      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus-Dark    
-      ${pkgs.papirus-folders}/bin/papirus-folders -o -C ${ThemeColor} -t Papirus-Light
+      papirus-folders -o -C ${ThemeColor} -t Papirus-${IconVariant}
+    '';
+  });
+
+  Orchis-Theme-Custom = pkgs.orchis-theme.overrideAttrs (oldAttrs: {
+    postInstall = (oldAttrs.postInstall or "") + ''
+      ${pkgs.bash}/bin/bash ./install.sh -d $out/share/themes -t pink -c dark --tweaks solid primary
     '';
   });
 in
@@ -30,6 +35,8 @@ in
     jetbrains-mono # Typeface made for developers.
     papirus-folders # Tool to change papirus icon theme color.
     Papirus-Icon-Theme-Custom # Pixel perfect icon theme for Linux.
+    Orchis-Theme-Custom
+    gtk-engine-murrine
   ];
 
   # Cursor configuration.
@@ -45,6 +52,11 @@ in
   gtk = {
     enable = true;
 
+    theme = {
+      name = "Orchis-Pink-Dark";
+      package = Orchis-Theme-Custom;
+    };
+
     iconTheme = {
       name = "Papirus-" + IconVariant;
       package = Papirus-Icon-Theme-Custom;
@@ -54,6 +66,14 @@ in
       name = "Inter";
       size = FontSize;
       package = pkgs.inter;
+    };
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
     };
   };
 }

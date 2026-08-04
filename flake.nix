@@ -101,7 +101,6 @@
             ./System/Desktop/Xfce.nix
           ];
           extraHomeModules = [
-            ./Home-Manager/Hosts/GTK.nix
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
