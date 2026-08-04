@@ -6,6 +6,13 @@
     ./hardware-configuration.nix
   ];
 
+  stylix = {
+    enable = true;
+    image = /home/nixos/wallpaper.webp; # Ruta a tu fondo de pantalla
+    # Opcional: Si prefieres un esquema de colores específico en lugar de generarlo del fondo
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  };
+
   # List of default packages to exclude from the configuration.
   # environment.plasma6.excludePackages = with pkgs.kdePackages; [
   #   okular # KDE document viewer.

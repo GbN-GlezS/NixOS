@@ -17,6 +17,11 @@
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,6 +30,7 @@
       home-manager,
       plasma-manager,
       caelestia-shell,
+      stylix,
       ...
     }:
     let
@@ -46,6 +52,7 @@
           };
 
           modules = [
+            stylix.nixosModules.stylix
             ./Hosts/${hostName}/configuration.nix
             ./Hosts/Common.nix
             ./System/Plymouth.nix
