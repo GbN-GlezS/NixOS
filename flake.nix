@@ -100,12 +100,22 @@
           extraSystemModules = [
             ./System/Desktop/Xfce.nix
           ];
+          extraHomeModules = [
+            ./Home-Manager/Hosts/GTK.nix
+          ];
           extraHomeArgs = {
             ThemeColor = "pink";
             IconVariant = "Dark";
             CursorVariant = "Ice";
             AccentColor = "233,58,154";
             LookAndFeel = "dark";
+            OrchisTheme = "pink";
+            OrchisColor = "dark";
+            OrchisSize = "standard";
+            OrchisTweaks = [
+              "solid"
+              "primary"
+            ];
           };
         };
 
