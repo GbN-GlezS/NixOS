@@ -157,7 +157,7 @@
           ];
           extraHomeModules = [
             plasma-manager.homeModules.plasma-manager
-            caelestia-shell.homeModules.default
+            caelestia-shell.homeModulesManager.default
             ./Home-Manager/Desktop/Plasma.nix
             ./Home-Manager/Desktop/Hyprland.nix
             ./Home-Manager/Desktop/caelestia-shell.nix
