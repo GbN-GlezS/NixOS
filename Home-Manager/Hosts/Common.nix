@@ -1,6 +1,7 @@
 {
   pkgs,
   ThemeColor ? "pink",
+  OrchisColor,
   IconVariant ? "Light",
   CursorVariant ? "Classic",
   CursorSize ? 16,
@@ -53,7 +54,7 @@ in
     enable = true;
 
     theme = {
-      name = "Orchis-" + ThemeColor + "-" + IconVariant;
+      name = "Orchis-" + OrchisColor + "-" + IconVariant;
       package = Orchis-Theme-Custom;
     };
 

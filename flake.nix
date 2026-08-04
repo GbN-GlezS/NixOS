@@ -104,17 +104,11 @@
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
+            OrchisColor = "Pink";
             IconVariant = "Dark";
             CursorVariant = "Ice";
             AccentColor = "233,58,154";
             LookAndFeel = "dark";
-            OrchisTheme = "pink";
-            OrchisColor = "dark";
-            OrchisSize = "standard";
-            OrchisTweaks = [
-              "solid"
-              "primary"
-            ];
           };
         };
 
@@ -156,6 +150,7 @@
           ];
           extraHomeArgs = {
             ThemeColor = "blue";
+            OrchisColor = "Blue";
             IconVariant = "Dark";
             CursorVariant = "Ice";
             AccentColor = "61,174,233";
