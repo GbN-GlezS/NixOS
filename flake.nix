@@ -159,7 +159,7 @@
             plasma-manager.homeModules.plasma-manager
             caelestia-shell.homeManagerModules.default
             ./Home-Manager/Desktop/Plasma.nix
-            ./Home-Manager/Desktop/Hyprland.nix
+            #./Home-Manager/Desktop/Hyprland.nix
             ./Home-Manager/Desktop/caelestia-shell.nix
             ./Home-Manager/Packages/VSCode.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
