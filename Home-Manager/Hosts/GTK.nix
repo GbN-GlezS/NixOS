@@ -20,7 +20,7 @@ in
     enable = true;
 
     theme = {
-      name = "Orchis-pink-dark";
+      name = "Orchis-Pink-Dark";
       package = orchis-theme-custom;
     };
 
@@ -30,13 +30,6 @@ in
 
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
-    };
-  };
-
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = "Orchis-pink-dark";
     };
   };
 }
