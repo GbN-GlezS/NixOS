@@ -6,11 +6,6 @@
     ./hardware-configuration.nix
   ];
 
-  stylix = {
-    enable = true;
-    targets.regreet.enable = false;
-  };
-
   # List of default packages to exclude from the configuration.
   # environment.plasma6.excludePackages = with pkgs.kdePackages; [
   #   okular # KDE document viewer.
