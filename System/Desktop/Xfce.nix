@@ -1,6 +1,8 @@
 # https://wiki.nixos.org/wiki/Xfce
 
 {
+  programs.xfconf.enable = true;
+
   services.xserver = {
     enable = true;
 
