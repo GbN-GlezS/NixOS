@@ -52,7 +52,6 @@
           };
 
           modules = [
-            stylix.nixosModules.stylix
             ./Hosts/${hostName}/configuration.nix
             ./Hosts/Common.nix
             ./System/Plymouth.nix
@@ -162,6 +161,7 @@
           extraHomeModules = [
             #plasma-manager.homeModules.plasma-manager
             caelestia-shell.homeManagerModules.default
+            stylix.nixosModules.stylix
             #./Home-Manager/Desktop/Plasma.nix
             #./Home-Manager/Desktop/Hyprland.nix
             ./Home-Manager/Desktop/caelestia-shell.nix
