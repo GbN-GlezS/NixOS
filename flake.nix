@@ -24,6 +24,7 @@
       nixpkgs,
       home-manager,
       plasma-manager,
+      caelestia-shell,
       ...
     }:
     let
@@ -156,8 +157,10 @@
           ];
           extraHomeModules = [
             plasma-manager.homeModules.plasma-manager
+            caelestia-shell.homeModules.default
             ./Home-Manager/Desktop/Plasma.nix
             ./Home-Manager/Desktop/Hyprland.nix
+            ./Home-Manager/Desktop/caelestia-shell.nix
             ./Home-Manager/Packages/VSCode.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
           ];
