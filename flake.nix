@@ -98,7 +98,6 @@
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
-            OrchisColor = "Pink";
             IconVariant = "Light";
             CursorVariant = "Classic";
             AccentColor = "233,58,154";
@@ -117,7 +116,6 @@
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
-            OrchisColor = "Pink";
             IconVariant = "Dark";
             CursorVariant = "Ice";
             AccentColor = "233,58,154";
@@ -137,7 +135,6 @@
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
-            OrchisColor = "Pink";
             IconVariant = "Light";
             CursorVariant = "Classic";
             AccentColor = "233,58,154";
@@ -161,12 +158,11 @@
             ./Home-Manager/Desktop/Plasma.nix
             #./Home-Manager/Desktop/Hyprland.nix
             ./Home-Manager/Desktop/caelestia-shell.nix
-            ./Home-Manager/Packages/VSCode.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
+            ./Home-Manager/Packages/VSCode.nix
           ];
           extraHomeArgs = {
             ThemeColor = "blue";
-            OrchisColor = "Blue";
             IconVariant = "Dark";
             CursorVariant = "Ice";
             AccentColor = "61,174,233";

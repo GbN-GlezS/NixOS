@@ -1,7 +1,6 @@
 {
   pkgs,
   ThemeColor ? "pink",
-  OrchisColor,
   IconVariant ? "Light",
   CursorVariant ? "Classic",
   CursorSize ? 16,
