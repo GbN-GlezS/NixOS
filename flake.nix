@@ -84,10 +84,15 @@
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
           extraSystemModules = [
-            ./System/Desktop/Xfce.nix
+            ./System/Desktop/Plasma.nix
+          ];
+          extraHomeModules = [
+            plasma-manager.homeModules.plasma-manager
+            ./Home-Manager/Plasma.nix
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
+            OrchisColor = "Pink";
             IconVariant = "Light";
             CursorVariant = "Classic";
             AccentColor = "233,58,154";
@@ -101,10 +106,12 @@
             ./System/Desktop/Plasma.nix
           ];
           extraHomeModules = [
-            ./Home-Manager/Hosts/Plasma.nix
+            plasma-manager.homeModules.plasma-manager
+            ./Home-Manager/Plasma.nix
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
+            OrchisColor = "Pink";
             IconVariant = "Dark";
             CursorVariant = "Ice";
             AccentColor = "233,58,154";
@@ -124,6 +131,7 @@
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
+            OrchisColor = "Pink";
             IconVariant = "Light";
             CursorVariant = "Classic";
             AccentColor = "233,58,154";
