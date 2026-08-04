@@ -35,5 +35,10 @@
 
   environment.systemPackages = with pkgs; [
     kitty
+    thunar
+    thunar-archive-plugin
+    thunar-volman
+    thunar-media-tags-plugin
+    thunar-extended
   ];
 }
