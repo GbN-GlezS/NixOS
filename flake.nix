@@ -105,7 +105,6 @@
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
-            OrchisColor = "Pink";
             IconVariant = "Dark";
             CursorVariant = "Ice";
             AccentColor = "233,58,154";
