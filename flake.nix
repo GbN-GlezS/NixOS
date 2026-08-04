@@ -63,7 +63,6 @@
                   FontSize = 10;
                 };
 
-                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Hosts/${hostName}.nix
@@ -87,6 +86,13 @@
           extraSystemModules = [
             ./System/Desktop/Xfce.nix
           ];
+          extraHomeArgs = {
+            ThemeColor = "pink";
+            IconVariant = "Light";
+            CursorVariant = "Classic";
+            AccentColor = "233,58,154";
+            LookAndFeel = "";
+          };
         };
 
         IdeaPad = mkHost {
@@ -94,6 +100,13 @@
           extraSystemModules = [
             ./System/Desktop/Xfce.nix
           ];
+          extraHomeArgs = {
+            ThemeColor = "pink";
+            IconVariant = "Dark";
+            CursorVariant = "Ice";
+            AccentColor = "233,58,154";
+            LookAndFeel = "dark";
+          };
         };
 
         Pavilion = mkHost {
@@ -103,6 +116,7 @@
             ./Packages/Spotify.nix
           ];
           extraHomeModules = [
+            plasma-manager.homeModules.plasma-manager
             ./Home-Manager/Plasma.nix
           ];
           extraHomeArgs = {
@@ -125,6 +139,7 @@
             ./Packages/VirtManager.nix
           ];
           extraHomeModules = [
+            plasma-manager.homeModules.plasma-manager
             ./Home-Manager/Plasma.nix
             ./Home-Manager/Hyprland.nix
             ./Home-Manager/Packages/VSCode.nix
