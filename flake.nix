@@ -27,11 +27,7 @@
           hostName,
           sysLocale ? "es_MX.UTF-8",
           kbdLayout ? "latam",
-          ThemeColor ? "pink",
-          IconVariant ? "Light",
-          CursorVariant ? "Classic",
-          AccentColor ? "233,58,154",
-          LookAndFeel ? "",
+          extraHomeArgs ? { },
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
         }:
@@ -53,7 +49,6 @@
           ]
           ++ extraSystemModules
           ++ [
-
             home-manager.nixosModules.default
             {
               home-manager = {
@@ -62,14 +57,7 @@
                 backupFileExtension = "backup";
                 overwriteBackup = true;
 
-                extraSpecialArgs = {
-                  inherit
-                    ThemeColor
-                    IconVariant
-                    CursorVariant
-                    AccentColor
-                    LookAndFeel
-                    ;
+                extraSpecialArgs = extraHomeArgs // {
                   CursorSize = 16;
                   FontSize = 10;
                 };
@@ -95,40 +83,55 @@
 
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
+          extraSystemModules = [
+            ./System/Desktop/Xfce.nix
+          ];
         };
 
         IdeaPad = mkHost {
           hostName = "IdeaPad";
-          IconVariant = "Dark";
-          CursorVariant = "Ice";
-          LookAndFeel = "dark";
+          extraSystemModules = [
+            ./System/Desktop/Xfce.nix
+          ];
         };
 
         Pavilion = mkHost {
           hostName = "Pavilion";
-          extraSystemModules = [ ./Packages/Spotify.nix ];
+          extraSystemModules = [
+            ./System/Desktop/Plasma.nix
+            ./Packages/Spotify.nix
+          ];
+          extraHomeArgs = {
+            ThemeColor = "pink";
+            IconVariant = "Light";
+            CursorVariant = "Classic";
+            AccentColor = "233,58,154";
+            LookAndFeel = "";
+          };
         };
 
         ThinkPad = mkHost {
           hostName = "ThinkPad";
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
-          ThemeColor = "blue";
-          IconVariant = "Dark";
-          CursorVariant = "Ice";
-          AccentColor = "61,174,233";
-          LookAndFeel = "dark";
           extraSystemModules = [
+            ./System/Desktop/Plasma.nix
+            ./System/Desktop/Hyprland.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
-            #./Hosts/no-desktop.nix
-            ./System/Desktop/Plasma.nix
           ];
           extraHomeModules = [
+            ./Home-Manager/Hyprland.nix
             ./Home-Manager/Packages/VSCode.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
-            #./Home-Manager/Hyprland.nix
           ];
+          extraHomeArgs = {
+            ThemeColor = "blue";
+            IconVariant = "Dark";
+            CursorVariant = "Ice";
+            AccentColor = "61,174,233";
+            LookAndFeel = "dark";
+          };
         };
 
       };
