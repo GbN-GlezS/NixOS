@@ -54,7 +54,7 @@ in
     enable = true;
 
     theme = {
-      name = "Orchis-" + lib.capitalise ThemeColor + "-" + IconVariant;
+      name = "Orchis-" + lib.toSentence ThemeColor + "-" + IconVariant;
       package = Orchis-Theme-Custom;
     };
 
