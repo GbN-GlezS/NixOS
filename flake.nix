@@ -147,15 +147,15 @@
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
           extraSystemModules = [
-            ./System/Desktop/Plasma.nix
+            #./System/Desktop/Plasma.nix
             ./System/Desktop/Hyprland.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
           ];
           extraHomeModules = [
-            plasma-manager.homeModules.plasma-manager
+            #plasma-manager.homeModules.plasma-manager
             caelestia-shell.homeManagerModules.default
-            ./Home-Manager/Desktop/Plasma.nix
+            #./Home-Manager/Desktop/Plasma.nix
             #./Home-Manager/Desktop/Hyprland.nix
             ./Home-Manager/Desktop/caelestia-shell.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
