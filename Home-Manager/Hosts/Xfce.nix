@@ -1,17 +1,33 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  OrchisColor,
+  IconVariant ? "Light",
+  ...
+}:
 
 {
-  # Configuraciones simples de Xfconf (temas y preferencias básicas)
-  xfconf.settings = {
-    xfwm4 = {
-      "/general/theme" = "Orchis-Pink-Dark";
-    };
-    xsettings = {
-      "/Net/ThemeName" = "Orchis-Pink-Dark";
-    };
-  };
+  # 1. Archivo XML para los bordes de ventana de Xfwm4
+  xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml".text = ''
+    <?xml version="1.0" encoding="UTF-8"?>
+    <channel name="xfwm4" version="1.0">
+      <property name="general" type="empty">
+        <property name="theme" type="string" value="Orchis-${OrchisColor}-Dark"/>
+      </property>
+    </channel>
+  '';
 
-  # Definición declarativa del panel vía XML
+  # 2. Archivo XML para el tema GTK global (Xsettings)
+  xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xsettings.xml".text = ''
+    <?xml version="1.0" encoding="UTF-8"?>
+    <channel name="xsettings" version="1.0">
+      <property name="Net" type="empty">
+        <property name="ThemeName" type="string" value="Orchis-${OrchisColor}-Dark"/>
+        <property name="IconThemeName" type="string" value="Papirus-${IconVariant}"/>
+      </property>
+    </channel>
+  '';
+
+  # 3. Archivo XML para los paneles
   xdg.configFile."xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml".text = ''
     <?xml version="1.0" encoding="UTF-8"?>
     <channel name="xfce4-panel" version="1.0">
