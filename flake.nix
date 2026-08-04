@@ -98,10 +98,10 @@
         IdeaPad = mkHost {
           hostName = "IdeaPad";
           extraSystemModules = [
-            ./System/Desktop/Xfce.nix
+            ./System/Desktop/Plasma.nix
           ];
           extraHomeModules = [
-            ./Home-Manager/Hosts/Xfce.nix
+            ./Home-Manager/Hosts/Plasma.nix
           ];
           extraHomeArgs = {
             ThemeColor = "pink";
