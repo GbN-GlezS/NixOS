@@ -18,34 +18,24 @@ let
       papirus-folders -o -C ${ThemeColor} -t Papirus-${IconVariant}
     '';
   });
-
-  Orchis-Theme-Custom = pkgs.orchis-theme.overrideAttrs (oldAttrs: {
-    postInstall = (oldAttrs.postInstall or "") + ''
-      ${pkgs.bash}/bin/bash ./install.sh -d $out/share/themes -t pink -c dark --tweaks solid primary macos
-    '';
-  });
 in
 
 {
-  home.stateVersion = "26.05"; # It is occasionally necessary for Home Manager to change configuration defaults in a way that is incompatible with stateful data.
+  home.stateVersion = "26.05";
 
-  # The set of packages to appear in the user environment.
   home.packages = with pkgs; [
-    bibata-cursors # Material Based Cursor Theme.
-    inter # Typeface specially designed for user interfaces.
-    jetbrains-mono # Typeface made for developers.
-    papirus-folders # Tool to change papirus icon theme color.
-    Papirus-Icon-Theme-Custom # Pixel perfect icon theme for Linux.
-    Orchis-Theme-Custom
-    gtk-engine-murrine
+    bibata-cursors
+    inter
+    jetbrains-mono
+    papirus-folders
+    Papirus-Icon-Theme-Custom
   ];
 
-  # Cursor configuration.
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;
     x11.enable = true;
-    name = "Bibata-Modern-" + CursorVariant;
+    name = "Bibata-Modern-${CursorVariant}";
     package = pkgs.bibata-cursors;
     size = CursorSize;
   };
@@ -54,12 +44,12 @@ in
     enable = true;
 
     theme = {
-      name = "Orchis-" + OrchisColor + "-" + IconVariant;
-      package = Orchis-Theme-Custom;
+      name = "Breeze";
+      package = pkgs.kdePackages.breeze-gtk;
     };
 
     iconTheme = {
-      name = "Papirus-" + IconVariant;
+      name = "Papirus-${IconVariant}";
       package = Papirus-Icon-Theme-Custom;
     };
 
