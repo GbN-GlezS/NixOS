@@ -157,7 +157,7 @@
             ./System/Desktop/Hyprland.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
-            stylix.nixosModules.stylix
+            #stylix.nixosModules.stylix
           ];
           extraHomeModules = [
             #plasma-manager.homeModules.plasma-manager
