@@ -1,5 +1,6 @@
 {
   pkgs,
+  lib,
   ThemeColor ? "pink",
   IconVariant ? "Light",
   CursorVariant ? "Classic",
@@ -53,7 +54,7 @@ in
     enable = true;
 
     theme = {
-      name = "Orchis-Pink-Dark";
+      name = "Orchis-" + lib.capitalise ThemeColor + "-" + IconVariant;
       package = Orchis-Theme-Custom;
     };
 
