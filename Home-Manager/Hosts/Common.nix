@@ -21,7 +21,7 @@ let
 
   Orchis-Theme-Custom = pkgs.orchis-theme.overrideAttrs (oldAttrs: {
     postInstall = (oldAttrs.postInstall or "") + ''
-      ${pkgs.bash}/bin/bash ./install.sh -d $out/share/themes -t pink -c dark --tweaks solid primary
+      ${pkgs.bash}/bin/bash ./install.sh -d $out/share/themes -t pink -c dark --tweaks solid primary macos
     '';
   });
 in
