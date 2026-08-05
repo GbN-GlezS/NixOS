@@ -23,7 +23,7 @@
     kate # Advanced text editor.
     kconfig # KConfig.
     khelpcenter # Software documentation viewer.
-    # konsole # Terminal emulator by KDE.
+    konsole # Terminal emulator by KDE.
     krdp # Library and examples for creating an RDP server.
     ktexteditor # KTextEditor Framework.
     kwin-x11 # Easy to use, but flexible, X Window Manager.
