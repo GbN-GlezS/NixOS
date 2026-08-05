@@ -11,11 +11,11 @@
 
   # List of default packages to exclude from the configuratio
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    ark # File archiver by KDE.
+    # ark # File archiver by KDE.
     aurorae # Aurorae is a themeable window decoration for KWin.
     baloo-widgets # Widgets for Baloo.
     discover # Helps you find and install applications, games, and tools.
-    #dolphin # File manager by KDE.
+    # dolphin # File manager by KDE.
     dolphin-plugins # Plugins for Dolphin.
     elisa # Simple music player aiming to provide a nice experience for its users.
     ffmpegthumbs # FFmpeg-based thumbnail creator for video files.
@@ -23,7 +23,7 @@
     kate # Advanced text editor.
     kconfig # KConfig.
     khelpcenter # Software documentation viewer.
-    #konsole # Terminal emulator by KDE.
+    # konsole # Terminal emulator by KDE.
     krdp # Library and examples for creating an RDP server.
     ktexteditor # KTextEditor Framework.
     kwin-x11 # Easy to use, but flexible, X Window Manager.
@@ -36,6 +36,6 @@
     qtsensors # Cross-platform application framework for C++.
     qttools # Cross-platform application framework for C++.
     qtvirtualkeyboard # Cross-platform application framework for C++.
-    spectacle # Screenshot capture utility.
+    # spectacle # Screenshot capture utility.
   ];
 }
