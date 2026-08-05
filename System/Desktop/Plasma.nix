@@ -11,35 +11,31 @@
 
   # List of default packages to exclude from the configuratio
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-
-    aurorae
-    plasma-browser-integration
-    plasma-workspace-wallpapers
-    # konsole
-    kwin-x11
-
-    qttools # Expose qdbus in PATH
-
-    ark
-    elisa
-    gwenview
-    okular
-    kate
-    ktexteditor # provides elevated actions for kate
-    khelpcenter
-    # dolphin
-    baloo-widgets # baloo information in Dolphin
-    # dolphin-plugins
-    # spectacle
-    ffmpegthumbs
-    krdp
-    kconfig # required for xdg-terminal from xdg-utils
-    qtbase # for qtpaths which is required for xdg-mime from xdg-utils
-    plasma-keyboard # touch keyboard
-    qtvirtualkeyboard # used by plasma-keyboard KCM
-
-    qrca
-    qtsensors # This is required for autorotation in Plasma 6
-    discover # Since PackageKit Nix support is not there yet, only install discover if flatpak or fwupd is enabled.
+    ark # File archiver by KDE.
+    aurorae # Aurorae is a themeable window decoration for KWin.
+    baloo-widgets # Widgets for Baloo.
+    discover # Helps you find and install applications, games, and tools.
+    #dolphin # File manager by KDE.
+    dolphin-plugins # Plugins for Dolphin.
+    elisa # Simple music player aiming to provide a nice experience for its users.
+    ffmpegthumbs # FFmpeg-based thumbnail creator for video files.
+    gwenview # Image viewer by KDE.
+    kate # Advanced text editor.
+    kconfig # KConfig.
+    khelpcenter # Software documentation viewer.
+    #konsole # Terminal emulator by KDE.
+    krdp # Library and examples for creating an RDP server.
+    ktexteditor # KTextEditor Framework.
+    kwin-x11 # Easy to use, but flexible, X Window Manager.
+    okular # KDE document viewer.
+    plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
+    plasma-keyboard # Virtual Keyboard for Qt based desktops.
+    plasma-workspace-wallpapers # Wallpapers for Plasma Workspaces.
+    qrca # QR code scanner for Plasma Mobile.
+    qtbase # Cross-platform application framework for C++.
+    qtsensors # Cross-platform application framework for C++.
+    qttools # Cross-platform application framework for C++.
+    qtvirtualkeyboard # Cross-platform application framework for C++.
+    #spectacle # Screenshot capture utility.
   ];
 }
