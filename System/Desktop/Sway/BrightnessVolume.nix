@@ -2,6 +2,6 @@
 
 {
   users.users.nixos.extraGroups = [ "video" ];
-  programs.light.enable = true;
+  #programs.light.enable = true;
   environment.systemPackages = [ pkgs.pulseaudio ];
 }
