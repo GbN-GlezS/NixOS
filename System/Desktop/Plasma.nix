@@ -36,6 +36,6 @@
     qtsensors # Cross-platform application framework for C++.
     qttools # Cross-platform application framework for C++.
     qtvirtualkeyboard # Cross-platform application framework for C++.
-    #spectacle # Screenshot capture utility.
+    spectacle # Screenshot capture utility.
   ];
 }
