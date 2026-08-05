@@ -13,6 +13,8 @@
     enable = true;
     overrideConfig = true;
 
+    configFile."kwalletrc"."Wallet"."Enabled" = false;
+
     configFile."kwinrc"."NightColor"."Active" = true;
     configFile."kwinrc"."NightColor"."Mode" = "Location";
     configFile."kwinrc"."NightColor"."LocationMode" = "Automatic";
