@@ -12,11 +12,11 @@
   # ];
 
   # The set of packages that appear in /run/current-system/sw.
-  environment.systemPackages = with pkgs; [
-    kitty # Fast, feature-rich, GPU based terminal emulator.
-    # .kdePackageskolourpaint # Easy-to-use paint program.
-    # .kdePackagespartitionmanager # Manage the disk devices, partitions and file systems on your computer.
-    # .kdePackagesskanpage # Utility to scan images and multi-page documents.
+  environment.systemPackages = with pkgs.kdePackages; [
+    # kolourpaint # Easy-to-use paint program.
+    konsole # Terminal emulator by KDE.
+    # partitionmanager # Manage the disk devices, partitions and file systems on your computer.
+    # skanpage # Utility to scan images and multi-page documents.
   ];
 
   # programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
