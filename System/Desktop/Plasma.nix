@@ -44,4 +44,15 @@
     login.kwallet.enable = lib.mkForce false;
     kde.kwallet.enable = lib.mkForce false;
   };
+
+  networking.networkmanager = {
+    enable = true;
+    settings = {
+      main = {
+        # Guarda las conexiones en archivos keyfile (/etc/NetworkManager/system-connections/)
+        # accesibles únicamente por root
+        auth-polkit = "true";
+      };
+    };
+  };
 }
