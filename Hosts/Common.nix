@@ -82,7 +82,6 @@
   # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration
   environment.systemPackages = with pkgs; [
     brave # Privacy-oriented browser for Desktop and Laptop computers.
-    kdePackages.kamoso # Application to take pictures and videos with your webcam.
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
