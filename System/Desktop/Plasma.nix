@@ -45,14 +45,8 @@
     kde.kwallet.enable = lib.mkForce false;
   };
 
-  networking.networkmanager = {
-    enable = true;
-    settings = {
-      main = {
-        # Guarda las conexiones en archivos keyfile (/etc/NetworkManager/system-connections/)
-        # accesibles únicamente por root
-        auth-polkit = "true";
-      };
-    };
+  # A set of environment variables used in the global environment.
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
   };
 }

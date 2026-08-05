@@ -11,11 +11,6 @@
     nixfmt # Official formatter for Nix code.
   ];
 
-  # Environment variables to always set at login.
-  home.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
-
   programs.vscode = {
     enable = true; # Whether to enable VSCode editor.
     package = pkgs.vscode.fhs; # The vscode package to use.
