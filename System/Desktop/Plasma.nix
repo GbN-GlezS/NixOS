@@ -39,6 +39,7 @@
     # spectacle # Screenshot capture utility.
   ];
 
+  # If enabled, pam_wallet will attempt to automatically unlock the user's default KDE wallet upon login.
   security.pam.services = {
     login.kwallet.enable = false;
     kde.kwallet.enable = false;
