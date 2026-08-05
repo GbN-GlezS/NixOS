@@ -11,12 +11,35 @@
 
   # List of default packages to exclude from the configuratio
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    discover # Helps you find and install applications, games, and tools.
-    elisa # Simple music player aiming to provide a nice experience for its users.
-    kate # Advanced text editor.
-    khelpcenter # Software documentation viewer.
-    # krunner # Framework for providing different actions given a string query.
-    # plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
-    qrca # QR code scanner for Plasma Mobile.
+
+    aurorae
+    plasma-browser-integration
+    plasma-workspace-wallpapers
+    # konsole
+    kwin-x11
+
+    (lib.getBin qttools) # Expose qdbus in PATH
+
+    ark
+    elisa
+    gwenview
+    okular
+    kate
+    ktexteditor # provides elevated actions for kate
+    khelpcenter
+    # dolphin
+    baloo-widgets # baloo information in Dolphin
+    # dolphin-plugins
+    # spectacle
+    ffmpegthumbs
+    krdp
+    kconfig # required for xdg-terminal from xdg-utils
+    qtbase # for qtpaths which is required for xdg-mime from xdg-utils
+    plasma-keyboard # touch keyboard
+    qtvirtualkeyboard # used by plasma-keyboard KCM
+
+    qrca
+    qtsensors # This is required for autorotation in Plasma 6
+    discover # Since PackageKit Nix support is not there yet, only install discover if flatpak or fwupd is enabled.
   ];
 }
