@@ -12,16 +12,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-
-    caelestia-shell = {
-      url = "github:caelestia-dots/shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -29,8 +19,6 @@
       nixpkgs,
       home-manager,
       plasma-manager,
-      caelestia-shell,
-      stylix,
       ...
     }:
     let
@@ -58,6 +46,7 @@
             ./System/PipeWire.nix
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
+            ./System/Desktop/Plasma.nix
             ({ networking.hostName = hostName; })
           ]
           ++ extraSystemModules
@@ -78,6 +67,8 @@
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Hosts/${hostName}.nix
+                    plasma-manager.homeModules.plasma-manager
+                    ./Home-Manager/Desktop/Plasma.nix
                     ./Home-Manager/Hosts/Common.nix
                     ./Home-Manager/Packages/DesktopEntries.nix
                     ./Home-Manager/Packages/OnlyOffice.nix
@@ -95,13 +86,7 @@
 
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
-          extraSystemModules = [
-            ./System/Desktop/Plasma.nix
-          ];
-          extraHomeModules = [
-            plasma-manager.homeModules.plasma-manager
-            ./Home-Manager/Desktop/Plasma.nix
-          ];
+
           extraHomeArgs = {
             ThemeColor = "pink";
             IconVariant = "Light";
@@ -113,13 +98,7 @@
 
         IdeaPad = mkHost {
           hostName = "IdeaPad";
-          extraSystemModules = [
-            ./System/Desktop/Plasma.nix
-          ];
-          extraHomeModules = [
-            plasma-manager.homeModules.plasma-manager
-            ./Home-Manager/Desktop/Plasma.nix
-          ];
+
           extraHomeArgs = {
             ThemeColor = "pink";
             IconVariant = "Dark";
@@ -131,14 +110,11 @@
 
         Pavilion = mkHost {
           hostName = "Pavilion";
+
           extraSystemModules = [
-            ./System/Desktop/Plasma.nix
             ./Packages/Spotify.nix
           ];
-          extraHomeModules = [
-            plasma-manager.homeModules.plasma-manager
-            ./Home-Manager/Desktop/Plasma.nix
-          ];
+
           extraHomeArgs = {
             ThemeColor = "pink";
             IconVariant = "Light";
@@ -152,29 +128,12 @@
           hostName = "ThinkPad";
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
+
           extraSystemModules = [
-            #./System/Desktop/Plasma.nix
-            #./System/Desktop/Hyprland.nix
-            ./System/Desktop/Cosmic.nix
-            #./System/Desktop/Sway/Sway.nix
-            #./System/Desktop/Sway/Screenshots.nix
-            #./System/Desktop/Sway/BrightnessVolume.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
-            # stylix.nixosModules.stylix
           ];
-          extraHomeModules = [
-            #plasma-manager.homeModules.plasma-manager
-            #caelestia-shell.homeManagerModules.default
-            #./Home-Manager/Desktop/Plasma.nix
-            #./Home-Manager/Desktop/Hyprland.nix
-            #./Home-Manager/Desktop/caelestia-shell.nix
-            #./Home-Manager/Desktop/Sway/Sway.nix
-            #./Home-Manager/Desktop/Sway/Screenshots.nix
-            #./Home-Manager/Desktop/Sway/BrightnessVolume.nix
-            ./Home-Manager/Packages/PhotoGIMP.nix
-            ./Home-Manager/Packages/VSCode.nix
-          ];
+
           extraHomeArgs = {
             ThemeColor = "blue";
             IconVariant = "Dark";
@@ -182,6 +141,11 @@
             AccentColor = "61,174,233";
             LookAndFeel = "dark";
           };
+
+          extraHomeModules = [
+            ./Home-Manager/Packages/PhotoGIMP.nix
+            ./Home-Manager/Packages/VSCode.nix
+          ];
         };
 
       };
