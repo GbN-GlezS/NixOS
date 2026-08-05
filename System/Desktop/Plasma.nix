@@ -19,7 +19,7 @@
     dolphin-plugins # Plugins for Dolphin.
     elisa # Simple music player aiming to provide a nice experience for its users.
     # ffmpegthumbs # FFmpeg-based thumbnail creator for video files.
-    gwenview # Image viewer by KDE.
+    # gwenview # Image viewer by KDE.
     kate # Advanced text editor.
     kconfig # KConfig.
     khelpcenter # Software documentation viewer.
@@ -27,7 +27,7 @@
     krdp # Library and examples for creating an RDP server.
     ktexteditor # KTextEditor Framework.
     kwin-x11 # Easy to use, but flexible, X Window Manager.
-    okular # KDE document viewer.
+    # okular # KDE document viewer.
     plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
     plasma-keyboard # Virtual Keyboard for Qt based desktops.
     plasma-workspace-wallpapers # Wallpapers for Plasma Workspaces.
