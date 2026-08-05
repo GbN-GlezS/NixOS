@@ -71,7 +71,6 @@
                     ./Home-Manager/Desktop/Plasma.nix
                     ./Home-Manager/Hosts/Common.nix
                     ./Home-Manager/Packages/Brave.nix
-                    ./Home-Manager/Packages/DesktopEntries.nix
                     ./Home-Manager/Packages/OnlyOffice.nix
                   ]
                   ++ extraHomeModules;
