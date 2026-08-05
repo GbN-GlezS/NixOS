@@ -19,10 +19,7 @@
     # skanpage # Utility to scan images and multi-page documents.
   ];
 
-  programs.kdeconnect = {
-    enable = true; # Whether to enable kdeconnect.
-    package = pkgs.kdePackages.kdeconnect-kde; # The kdeconnect-kde package to use
-  };
+  programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
 
   # programs.nix-ld.enable = true; # Whether to enable nix-ld.
 }
