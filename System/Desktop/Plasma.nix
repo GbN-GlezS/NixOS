@@ -5,8 +5,8 @@
 {
   # Definition of systemd service units; see systemd.service(5).
   services = {
-    desktopManager.plasma6.enable = true; # Enable the Plasma 6 (KDE 6) desktop environment.
     displayManager.plasma-login-manager.enable = true; # Whether to enable Plasma Login Manager.
+    desktopManager.plasma6.enable = true; # Enable the Plasma 6 (KDE 6) desktop environment.
   };
 
   # List of default packages to exclude from the configuratio
@@ -16,7 +16,7 @@
     kate # Advanced text editor.
     khelpcenter # Software documentation viewer.
     # krunner # Framework for providing different actions given a string query.
-    plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
+    # plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
     qrca # QR code scanner for Plasma Mobile.
   ];
 }
