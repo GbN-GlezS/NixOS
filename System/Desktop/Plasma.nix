@@ -18,7 +18,7 @@
     # konsole
     kwin-x11
 
-    (lib.getBin qttools) # Expose qdbus in PATH
+    qttools # Expose qdbus in PATH
 
     ark
     elisa
