@@ -157,7 +157,7 @@
             #./System/Desktop/Hyprland.nix
             ./System/Desktop/Sway/Sway.nix
             ./System/Desktop/Sway/Screenshots.nix
-            "./System/Desktop/Sway/Brightness and volume.nix"
+            ./System/Desktop/Sway/BrightnessVolume.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
             # stylix.nixosModules.stylix
@@ -170,7 +170,7 @@
             #./Home-Manager/Desktop/caelestia-shell.nix
             ./Home-Manager/Desktop/Sway/Sway.nix
             ./Home-Manager/Desktop/Sway/Screenshots.nix
-            "./Home-Manager/Desktop/Sway/Brightness and volume.nix"
+            ./Home-Manager/Desktop/Sway/BrightnessVolume.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
             ./Home-Manager/Packages/VSCode.nix
           ];
