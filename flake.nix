@@ -155,9 +155,9 @@
           extraSystemModules = [
             #./System/Desktop/Plasma.nix
             #./System/Desktop/Hyprland.nix
-            ./System/Desktop/Sway/Sway.nix
-            ./System/Desktop/Sway/Screenshots.nix
-            ./System/Desktop/Sway/BrightnessVolume.nix
+            #./System/Desktop/Sway/Sway.nix
+            #./System/Desktop/Sway/Screenshots.nix
+            #./System/Desktop/Sway/BrightnessVolume.nix
             ./Packages/Spotify.nix
             ./Packages/VirtManager.nix
             # stylix.nixosModules.stylix
@@ -166,11 +166,12 @@
             #plasma-manager.homeModules.plasma-manager
             #caelestia-shell.homeManagerModules.default
             #./Home-Manager/Desktop/Plasma.nix
+            ./Home-Manager/Desktop/Cosmic.nix
             #./Home-Manager/Desktop/Hyprland.nix
             #./Home-Manager/Desktop/caelestia-shell.nix
-            ./Home-Manager/Desktop/Sway/Sway.nix
-            ./Home-Manager/Desktop/Sway/Screenshots.nix
-            ./Home-Manager/Desktop/Sway/BrightnessVolume.nix
+            #./Home-Manager/Desktop/Sway/Sway.nix
+            #./Home-Manager/Desktop/Sway/Screenshots.nix
+            #./Home-Manager/Desktop/Sway/BrightnessVolume.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
             ./Home-Manager/Packages/VSCode.nix
           ];
