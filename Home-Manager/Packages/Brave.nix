@@ -5,10 +5,7 @@
 {
   # The set of packages to appear in the user environment.
   home.packages = with pkgs; [
-    (brave.override {
-      enableWideVine = true;
-      commandLineArgs = [ "--password-store=basic" ];
-    }) # Privacy-oriented browser for Desktop and Laptop computers (https://wiki.nixos.org/wiki/Chromium).
+    (brave.override { commandLineArgs = [ "--password-store=basic" ]; }) # Privacy-oriented browser for Desktop and Laptop computers.
   ];
 
   # Desktop Entries allow applications to be shown in your desktop environment's app launcher.
