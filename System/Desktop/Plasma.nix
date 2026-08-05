@@ -18,7 +18,7 @@
     # dolphin # File manager by KDE.
     dolphin-plugins # Plugins for Dolphin.
     elisa # Simple music player aiming to provide a nice experience for its users.
-    ffmpegthumbs # FFmpeg-based thumbnail creator for video files.
+    # ffmpegthumbs # FFmpeg-based thumbnail creator for video files.
     gwenview # Image viewer by KDE.
     kate # Advanced text editor.
     kconfig # KConfig.
