@@ -38,4 +38,9 @@
     qtvirtualkeyboard # Cross-platform application framework for C++.
     # spectacle # Screenshot capture utility.
   ];
+
+  security.pam.services = {
+    login.kwallet.enable = false;
+    kde.kwallet.enable = false;
+  };
 }
