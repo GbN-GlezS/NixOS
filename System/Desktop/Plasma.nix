@@ -1,6 +1,6 @@
 # https://wiki.nixos.org/wiki/KDE
 
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   # Definition of systemd service units; see systemd.service(5).
@@ -41,7 +41,7 @@
 
   # If enabled, pam_wallet will attempt to automatically unlock the user's default KDE wallet upon login.
   security.pam.services = {
-    login.kwallet.enable = false;
-    kde.kwallet.enable = false;
+    login.kwallet.enable = lib.mkForce false;
+    kde.kwallet.enable = lib.mkForce false;
   };
 }
