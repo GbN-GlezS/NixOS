@@ -27,6 +27,7 @@
           hostName,
           sysLocale ? "es_MX.UTF-8",
           kbdLayout ? "latam",
+          kbdVariant ? "",
           extraHomeArgs ? { },
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
@@ -34,10 +35,7 @@
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
-          specialArgs = {
-            inherit sysLocale kbdLayout;
-            kbdVariant = "";
-          };
+          specialArgs = { inherit sysLocale kbdLayout kbdVariant; };
 
           modules = [
             ./Hosts/${hostName}/configuration.nix
@@ -128,6 +126,7 @@
           hostName = "ThinkPad";
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
+          kbdVariant = "colemak";
 
           extraSystemModules = [
             ./Packages/Spotify.nix
