@@ -15,7 +15,7 @@
   environment.systemPackages = with pkgs.kdePackages; [
     # kolourpaint # Easy-to-use paint program.
     konsole # Terminal emulator by KDE.
-    # partitionmanager # Manage the disk devices, partitions and file systems on your computer.
+    partitionmanager # Manage the disk devices, partitions and file systems on your computer.
     # skanpage # Utility to scan images and multi-page documents.
   ];
 
