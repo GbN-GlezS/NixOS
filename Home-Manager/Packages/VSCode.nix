@@ -46,7 +46,8 @@
 
     defaultApplications = {
       "text/plain" = [ "code.desktop" ]; # .txt
-      #"text/x-nix" = [ "code.desktop" ]; # .nix
+      "text/x-nix" = [ "code.desktop" ]; # .nix
+      "text/csv" = [ "code.desktop" ]; # .csv
     };
   };
 }

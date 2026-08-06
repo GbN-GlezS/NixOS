@@ -20,29 +20,29 @@
     enable = true; # Whether to manage $XDG_CONFIG_HOME/mimeapps.list.
 
     defaultApplications = {
-      "application/pdf" = [ "onlyoffice-desktopeditors.desktop" ]; # PDF
-
-      # Word Processing Documents
+      # Document
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = [
         "onlyoffice-desktopeditors.desktop"
       ]; # .docx
       "application/msword" = [ "onlyoffice-desktopeditors.desktop" ]; # .doc
       "application/vnd.oasis.opendocument.text" = [ "onlyoffice-desktopeditors.desktop" ]; # .odt
 
-      # Spreadsheets
+      # Spreadsheet
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [
         "onlyoffice-desktopeditors.desktop"
       ]; # .xlsx
       "application/vnd.ms-excel" = [ "onlyoffice-desktopeditors.desktop" ]; # .xls
       "application/vnd.oasis.opendocument.spreadsheet" = [ "onlyoffice-desktopeditors.desktop" ]; # .ods
-      "text/csv" = [ "onlyoffice-desktopeditors.desktop" ]; # .csv
 
-      # Presentations
+      # Presentation
       "application/vnd.openxmlformats-officedocument.presentationml.presentation" = [
         "onlyoffice-desktopeditors.desktop"
       ]; # .pptx
       "application/vnd.ms-powerpoint" = [ "onlyoffice-desktopeditors.desktop" ]; # .ppt
       "application/vnd.oasis.opendocument.presentation" = [ "onlyoffice-desktopeditors.desktop" ]; # .odp
+
+      # PDF
+      "application/pdf" = [ "onlyoffice-desktopeditors.desktop" ]; # .pdf
     };
   };
 }
