@@ -34,7 +34,7 @@
     qrca # QR code scanner for Plasma Mobile.
     # qtbase # Cross-platform application framework for C++.
     qtsensors # Cross-platform application framework for C++.
-    qttools # Cross-platform application framework for C++.
+    (lib.getBin qttools) # Cross-platform application framework for C++.
     qtvirtualkeyboard # Cross-platform application framework for C++.
     # spectacle # Screenshot capture utility.
   ];
