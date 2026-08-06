@@ -32,8 +32,8 @@
       "quiet" # Suprime los mensajes informativos estándar del kernel [9].
       "rd.systemd.show_status=false" # Desactiva estados de systemd en el initrd (evita el modo "auto") [9].
       "systemd.show_status=false" # Desactiva estados de systemd en el sistema real [9].
-      "rd.udev.log_level=3" # Limita el registro de udev en la fase inicial [9].
-      "udev.log_priority=3" # Limita el registro de udev en el sistema principal [9].
+      "rd.udev.log_level=0" # Silencio absoluto de udev en el initrd
+      "udev.log_priority=0" # Silencio absoluto de udev en el sistema principal
     ];
 
     # 5. Ocultar la selección de SO en el cargador de arranque [10].
