@@ -109,13 +109,13 @@
 
         Pavilion = mkHost {
           hostName = "Pavilion";
+          GPU = "i915";
 
           extraSystemModules = [
             ./Packages/Spotify.nix
           ];
 
           extraHomeArgs = {
-            GPU = "i915";
             ThemeColor = "pink";
             IconVariant = "Light";
             CursorVariant = "Classic";
