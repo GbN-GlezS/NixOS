@@ -27,7 +27,7 @@
     ktexteditor # KTextEditor Framework.
     kwin-x11 # Easy to use, but flexible, X Window Manager.
     okular # KDE document viewer.
-    plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
+    # plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
     plasma-workspace-wallpapers # Wallpapers for Plasma Workspaces.
     qrca # QR code scanner for Plasma Mobile.
     qtsensors # Cross-platform application framework for C++.
