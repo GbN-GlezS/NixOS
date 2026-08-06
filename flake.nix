@@ -25,6 +25,7 @@
       mkHost =
         {
           hostName,
+          GPU ? "amdgpu",
           sysLocale ? "es_MX.UTF-8",
           kbdLayout ? "latam",
           kbdVariant ? "",
@@ -114,6 +115,7 @@
           ];
 
           extraHomeArgs = {
+            GPU = "i915";
             ThemeColor = "pink";
             IconVariant = "Light";
             CursorVariant = "Classic";
