@@ -1,4 +1,5 @@
 # https://wiki.nixos.org/wiki/Chromium
+# https://support.brave.app/hc/en-us/articles/360044860011-How-Do-I-Use-Command-Line-Flags-in-Brave
 
 { pkgs, ... }:
 
