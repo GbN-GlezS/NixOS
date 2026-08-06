@@ -48,6 +48,21 @@
       ];
     };
 
+    "brave-notebooklm" = {
+      name = "NotebookLM";
+      genericName = "AI Research Assistant";
+      comment = "Open NotebookLM as an application";
+      exec = "brave --start-maximized --app=https://notebooklm.google.com/";
+      icon = "google";
+      terminal = false;
+      type = "Application";
+      categories = [
+        "Office"
+        "Utility"
+        "Network"
+      ];
+    };
+
     "brave-youtube" = {
       name = "YouTube";
       genericName = "Video streaming service";
