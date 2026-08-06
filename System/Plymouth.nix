@@ -25,7 +25,7 @@
     initrd.systemd.enable = true;
 
     # Carga temprana del driver gráfico. [11]
-    boot.initrd.kernelModules = [ GPU ];
+    initrd.kernelModules = [ GPU ];
 
     # 4. Parámetros del kernel simplificados para un silencio total y sin redundancias
     kernelParams = [

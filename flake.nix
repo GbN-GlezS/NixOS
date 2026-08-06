@@ -36,7 +36,14 @@
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
-          specialArgs = { inherit sysLocale kbdLayout kbdVariant; };
+          specialArgs = {
+            inherit
+              GPU
+              sysLocale
+              kbdLayout
+              kbdVariant
+              ;
+          };
 
           modules = [
             ./Hosts/${hostName}/configuration.nix
