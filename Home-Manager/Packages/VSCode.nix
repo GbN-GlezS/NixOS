@@ -40,4 +40,13 @@
       "git.enableSmartCommit" = true;
     };
   };
+
+  xdg.mimeApps = {
+    enable = true; # Whether to manage $XDG_CONFIG_HOME/mimeapps.list.
+
+    defaultApplications = {
+      "text/plain" = [ "code.desktop" ]; # .txt
+      #"text/x-nix" = [ "code.desktop" ]; # .nix
+    };
+  };
 }

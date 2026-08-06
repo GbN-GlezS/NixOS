@@ -19,7 +19,6 @@
   xdg.mimeApps = {
     enable = true; # Whether to manage $XDG_CONFIG_HOME/mimeapps.list.
 
-    # Packages whose .desktop files will be used to establish default mimetype associations
     defaultApplications = {
       "application/pdf" = [ "onlyoffice-desktopeditors.desktop" ]; # PDF
 
@@ -29,7 +28,6 @@
       ]; # .docx
       "application/msword" = [ "onlyoffice-desktopeditors.desktop" ]; # .doc
       "application/vnd.oasis.opendocument.text" = [ "onlyoffice-desktopeditors.desktop" ]; # .odt
-      "text/plain" = [ "onlyoffice-desktopeditors.desktop" ]; # .txt
 
       # Spreadsheets
       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = [
