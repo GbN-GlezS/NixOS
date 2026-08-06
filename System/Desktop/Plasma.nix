@@ -31,7 +31,7 @@
     plasma-workspace-wallpapers # Wallpapers for Plasma Workspaces.
     qrca # QR code scanner for Plasma Mobile.
     qtsensors # Cross-platform application framework for C++.
-    (lib.getBin qttools) # Cross-platform application framework for C++.
+    # (lib.getBin qttools) # Cross-platform application framework for C++.
     # spectacle # Screenshot capture utility.
   ];
 
