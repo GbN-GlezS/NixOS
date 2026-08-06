@@ -5,26 +5,21 @@
 {
   boot = {
     plymouth = {
-      enable = true; # Whether to enable Plymouth boot splash screen.
+      enable = true;
     };
 
-    consoleLogLevel = 0; # The kernel console loglevel.
-    initrd.verbose = false; # Verbosity of the initrd.
-
-    # Parameters added to the kernel command line.
+    # Enable "Silent boot"
+    consoleLogLevel = 3;
+    initrd.verbose = false;
     kernelParams = [
       "quiet"
-      "rd.udev.log_level=0"
-      "rd.systemd.show_status=no"
-
-      "loglevel=0"
-      "vt.global_cursor_default=0"
-      "plymouth.ignore-serial-consoles"
-      "rd.debug=0" # Asegura sin debug
-      "rd.udev.children_max=0" # Reduce actividad de udev
-      "systemd.show_status=no" # Sin status en el sistema principal
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
     ];
 
-    loader.timeout = 0; # Timeout (in seconds) until loader boots the default menu item.
+    # Hide the OS choice for bootloaders.
+    # It's still possible to open the bootloader list by pressing any key
+    # It will just not appear on screen unless a key is pressed
+    loader.timeout = 0;
   };
 }
