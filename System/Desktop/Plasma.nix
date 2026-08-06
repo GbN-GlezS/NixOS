@@ -21,7 +21,6 @@
     # ffmpegthumbs # FFmpeg-based thumbnail creator for video files.
     # gwenview # Image viewer by KDE.
     kate # Advanced text editor.
-    kconfig # KConfig.
     khelpcenter # Software documentation viewer.
     konsole # Terminal emulator by KDE.
     krdp # Library and examples for creating an RDP server.
@@ -29,13 +28,10 @@
     kwin-x11 # Easy to use, but flexible, X Window Manager.
     okular # KDE document viewer.
     plasma-browser-integration # Components necessary to integrate browsers into the Plasma Desktop.
-    plasma-keyboard # Virtual Keyboard for Qt based desktops.
     plasma-workspace-wallpapers # Wallpapers for Plasma Workspaces.
     qrca # QR code scanner for Plasma Mobile.
-    # qtbase # Cross-platform application framework for C++.
     qtsensors # Cross-platform application framework for C++.
     (lib.getBin qttools) # Cross-platform application framework for C++.
-    qtvirtualkeyboard # Cross-platform application framework for C++.
     # spectacle # Screenshot capture utility.
   ];
 
