@@ -8,7 +8,7 @@
     consoleLogLevel = 0; # The kernel console loglevel.
 
     initrd = {
-      # verbose = false; # Verbosity of the initrd.
+      verbose = false; # Verbosity of the initrd.
       kernelModules = [ GPU ]; # Set of modules that are always loaded by the initrd.
     };
 
