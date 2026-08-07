@@ -6,7 +6,7 @@
 {
   # The set of packages to appear in the user environment.
   home.packages = with pkgs; [
-    (brave.override {
+    (brave-origin.override {
       commandLineArgs = [
         # --- Almacenamiento y Autenticación ---
         "--password-store=basic"
