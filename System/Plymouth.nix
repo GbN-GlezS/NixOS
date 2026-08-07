@@ -4,8 +4,12 @@
 
 {
   boot = {
-    plymouth.enable = true; # Whether to enable Plymouth boot splash screen.
-    consoleLogLevel = 0; # The kernel console loglevel.
+    plymouth = {
+      enable = true; # Whether to enable Plymouth boot splash screen.
+      theme = "breeze"; # Plymouth theme to use.
+    };
+
+    consoleLogLevel = 3; # The kernel console loglevel.
 
     initrd = {
       verbose = false; # Verbosity of the initrd.
@@ -17,8 +21,8 @@
     # Parameters added to the kernel command line.
     kernelParams = [
       "quiet"
-      "rd.udev.log_level=0"
-      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
       # "systemd.show_status=false"
       # "rd.udev.log_level=3"
       # "udev.log_priority=3"
