@@ -1,12 +1,15 @@
 # https://wiki.nixos.org/wiki/Plymouth
 
-{ GPU, ... }:
+{
+  GPU ? "amdgpu",
+  ...
+}:
 
 {
   boot = {
     plymouth = {
       enable = true; # Whether to enable Plymouth boot splash screen.
-      theme = "breeze"; # Plymouth theme to use.
+      theme = "breeze"; # Splash screen theme.
     };
 
     consoleLogLevel = 3; # The kernel console loglevel.
