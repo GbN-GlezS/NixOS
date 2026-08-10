@@ -3,22 +3,25 @@
 {
   programs.firefox = {
     enable = true;
-
-    profiles.default = {
-      id = 0;
-      name = "default";
-      isDefault = true;
-    };
-
-    # Instalación de extensiones y políticas globales del navegador
     policies = {
       ExtensionSettings = {
-        # Configuración para instalar uBlock Origin desde Mozilla Add-ons
         "uBlock0@raymondhill.net" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          private_browsing_allowed = true;
         };
       };
+    };
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
     };
   };
 }
