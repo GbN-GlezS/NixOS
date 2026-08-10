@@ -77,7 +77,7 @@
             home-manager.nixosModules.default
 
             {
-              Home-Manager = {
+              home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
 
