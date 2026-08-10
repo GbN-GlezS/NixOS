@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "Home-Manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1786356609,
+        "narHash": "sha256-ou8fYz5w9yhXC8YbvvExybFIa19MyW5G/8dEPqa90hM=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "c30c7955cec30d664a9baced6bc0112e263d4647",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "NUR": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -42,26 +62,6 @@
         "type": "github"
       }
     },
-    "home-manager": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1786356609,
-        "narHash": "sha256-ou8fYz5w9yhXC8YbvvExybFIa19MyW5G/8dEPqa90hM=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "c30c7955cec30d664a9baced6bc0112e263d4647",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1786106723,
@@ -81,7 +81,7 @@
     "plasma-manager": {
       "inputs": {
         "home-manager": [
-          "home-manager"
+          "Home-Manager"
         ],
         "nixpkgs": [
           "nixpkgs"
@@ -103,8 +103,8 @@
     },
     "root": {
       "inputs": {
+        "Home-Manager": "Home-Manager",
         "NUR": "NUR",
-        "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "plasma-manager": "plasma-manager"
       }

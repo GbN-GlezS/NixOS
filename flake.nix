@@ -74,7 +74,7 @@
           ++ extraSystemModules
           ++ [
             # Home Manager
-            Home-Manager.nixosModules.default
+            home-manager.nixosModules.default
 
             {
               Home-Manager = {
