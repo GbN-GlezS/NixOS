@@ -1,30 +1,30 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    NixPkgs.url = "github:nixos/NixPkgs?ref=nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+    Home-Manager = {
+      url = "github:nix-community/Home-Manager";
+      inputs.NixPkgs.follows = "NixPkgs";
     };
 
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
+    Plasma-Manager = {
+      url = "github:nix-community/Plasma-Manager";
+      inputs.NixPkgs.follows = "NixPkgs";
+      inputs.Home-Manager.follows = "Home-Manager";
     };
 
-    nur = {
+    NUR = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.NixPkgs.follows = "NixPkgs";
     };
   };
 
   outputs =
     {
-      nixpkgs,
-      home-manager,
-      plasma-manager,
-      nur,
+      NixPkgs,
+      Home-Manager,
+      Plasma-Manager,
+      NUR,
       ...
     }:
     let
@@ -39,7 +39,7 @@
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
         }:
-        nixpkgs.lib.nixosSystem {
+        NixPkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
           specialArgs = {
@@ -53,7 +53,7 @@
 
           modules = [
             # NUR
-            nur.modules.nixos.default
+            NUR.modules.nixos.default
 
             # Host
             ./Hosts/${hostName}/configuration.nix
@@ -74,10 +74,10 @@
           ++ extraSystemModules
           ++ [
             # Home Manager
-            home-manager.nixosModules.default
+            Home-Manager.nixosModules.default
 
             {
-              home-manager = {
+              Home-Manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
 
@@ -94,7 +94,7 @@
                     ./Home-Manager/Hosts/${hostName}.nix
 
                     # Plasma Manager
-                    plasma-manager.homeModules.plasma-manager
+                    Plasma-Manager.homeModules.Plasma-Manager
 
                     # Shared Home Manager configuration
                     ./Home-Manager/Desktop/Plasma.nix
