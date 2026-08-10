@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    home-manager = {
+    Home-Manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -10,7 +10,7 @@
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
+      inputs.home-manager.follows = "Home-Manager";
     };
 
     NUR = {
@@ -22,7 +22,7 @@
   outputs =
     {
       nixpkgs,
-      home-manager,
+      Home-Manager,
       plasma-manager,
       NUR,
       ...
@@ -74,10 +74,10 @@
           ++ extraSystemModules
           ++ [
             # Home Manager
-            home-manager.nixosModules.default
+            Home-Manager.nixosModules.default
 
             {
-              home-manager = {
+              Home-Manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
 
