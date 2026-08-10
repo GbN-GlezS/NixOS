@@ -1,27 +1,27 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    NixPkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     Home-Manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "NixPkgs";
     };
 
     Plasma-Manager = {
       url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "NixPkgs";
       inputs.home-manager.follows = "Home-Manager";
     };
 
     NUR = {
       url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "NixPkgs";
     };
   };
 
   outputs =
     {
-      nixpkgs,
+      NixPkgs,
       Home-Manager,
       Plasma-Manager,
       NUR,
@@ -39,7 +39,7 @@
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
         }:
-        nixpkgs.lib.nixosSystem {
+        NixPkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
           specialArgs = {
