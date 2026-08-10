@@ -6,7 +6,7 @@
 
     # Nixpkgs 26.05 stable
     # IdeaCentre, IdeaPad y Pavilion
-    nixpkgs-26-05.url = "github:nixos/nixpkgs?ref=nixos-26.05";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -28,7 +28,7 @@
   outputs =
     {
       nixpkgs-unstable,
-      nixpkgs-26-05,
+      nixpkgs,
       home-manager,
       plasma-manager,
       nur,
@@ -38,7 +38,7 @@
       mkHost =
         {
           hostName,
-          nixpkgsInput ? nixpkgs-26-05,
+          nixpkgsInput ? nixpkgs,
           GPU ? "amdgpu",
           sysLocale ? "es_MX.UTF-8",
           kbdLayout ? "latam",
@@ -129,7 +129,7 @@
 
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
-          nixpkgsInput = nixpkgs-26-05;
+          nixpkgsInput = nixpkgs;
 
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -142,7 +142,7 @@
 
         IdeaPad = mkHost {
           hostName = "IdeaPad";
-          nixpkgsInput = nixpkgs-26-05;
+          nixpkgsInput = nixpkgs;
 
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -155,7 +155,7 @@
 
         Pavilion = mkHost {
           hostName = "Pavilion";
-          nixpkgsInput = nixpkgs-26-05;
+          nixpkgsInput = nixpkgs;
 
           GPU = "i915";
 
