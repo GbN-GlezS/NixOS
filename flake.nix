@@ -12,6 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -19,6 +24,7 @@
       nixpkgs,
       home-manager,
       plasma-manager,
+      nur,
       ...
     }:
     let
@@ -46,22 +52,35 @@
           };
 
           modules = [
+            # NUR
+            nur.modules.nixos.default
+
+            # Host
             ./Hosts/${hostName}/configuration.nix
             ./Hosts/Common.nix
+
+            # System
             ./System/Plymouth.nix
             ./System/PipeWire.nix
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
             ./System/Desktop/Plasma.nix
-            ({ networking.hostName = hostName; })
+
+            # Hostname
+            {
+              networking.hostName = hostName;
+            }
           ]
           ++ extraSystemModules
           ++ [
+            # Home Manager
             home-manager.nixosModules.default
+
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+
                 backupFileExtension = "backup";
                 overwriteBackup = true;
 
@@ -73,9 +92,15 @@
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Hosts/${hostName}.nix
+
+                    # Plasma Manager
                     plasma-manager.homeModules.plasma-manager
+
+                    # Shared Home Manager configuration
                     ./Home-Manager/Desktop/Plasma.nix
                     ./Home-Manager/Hosts/Common.nix
+
+                    # Common packages
                     ./Home-Manager/Packages/BraveOrigin.nix
                     ./Home-Manager/Packages/OnlyOffice.nix
                   ]
@@ -85,11 +110,9 @@
             }
           ];
         };
-
     in
     {
       nixosConfigurations = {
-
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
 
@@ -116,6 +139,7 @@
 
         Pavilion = mkHost {
           hostName = "Pavilion";
+
           GPU = "i915";
 
           extraSystemModules = [
@@ -133,13 +157,14 @@
 
         ThinkPad = mkHost {
           hostName = "ThinkPad";
+
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
           kbdVariant = "colemak";
 
           extraSystemModules = [
             ./Packages/Spotify.nix
-            #./Packages/VirtManager.nix
+            # ./Packages/VirtManager.nix
           ];
 
           extraHomeArgs = {
@@ -156,7 +181,6 @@
             ./Home-Manager/Packages/VSCode.nix
           ];
         };
-
       };
     };
 }
