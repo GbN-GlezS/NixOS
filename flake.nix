@@ -151,6 +151,7 @@
           };
 
           extraHomeModules = [
+            ./Home-Manager/Packages/Firefox.nix
             ./Home-Manager/Packages/PhotoGIMP.nix
             ./Home-Manager/Packages/VSCode.nix
           ];
