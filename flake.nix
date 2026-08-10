@@ -1,44 +1,30 @@
 {
   inputs = {
-    # Nixpkgs unstable
-    # ThinkPad
-    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-
-    # Nixpkgs 26.05 stable
-    # IdeaCentre, IdeaPad y Pavilion
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-26.05";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
-    };
-
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 
   outputs =
     {
-      nixpkgs-unstable,
       nixpkgs,
       home-manager,
       plasma-manager,
-      nur,
       ...
     }:
     let
       mkHost =
         {
           hostName,
-          nixpkgsInput ? nixpkgs,
           GPU ? "amdgpu",
           sysLocale ? "es_MX.UTF-8",
           kbdLayout ? "latam",
@@ -47,7 +33,7 @@
           extraSystemModules ? [ ],
           extraHomeModules ? [ ],
         }:
-        nixpkgsInput.lib.nixosSystem {
+        nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
           specialArgs = {
@@ -60,35 +46,22 @@
           };
 
           modules = [
-            # NUR
-            nur.modules.nixos.default
-
-            # Host
             ./Hosts/${hostName}/configuration.nix
             ./Hosts/Common.nix
-
-            # System
             ./System/Plymouth.nix
             ./System/PipeWire.nix
             ./Services/Avahi.nix
             ./Services/GarbageCollector.nix
             ./System/Desktop/Plasma.nix
-
-            # Hostname
-            {
-              networking.hostName = hostName;
-            }
+            ({ networking.hostName = hostName; })
           ]
           ++ extraSystemModules
           ++ [
-            # Home Manager
             home-manager.nixosModules.default
-
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-
                 backupFileExtension = "backup";
                 overwriteBackup = true;
 
@@ -100,15 +73,9 @@
                 users.nixos = {
                   imports = [
                     ./Home-Manager/Hosts/${hostName}.nix
-
-                    # Plasma Manager
                     plasma-manager.homeModules.plasma-manager
-
-                    # Shared Home Manager configuration
                     ./Home-Manager/Desktop/Plasma.nix
                     ./Home-Manager/Hosts/Common.nix
-
-                    # Common packages
                     ./Home-Manager/Packages/BraveOrigin.nix
                     ./Home-Manager/Packages/OnlyOffice.nix
                   ]
@@ -118,18 +85,13 @@
             }
           ];
         };
+
     in
     {
       nixosConfigurations = {
 
-        # ==========================================
-        # FAMILY
-        # NixOS 26.05 Stable
-        # ==========================================
-
         IdeaCentre = mkHost {
           hostName = "IdeaCentre";
-          nixpkgsInput = nixpkgs;
 
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -142,7 +104,6 @@
 
         IdeaPad = mkHost {
           hostName = "IdeaPad";
-          nixpkgsInput = nixpkgs;
 
           extraHomeArgs = {
             ThemeColor = "pink";
@@ -155,8 +116,6 @@
 
         Pavilion = mkHost {
           hostName = "Pavilion";
-          nixpkgsInput = nixpkgs;
-
           GPU = "i915";
 
           extraSystemModules = [
@@ -172,22 +131,15 @@
           };
         };
 
-        # ==========================================
-        # PERSONAL
-        # NixOS Unstable
-        # ==========================================
-
         ThinkPad = mkHost {
           hostName = "ThinkPad";
-          nixpkgsInput = nixpkgs-unstable;
-
           sysLocale = "en_US.UTF-8";
           kbdLayout = "us";
           kbdVariant = "colemak";
 
           extraSystemModules = [
             ./Packages/Spotify.nix
-            # ./Packages/VirtManager.nix
+            #./Packages/VirtManager.nix
           ];
 
           extraHomeArgs = {
@@ -204,6 +156,7 @@
             ./Home-Manager/Packages/VSCode.nix
           ];
         };
+
       };
     };
 }
