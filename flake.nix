@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    plasma-manager = {
+    Plasma-Manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "Home-Manager";
@@ -23,7 +23,7 @@
     {
       nixpkgs,
       Home-Manager,
-      plasma-manager,
+      Plasma-Manager,
       NUR,
       ...
     }:
@@ -94,7 +94,7 @@
                     ./Home-Manager/Hosts/${hostName}.nix
 
                     # Plasma Manager
-                    plasma-manager.homeModules.plasma-manager
+                    Plasma-Manager.homeModules.plasma-manager
 
                     # Shared Home Manager configuration
                     ./Home-Manager/Desktop/Plasma.nix
