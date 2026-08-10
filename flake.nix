@@ -13,7 +13,7 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    nur = {
+    NUR = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -24,7 +24,7 @@
       nixpkgs,
       home-manager,
       plasma-manager,
-      nur,
+      NUR,
       ...
     }:
     let
@@ -53,7 +53,7 @@
 
           modules = [
             # NUR
-            nur.modules.nixos.default
+            NUR.modules.nixos.default
 
             # Host
             ./Hosts/${hostName}/configuration.nix
