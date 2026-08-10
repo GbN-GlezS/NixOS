@@ -4,13 +4,13 @@
   programs.firefox = {
     enable = true;
 
-    # Creamos el perfil "NixOS" y lo marcamos como predeterminado
+    # Perfil obligatorio llamado "NixOS" configurado como predeterminado
     profiles.NixOS = {
       id = 0;
       name = "NixOS";
       isDefault = true;
 
-      # Configuraciones mínimas funcionales (telemetría desactivada y optimización básica)
+      # Ajustes mínimos recomendados para optimización básica y privacidad
       settings = {
         "browser.startup.homepage" = "about:home";
         "browser.search.suggest.enabled" = false;
@@ -21,27 +21,31 @@
       };
     };
 
-    # Políticas globales para instalar uBlock Origin y dar acceso a ventanas privadas
+    # Políticas del navegador para extensiones y comportamiento global
     policies = {
       DisableTelemetry = true;
       DisablePocket = true;
-      DisableFirefoxAccounts = false; # Cambiar a true si no deseas usar la sincronización de Mozilla
+      DisableFirefoxAccounts = false; # Cambiar a true si no usas Sync de Mozilla
 
-      # Instalación declarativa de Extensiones usando las políticas de Firefox
+      # Instalación declarativa de uBlock Origin con sus permisos
       ExtensionSettings = {
         # ID oficial de uBlock Origin
         "uBlock0@raymondhill.net" = {
           installation_mode = "normal_installed";
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           default_area = "navbar";
-          # Permitir explícitamente su ejecución en ventanas privadas/incógnito
+
+          # Permitir ejecución en Ventanas Privadas (Run in Private Windows - Allow)
           private_browsing = "allowed";
+
+          # Permitir actualizaciones automáticas (Allow automatic updates - On)
+          updates_enabled = true;
         };
       };
     };
   };
 
-  # Establecer Firefox como el navegador web (WB) predeterminado del sistema usando XDG
+  # Configurar Firefox como el navegador web por defecto (Web Browser - WB) en el sistema
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
