@@ -2,15 +2,15 @@
   inputs = {
     NixPkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    Home-Manager = {
+    HomeManager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "NixPkgs";
     };
 
-    Plasma-Manager = {
+    PlasmaManager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "NixPkgs";
-      inputs.home-manager.follows = "Home-Manager";
+      inputs.home-manager.follows = "HomeManager";
     };
 
     NUR = {
@@ -22,8 +22,8 @@
   outputs =
     {
       NixPkgs,
-      Home-Manager,
-      Plasma-Manager,
+      HomeManager,
+      PlasmaManager,
       NUR,
       ...
     }:
@@ -74,7 +74,7 @@
           ++ extraSystemModules
           ++ [
             # Home Manager
-            Home-Manager.nixosModules.default
+            HomeManager.nixosModules.default
 
             {
               home-manager = {
@@ -94,7 +94,7 @@
                     ./Hosts/${hostName}/${hostName}.nix
 
                     # Plasma Manager
-                    Plasma-Manager.homeModules.plasma-manager
+                    PlasmaManager.homeModules.plasma-manager
 
                     # Shared Home Manager configuration
                     ./System/Desktop/Plasma-Home.nix
