@@ -43,16 +43,15 @@
     },
     "NixPkgs": {
       "locked": {
-        "lastModified": 1786247143,
-        "narHash": "sha256-8S3Kcxs7D4UtxJxSJZz0m14CGhuW0MxfrIwJxeGWGnQ=",
+        "lastModified": 1786437804,
+        "narHash": "sha256-mbglL8s6CUmt10NSlhi5nZ1c6xKl/dtgT73VW2+l4kw=",
         "owner": "NixOS",
         "repo": "NixPkgs",
-        "rev": "279b4a8275f032c566576b3f181fa0f27197f588",
+        "rev": "f1e790562e78f6de0b00769975c26abd4170ed64",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-unstable",
         "repo": "NixPkgs",
         "type": "github"
       }
