@@ -97,7 +97,7 @@
                     Plasma-Manager.homeModules.plasma-manager
 
                     # Shared Home Manager configuration
-                    ./Desktop/Plasma-Home.nix
+                    ./System/Desktop/Plasma-Home.nix
                     ./Hosts/Common-Home.nix
 
                     # Common packages
