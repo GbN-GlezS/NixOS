@@ -101,8 +101,8 @@
                     ./Home-Manager/Hosts/Common.nix
 
                     # Common packages
-                    ./Packages/Home-BraveOrigin.nix
-                    ./Packages/Home-OnlyOffice.nix
+                    ./Packages/BraveOrigin.nix
+                    ./Packages/OnlyOffice.nix
                   ]
                   ++ extraHomeModules;
                 };
@@ -176,9 +176,9 @@
           };
 
           extraHomeModules = [
-            ./Packages/Home-Firefox.nix
-            ./Packages/Home-PhotoGIMP.nix
-            ./Packages/Home-VSCode.nix
+            ./Packages/Firefox.nix
+            ./Packages/PhotoGIMP.nix
+            ./Packages/VSCode.nix
           ];
         };
       };
