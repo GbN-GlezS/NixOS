@@ -13,6 +13,7 @@
 
   # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs.kdePackages; [
+    android-tools # Android SDK platform tools.
     # kolourpaint # Easy-to-use paint program.
     konsole # Terminal emulator by KDE.
     partitionmanager # Manage the disk devices, partitions and file systems on your computer.
