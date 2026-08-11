@@ -12,12 +12,12 @@
   # ];
 
   # The set of packages that appear in /run/current-system/sw.
-  environment.systemPackages = with pkgs.kdePackages; [
+  environment.systemPackages = with pkgs; [
     android-tools # Android SDK platform tools.
-    # kolourpaint # Easy-to-use paint program.
-    konsole # Terminal emulator by KDE.
-    partitionmanager # Manage the disk devices, partitions and file systems on your computer.
-    # skanpage # Utility to scan images and multi-page documents.
+    # kdePackages.kolourpaint # Easy-to-use paint program.
+    kdePackages.konsole # Terminal emulator by KDE.
+    kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
+    # kdePackagesskanpage # Utility to scan images and multi-page documents.
   ];
 
   programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
