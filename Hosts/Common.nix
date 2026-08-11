@@ -12,19 +12,19 @@
 
 {
   nix.settings = {
-  experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
-  substituters = [
-    "https://gbn-glezs.cachix.org"
-  ];
+    substituters = [
+      "https://gbn-glezs.cachix.org"
+    ];
 
-  trusted-public-keys = [
-    "gbn-glezs.cachix.org-1:WxkmC5RPDqKr3YWg3iewBESbmnjdxMH59PqJsf2vVmY="
-  ];
-};
+    trusted-public-keys = [
+      "gbn-glezs.cachix.org-1:WxkmC5RPDqKr3YWg3iewBESbmnjdxMH59PqJsf2vVmY="
+    ];
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
