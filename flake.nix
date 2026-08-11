@@ -1,6 +1,6 @@
 {
   inputs = {
-    NixPkgs.url = "github:NixOS/NixPkgs/NixOS-Unstable";
+    NixPkgs.url = "github:NixOS/NixPkgs/nixos-unstable";
 
     NUR = {
       url = "github:Nix-Community/NUR";
