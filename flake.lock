@@ -9,13 +9,13 @@
       "locked": {
         "lastModified": 1786356609,
         "narHash": "sha256-ou8fYz5w9yhXC8YbvvExybFIa19MyW5G/8dEPqa90hM=",
-        "owner": "nix-community",
+        "owner": "Nix-Community",
         "repo": "Home-Manager",
         "rev": "c30c7955cec30d664a9baced6bc0112e263d4647",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "Nix-Community",
         "repo": "Home-Manager",
         "type": "github"
       }
@@ -28,30 +28,30 @@
         ]
       },
       "locked": {
-        "lastModified": 1786398922,
-        "narHash": "sha256-3N/P50NYFTjN7fhaBDNGZDG0O76KEb78Klc2RnbZzt0=",
-        "owner": "nix-community",
+        "lastModified": 1786437624,
+        "narHash": "sha256-LglvdhBzVmNJ+GqZfKwLbj7BxosrI3XrER7GmIzahR0=",
+        "owner": "Nix-Community",
         "repo": "NUR",
-        "rev": "986bf189b7bad93cf1a7ededf82309dea09e183a",
+        "rev": "243270d0fff6e849eeaa07a497c0a40fdae9309c",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "Nix-Community",
         "repo": "NUR",
         "type": "github"
       }
     },
     "NixPkgs": {
       "locked": {
-        "lastModified": 1786106723,
-        "narHash": "sha256-zDSUbpoeo/9ZmD2+wXnzxoo1+uhL8vxc0b8yuYMKYq0=",
-        "owner": "nixos",
+        "lastModified": 1786247143,
+        "narHash": "sha256-8S3Kcxs7D4UtxJxSJZz0m14CGhuW0MxfrIwJxeGWGnQ=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "f13ff45afd1bb73e640eaa08a7066dbed07e3238",
+        "rev": "279b4a8275f032c566576b3f181fa0f27197f588",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -69,13 +69,13 @@
       "locked": {
         "lastModified": 1785762349,
         "narHash": "sha256-jZhZkzAwc7f3exzcTDJWP2WCAchCv0iNC3UF/QsahdQ=",
-        "owner": "nix-community",
+        "owner": "Nix-Community",
         "repo": "Plasma-Manager",
         "rev": "a19a2a029fa180911bd89c554dca1616e10f4c1d",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "Nix-Community",
         "repo": "Plasma-Manager",
         "type": "github"
       }
