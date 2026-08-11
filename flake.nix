@@ -1,6 +1,6 @@
 {
   inputs = {
-    NixPkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    NixPkgs.url = "github:nixos/nixpkgs?ref=NixOS-Unstable";
 
     HomeManager = {
       url = "github:nix-community/Home-Manager";
