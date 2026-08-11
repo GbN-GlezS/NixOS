@@ -2,6 +2,11 @@
   inputs = {
     NixPkgs.url = "github:NixOS/NixPkgs?Ref=nixos-unstable";
 
+    NUR = {
+      url = "github:Nix-Community/NUR";
+      inputs.nixpkgs.follows = "NixPkgs";
+    };
+
     HomeManager = {
       url = "github:Nix-Community/Home-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
@@ -11,11 +16,6 @@
       url = "github:Nix-Community/Plasma-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
       inputs.home-manager.follows = "HomeManager";
-    };
-
-    NUR = {
-      url = "github:Nix-Community/NUR";
-      inputs.nixpkgs.follows = "NixPkgs";
     };
   };
 
