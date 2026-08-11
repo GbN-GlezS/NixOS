@@ -56,7 +56,7 @@
             NUR.modules.nixos.default
 
             # Host
-            ./Hosts/${hostName}/configuration.nix
+            ./Hosts/${hostName}/Configuration.nix
             ./Hosts/Common.nix
 
             # System
@@ -91,14 +91,14 @@
 
                 users.nixos = {
                   imports = [
-                    ./Home-Manager/Hosts/${hostName}.nix
+                    ./Hosts/${hostName}-Home.nix
 
                     # Plasma Manager
                     Plasma-Manager.homeModules.plasma-manager
 
                     # Shared Home Manager configuration
-                    ./Home-Manager/Desktop/Plasma.nix
-                    ./Home-Manager/Hosts/Common.nix
+                    ./Desktop/Plasma-Home.nix
+                    ./Hosts/Common-Home.nix
 
                     # Common packages
                     ./Packages/BraveOrigin.nix
