@@ -24,7 +24,6 @@
       NixPkgs,
       HomeManager,
       PlasmaManager,
-
       NUR,
       ...
     }:
