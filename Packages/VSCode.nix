@@ -18,6 +18,7 @@
     # The extensions Visual Studio Code should be started with.
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide # Nix language support with formatting and error report.
+      github.vscode-github-actions # Visual Studio Code extension for GitHub Actions workflows and runs for github.com hosted repositories.
     ];
 
     # Configuration written to Visual Studio Code's settings.json.
