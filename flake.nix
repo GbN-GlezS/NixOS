@@ -1,20 +1,20 @@
 {
   inputs = {
-    NixPkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    NixPkgs.url = "GitHub:NixOS/nixpkgs?ref=NixOS-unstable";
 
     HomeManager = {
-      url = "github:nix-community/home-manager";
+      url = "GitHub:Nix-Community/Home-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
     };
 
     PlasmaManager = {
-      url = "github:nix-community/plasma-manager";
+      url = "GitHub:Nix-Community/Plasma-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
       inputs.home-manager.follows = "HomeManager";
     };
 
     NUR = {
-      url = "github:nix-community/NUR";
+      url = "GitHub:Nix-Community/NUR";
       inputs.nixpkgs.follows = "NixPkgs";
     };
   };
