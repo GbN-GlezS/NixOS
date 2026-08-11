@@ -3,12 +3,12 @@
     NixPkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     HomeManager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/Home-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
     };
 
     PlasmaManager = {
-      url = "github:nix-community/plasma-manager";
+      url = "github:nix-community/Plasma-Manager";
       inputs.nixpkgs.follows = "NixPkgs";
       inputs.home-manager.follows = "HomeManager";
     };
