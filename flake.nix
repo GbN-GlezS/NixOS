@@ -91,7 +91,7 @@
 
                 users.nixos = {
                   imports = [
-                    ./Hosts/${hostName}-Home.nix
+                    ./Hosts/${hostName}/${hostName}-Home.nix
 
                     # Plasma Manager
                     Plasma-Manager.homeModules.plasma-manager
