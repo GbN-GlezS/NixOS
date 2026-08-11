@@ -8,8 +8,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  ThinkPad:
+  build:
+    name: Build ${{ matrix.host }}
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        host:
+          - ThinkPad
+          - Pavilion
+          - IdeaPad
+          - IdeaCentre
 
     steps:
       - name: Checkout repository
@@ -26,9 +36,9 @@ jobs:
           name: gbn-glezs
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-      - name: Build ThinkPad
+      - name: Build ${{ matrix.host }}
         run: |
           nix build \
-            .#nixosConfigurations.ThinkPad.config.system.build.toplevel \
+            .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel \
             --print-out-paths \
             | cachix push gbn-glezs
