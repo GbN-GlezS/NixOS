@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "Home-Manager": {
+    "HomeManager": {
       "inputs": {
         "nixpkgs": [
           "NixPkgs"
@@ -57,10 +57,10 @@
         "type": "github"
       }
     },
-    "Plasma-Manager": {
+    "PlasmaManager": {
       "inputs": {
         "home-manager": [
-          "Home-Manager"
+          "HomeManager"
         ],
         "nixpkgs": [
           "NixPkgs"
@@ -103,10 +103,10 @@
     },
     "root": {
       "inputs": {
-        "Home-Manager": "Home-Manager",
+        "HomeManager": "HomeManager",
         "NUR": "NUR",
         "NixPkgs": "NixPkgs",
-        "Plasma-Manager": "Plasma-Manager"
+        "PlasmaManager": "PlasmaManager"
       }
     }
   },
