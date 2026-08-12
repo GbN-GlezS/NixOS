@@ -15,6 +15,7 @@
   environment.systemPackages = with pkgs; [
     android-tools # Android SDK platform tools.
     tree # Command to produce a depth indented directory listing.
+    scrcpy # Display and control Android devices over USB or TCP/IP.
     # kdePackages.kolourpaint # Easy-to-use paint program.
     kdePackages.konsole # Terminal emulator by KDE.
     kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
