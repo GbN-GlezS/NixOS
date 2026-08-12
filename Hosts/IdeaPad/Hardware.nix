@@ -19,7 +19,6 @@
     "xhci_pci"
     "ahci"
     "ehci_pci"
-    "usb_storage"
     "sd_mod"
   ];
   boot.initrd.kernelModules = [ ];
