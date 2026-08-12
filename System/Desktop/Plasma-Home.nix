@@ -13,13 +13,6 @@
     enable = true;
     overrideConfig = true;
 
-    kscreen.outputs = [
-      {
-        mode = "1280x720@60";
-        enable = true;
-      }
-    ];
-
     configFile."kwalletrc"."Wallet"."Enabled" = false;
 
     configFile."kwinrc"."NightColor"."Active" = true;
