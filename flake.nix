@@ -1,4 +1,13 @@
 {
+  nixConfig = {
+    extra-substituters = [
+      "https://gbn-glezs.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "gbn-glezs.cachix.org-1:WxkmC5RPDqKr3YWg3iewBESbmnjdxMH59PqJsf2vVmY="
+    ];
+  };
+
   inputs = {
     NixPkgs.url = "github:NixOS/NixPkgs/nixos-unstable";
 
