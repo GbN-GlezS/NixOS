@@ -18,6 +18,8 @@
     ];
   };
 
+  boot.kernelParams = [ "video=eDP-1:1280x720@60" ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
