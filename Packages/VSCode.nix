@@ -18,21 +18,23 @@
     # The extensions Visual Studio Code should be started with.
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide # Nix language support with formatting and error report.
-      github.vscode-github-actions # Visual Studio Code extension for GitHub Actions workflows and runs for github.com hosted repositories.
-      redhat.vscode-yaml # YAML Language Support by Red Hat, with built-in Kubernetes and Kudo syntax support.
+      github.vscode-github-actions # Visual Studio Code extension for GitHub Actions workflows and runs.
+      redhat.vscode-yaml # YAML Language Support by Red Hat.
     ];
 
     # Configuration written to Visual Studio Code's settings.json.
     profiles.default.userSettings = {
       "[nix]" = {
-        "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "jnoortheen.nix-ide";
+        "editor.formatOnSave" = true;
       };
 
       "[yaml]" = {
-        "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "redhat.vscode-yaml";
+        "editor.formatOnSave" = true;
       };
+
+      "git.enableSmartCommit" = true;
 
       "nix.enableLanguageServer" = true;
       "nix.serverPath" = "nil";
@@ -44,7 +46,14 @@
         };
       };
 
-      "git.enableSmartCommit" = true;
+      "yaml.disableSchemaDetection" = [
+        "**/.github/workflows/*.yml"
+        "**/.github/workflows/*.yaml"
+        "**/.gitea/workflows/*.yml"
+        "**/.gitea/workflows/*.yaml"
+        "**/.forgejo/workflows/*.yml"
+        "**/.forgejo/workflows/*.yaml"
+      ];
     };
   };
 
