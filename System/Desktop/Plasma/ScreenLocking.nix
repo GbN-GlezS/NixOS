@@ -5,11 +5,14 @@
     enable = true;
 
     kscreenlocker = {
-      timeout = 0; # Lock screen automatically: Never
-      lockOnResume = false; # Lock after waking from sleep (False)
-      passwordRequired = false; # Delay before password required: Never require password
+      autoLock = false; # Whether the screen will be locked after the specified time.
+      lockOnResume = false; # Whether to lock the screen when the system resumes from sleep.
+      timeout = 0; # Sets the timeout in minutes after which the screen will be locked.
+      passwordRequired = false; # Whether the user password is required to unlock the screen.
+      passwordRequiredDelay = 0; # The time it takes in seconds for the password to be required after the screen is locked.
+      lockOnStartup = false; # Whether to lock the screen on startup.
     };
 
-    shortcuts."ksmserver"."Lock Session" = [ "Meta+L" ]; # Keyboard shortcut: Meta+L
+    shortcuts."ksmserver"."Lock Session" = [ ];
   };
 }
