@@ -1,3 +1,6 @@
+# https://github.com/nix-community/plasma-manager/blob/trunk/modules/panels.nix
+# https://github.com/nix-community/plasma-manager/blob/trunk/modules/widgets/system-tray.nix\
+
 { ... }:
 
 {
@@ -12,11 +15,18 @@
 
       # The widgets to use in the panel.
       widgets = [
-        "org.kde.plasma.kickoff"
-        "org.kde.plasma.icontasks"
+        "org.kde.plasma.kickoff" # Kickoff is the default application launcher of the Plasma desktop.
+        "org.kde.plasma.icontasks" # Icons Only Task Manager shows tasks only by their icon and not by icon and title of the window opened.
         "org.kde.plasma.marginsseparator"
-        "org.kde.plasma.systemtray"
-        "org.kde.plasma.digitalclock"
+        {
+          # A system tray of other widgets/plasmoids
+          systemTray = {
+            icons = {
+              scaleToFit = true; # Whether to automatically scale System Tray icons to fix the available thickness of the panel.
+            };
+          };
+        }
+        "org.kde.plasma.digitalclock" # A digital clock widget.
       ];
     }
   ];
