@@ -30,8 +30,15 @@
     enable = true;
     overrideConfig = true;
 
+    # Screen Locking
+    configFile."kscreenlockerrc"."Daemon"."LockGrace" = -1;
+    configFile."kscreenlockerrc"."Daemon"."LockOnResume" = true;
+    configFile."kscreenlockerrc"."Daemon"."Timeout" = 5;
+
+    # KWallet
     configFile."kwalletrc"."Wallet"."Enabled" = false;
 
+    # Night Color
     configFile."kwinrc"."NightColor"."Active" = true;
     configFile."kwinrc"."NightColor"."Mode" = "Location";
     configFile."kwinrc"."NightColor"."LocationMode" = "Automatic";
