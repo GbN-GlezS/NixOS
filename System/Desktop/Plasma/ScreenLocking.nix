@@ -5,15 +5,19 @@
     enable = true;
 
     kscreenlocker = {
+      # Lock screen automatically: Never
       autoLock = false;
       timeout = 0;
+
+      # Lock after waking from sleep (False)
       lockOnResume = false;
-      passwordRequired = false;
-      passwordRequiredDelay = 0;
+
+      # Delay before password required: Never require password
+      passwordRequired = true;
+      passwordRequiredDelay = 1;
     };
 
-    # This matches the "Meta+L" state shown in the image.
-    # If you actually want to disable it, change this back to [ ]
+    # Keyboard shortcut: Meta+L
     shortcuts."ksmserver"."Lock Session" = [ "Meta+L" ];
   };
 }
