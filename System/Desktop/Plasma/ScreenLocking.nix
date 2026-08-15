@@ -5,18 +5,11 @@
     enable = true;
 
     kscreenlocker = {
-      # Lock screen automatically: Never
-      # autoLock = false;
-      timeout = 0;
-
-      # Lock after waking from sleep (False)
-      lockOnResume = false;
-
-      # Delay before password required: Never require password
-      passwordRequired = false;
+      timeout = 0; # Lock screen automatically: Never
+      lockOnResume = false; # Lock after waking from sleep (False)
+      passwordRequired = false; # Delay before password required: Never require password
     };
 
-    # Keyboard shortcut: Meta+L
-    shortcuts."ksmserver"."Lock Session" = [ "Meta+L" ];
+    shortcuts."ksmserver"."Lock Session" = [ "Meta+L" ]; # Keyboard shortcut: Meta+L
   };
 }
