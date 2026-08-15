@@ -1,10 +1,10 @@
 {
   nixConfig = {
     extra-substituters = [
-      "https://gbn-glezs.cachix.org"
+      "https://gbngnlez.cachix.org"
     ];
     extra-trusted-public-keys = [
-      "gbn-glezs.cachix.org-1:WxkmC5RPDqKr3YWg3iewBESbmnjdxMH59PqJsf2vVmY="
+      "gbngnlez.cachix.org-1:4087tPR0DCehBmp1z8gmoRk91VcUOjmcV9KdKI64MOU="
     ];
   };
 
