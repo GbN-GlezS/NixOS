@@ -32,8 +32,7 @@
 
     # Screen Locking
     configFile."kscreenlockerrc"."Daemon"."LockGrace" = -1;
-    configFile."kscreenlockerrc"."Daemon"."LockOnResume" = true;
-    configFile."kscreenlockerrc"."Daemon"."Timeout" = 5;
+    configFile."kscreenlockerrc"."Daemon"."LockOnResume" = false;
 
     # KWallet
     configFile."kwalletrc"."Wallet"."Enabled" = false;
