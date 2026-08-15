@@ -13,8 +13,8 @@
       lockOnResume = false;
 
       # Delay before password required: Never require password
-      passwordRequired = true;
-      passwordRequiredDelay = 1;
+      passwordRequired = false;
+      # passwordRequiredDelay = 0;
     };
 
     # Keyboard shortcut: Meta+L
