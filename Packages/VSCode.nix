@@ -19,6 +19,7 @@
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide # Nix language support with formatting and error report.
       github.vscode-github-actions # Visual Studio Code extension for GitHub Actions workflows and runs for github.com hosted repositories.
+      redhat.vscode-yaml # YAML Language Support by Red Hat, with built-in Kubernetes and Kudo syntax support.
     ];
 
     # Configuration written to Visual Studio Code's settings.json.
@@ -26,6 +27,11 @@
       "[nix]" = {
         "editor.formatOnSave" = true;
         "editor.defaultFormatter" = "jnoortheen.nix-ide";
+      };
+
+      "[yaml]" = {
+        "editor.formatOnSave" = true;
+        "editor.defaultFormatter" = "redhat.vscode-yaml";
       };
 
       "nix.enableLanguageServer" = true;
@@ -49,6 +55,8 @@
       "text/plain" = [ "code.desktop" ]; # .txt
       "text/x-nix" = [ "code.desktop" ]; # .nix
       "text/csv" = [ "code.desktop" ]; # .csv
+      "text/yaml" = [ "code.desktop" ]; # .yaml
+      "application/x-yaml" = [ "code.desktop" ]; # .yml
     };
   };
 }
