@@ -12,7 +12,8 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./Plasma/ScreenLocking.nix
+    ./Plasma/KScreenLocker.nix
+    ./Plasma/Panels.nix
   ];
 
   # Set resolution to 1280x720 automatically upon graphical session startup
@@ -86,25 +87,5 @@
         pointSize = FontSize;
       };
     };
-
-    panels = [
-      {
-        location = "bottom";
-        alignment = "center";
-        lengthMode = "fill";
-        hiding = "dodgewindows";
-        opacity = "adaptive";
-        floating = true;
-        height = 35;
-
-        widgets = [
-          "org.kde.plasma.kickoff"
-          "org.kde.plasma.icontasks"
-          "org.kde.plasma.panelspacer"
-          "org.kde.plasma.systemtray"
-          "org.kde.plasma.digitalclock"
-        ];
-      }
-    ];
   };
 }
