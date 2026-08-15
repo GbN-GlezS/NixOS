@@ -31,9 +31,9 @@
     overrideConfig = true;
 
     # Screen Locking
-    configFile."kscreenlockerrc"."Daemon"."LockGrace" = -1;
-    configFile."kscreenlockerrc"."Daemon"."LockOnResume" = false;
-    configFile."kscreenlockerrc"."Daemon"."Timeout" = 5;
+    configFile."kscreenlockerrc"."Daemon"."Autolock" = false; # Lock screen automatically: Never
+    configFile."kscreenlockerrc"."Daemon"."LockOnResume" = false; # Lock after waking from sleep: Disabled
+    configFile."kscreenlockerrc"."Daemon"."LockGrace" = -1; # Delay before password required: Never require password
 
     # KWallet
     configFile."kwalletrc"."Wallet"."Enabled" = false;
