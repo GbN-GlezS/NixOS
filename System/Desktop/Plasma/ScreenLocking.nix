@@ -1,3 +1,5 @@
+# https://github.com/nix-community/plasma-manager/blob/trunk/modules/kscreenlocker.nix
+
 { ... }:
 
 {
@@ -10,7 +12,6 @@
       timeout = 0; # Sets the timeout in minutes after which the screen will be locked.
       passwordRequired = false; # Whether the user password is required to unlock the screen.
       passwordRequiredDelay = 0; # The time it takes in seconds for the password to be required after the screen is locked.
-      lockOnStartup = false; # Whether to lock the screen on startup.
     };
 
     shortcuts."ksmserver"."Lock Session" = [ ];
