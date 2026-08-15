@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 jobs:
@@ -29,16 +28,19 @@ jobs:
         uses: cachix/install-nix-action@v31
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          extra_nix_config: |
+            accept-flake-config = true
 
       - name: Setup Cachix
         uses: cachix/cachix-action@v17
         with:
-          name: gbn-glezs
+          name: gbngnlez
           authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - name: Build ${{ matrix.host }}
         run: |
           nix build \
+            --accept-flake-config \
             .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel \
             --print-out-paths \
-            | cachix push gbn-glezs
+            | cachix push gbngnlez
