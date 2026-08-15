@@ -10,6 +10,11 @@
 }:
 
 {
+  imports = [
+    # Include the results of the hardware scan.
+    ./Plasma/ScreenLocking.nix
+  ];
+
   # Set resolution to 1280x720 automatically upon graphical session startup
   systemd.user.services.set-display-resolution = {
     Unit = {
@@ -29,13 +34,6 @@
   programs.plasma = {
     enable = true;
     overrideConfig = true;
-
-    # High-level declarative screen locker settings
-    kscreenlocker = {
-      autoLock = false; # Lock screen automatically: Never
-      lockOnResume = false; # Lock after waking from sleep: Unchecked
-      passwordRequired = false; # Delay before password required: Never require password
-    };
 
     # KWallet
     configFile."kwalletrc"."Wallet"."Enabled" = false;
