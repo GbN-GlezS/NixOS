@@ -54,7 +54,7 @@
   };
 
   # If set, configure the virtual console keymap from the xserver keyboard settings.
-  console.useXkbConfig = true;
+  # console.useXkbConfig = true;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
