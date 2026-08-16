@@ -78,8 +78,9 @@
   nixpkgs.config.allowUnfree = true;
 
   # These packages are automatically available to all users, and are automatically updated every time you rebuild the system configuration
-  # environment.systemPackages = with pkgs; [
-  # ];
+  environment.systemPackages = with pkgs; [
+    git # Distributed version control system.
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

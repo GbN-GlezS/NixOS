@@ -6,7 +6,6 @@
 {
   # The set of packages to appear in the user environment.
   home.packages = with pkgs; [
-    git # Distributed version control system.
     nil # Yet another language server for Nix.
     nixfmt # Official formatter for Nix code.
   ];
