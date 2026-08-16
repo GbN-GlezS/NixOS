@@ -14,6 +14,7 @@
     # Include the results of the hardware scan.
     ./Plasma/KScreenLocker.nix
     ./Plasma/Panels.nix
+    (import ./Plasma/Fonts.nix { inherit FontSize; })
   ];
 
   # Set resolution to 1280x720 automatically upon graphical session startup
@@ -60,32 +61,5 @@
     configFile."kdeglobals"."General"."LastUsedCustomAccentColor" = AccentColor;
     configFile."kdeglobals"."Sounds"."Theme" = "freedesktop";
     configFile."ksplashrc"."KSplash"."Theme" = "None";
-
-    fonts = {
-      general = {
-        family = "Inter";
-        pointSize = FontSize;
-      };
-      fixedWidth = {
-        family = "JetBrains Mono";
-        pointSize = FontSize;
-      };
-      small = {
-        family = "Inter";
-        pointSize = FontSize * 0.8;
-      };
-      toolbar = {
-        family = "Inter";
-        pointSize = FontSize;
-      };
-      menu = {
-        family = "Inter";
-        pointSize = FontSize;
-      };
-      windowTitle = {
-        family = "Inter";
-        pointSize = FontSize;
-      };
-    };
   };
 }
