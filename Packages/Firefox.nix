@@ -1,6 +1,6 @@
 # https://wiki.nixos.org/wiki/Firefox
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.firefox = {
