@@ -50,6 +50,7 @@
     };
   };
 
+  # Set Firefox as the system-wide default handler
   xdg.mimeApps = {
     enable = true;
 
@@ -60,49 +61,6 @@
       "x-scheme-handler/https" = "firefox.desktop";
       "x-scheme-handler/about" = "firefox.desktop";
       "x-scheme-handler/unknown" = "firefox.desktop";
-    };
-  };
-
-  xdg.desktopEntries = {
-    "firefox-chatgpt" = {
-      name = "ChatGPT";
-      genericName = "AI assistant";
-      comment = "Open ChatGPT as an application";
-      exec = "firefox --new-window https://chatgpt.com/";
-      icon = "${./Icons/ChatGPT-Dark.svg}";
-      terminal = false;
-      type = "Application";
-      categories = [
-        "Network"
-        "Utility"
-      ];
-    };
-
-    "firefox-gemini" = {
-      name = "Gemini";
-      genericName = "AI assistant";
-      comment = "Open Gemini as an application";
-      exec = "firefox --new-window https://gemini.google.com/";
-      icon = "${./Icons/Gemini.svg}";
-      terminal = false;
-      type = "Application";
-      categories = [
-        "Network"
-        "Utility"
-      ];
-    };
-
-    "firefox-whatsapp" = {
-      name = "WhatsApp";
-      genericName = "Messaging application";
-      comment = "Open WhatsApp Web as an application";
-      exec = "firefox --new-window https://web.whatsapp.com/";
-      icon = "whatsapp";
-      terminal = false;
-      type = "Application";
-      categories = [
-        "Network"
-      ];
     };
   };
 }

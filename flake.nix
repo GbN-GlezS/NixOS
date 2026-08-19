@@ -111,6 +111,7 @@
 
                     # Common packages
                     ./Packages/Firefox.nix
+                    ./Packages/WebApps.nix
                     ./Packages/OnlyOffice.nix
                   ]
                   ++ extraHomeModules;
