@@ -1,3 +1,5 @@
+# https://wiki.nixos.org/wiki/Firefox
+
 { config, pkgs, ... }:
 
 {
@@ -16,13 +18,26 @@
       ];
 
       settings = {
+        # --- Startup & Search ---
         "browser.startup.homepage" = "about:home";
         "browser.search.suggest.enabled" = false;
         "browser.urlbar.suggest.searches" = false;
 
+        # --- Telemetry, Diagnostics & Privacy ---
         "telemetry.archive.enabled" = false;
         "datareporting.healthreport.uploadEnabled" = false;
         "toolkit.telemetry.unified" = false;
+        "browser.send_pings" = false;
+        "browser.ping-centre.telemetry" = false;
+        "breakpad.reportURL" = "";
+
+        # --- Hardware Acceleration & Rendering (VA-API / WebRender) ---
+        "gfx.webrender.all" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "media.hardware-video-decoding.force-enabled" = true;
+
+        # --- Memory & Resource Management ---
+        "browser.tabs.unloadOnLowMemory" = true;
       };
     };
 
@@ -30,6 +45,8 @@
       DisableTelemetry = true;
       DisablePocket = true;
       DisableFirefoxAccounts = false;
+      DisableFirefoxStudies = true;
+      DisableFeedbackCommands = true;
     };
   };
 
@@ -43,6 +60,49 @@
       "x-scheme-handler/https" = "firefox.desktop";
       "x-scheme-handler/about" = "firefox.desktop";
       "x-scheme-handler/unknown" = "firefox.desktop";
+    };
+  };
+
+  xdg.desktopEntries = {
+    "firefox-chatgpt" = {
+      name = "ChatGPT";
+      genericName = "AI assistant";
+      comment = "Open ChatGPT as an application";
+      exec = "firefox --new-window https://chatgpt.com/";
+      icon = "${./Icons/ChatGPT-Dark.svg}";
+      terminal = false;
+      type = "Application";
+      categories = [
+        "Network"
+        "Utility"
+      ];
+    };
+
+    "firefox-gemini" = {
+      name = "Gemini";
+      genericName = "AI assistant";
+      comment = "Open Gemini as an application";
+      exec = "firefox --new-window https://gemini.google.com/";
+      icon = "${./Icons/Gemini.svg}";
+      terminal = false;
+      type = "Application";
+      categories = [
+        "Network"
+        "Utility"
+      ];
+    };
+
+    "firefox-whatsapp" = {
+      name = "WhatsApp";
+      genericName = "Messaging application";
+      comment = "Open WhatsApp Web as an application";
+      exec = "firefox --new-window https://web.whatsapp.com/";
+      icon = "whatsapp";
+      terminal = false;
+      type = "Application";
+      categories = [
+        "Network"
+      ];
     };
   };
 }

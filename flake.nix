@@ -110,7 +110,7 @@
                     ./Hosts/Common-Home.nix
 
                     # Common packages
-                    ./Packages/BraveOrigin.nix
+                    ./Packages/Firefox.nix
                     ./Packages/OnlyOffice.nix
                   ]
                   ++ extraHomeModules;

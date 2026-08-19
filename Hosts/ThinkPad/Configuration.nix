@@ -13,18 +13,14 @@
 
   # The set of packages that appear in /run/current-system/sw.
   environment.systemPackages = with pkgs; [
-    android-tools # Android SDK platform tools.
     tree # Command to produce a depth indented directory listing.
-    scrcpy # Display and control Android devices over USB or TCP/IP.
     # kdePackages.kolourpaint # Easy-to-use paint program.
     kdePackages.konsole # Terminal emulator by KDE.
     kdePackages.partitionmanager # Manage the disk devices, partitions and file systems on your computer.
     # kdePackagesskanpage # Utility to scan images and multi-page documents.
-    yt-dlp # Feature-rich command-line audio/video downloader.
-    ffmpeg # Complete, cross-platform solution to record, convert and stream audio and video.
   ];
 
   programs.kdeconnect.enable = true; # Whether to enable kdeconnect.
 
-  # programs.nix-ld.enable = true; # Whether to enable nix-ld.
+  programs.nix-ld.enable = true; # Whether to enable nix-ld.
 }
