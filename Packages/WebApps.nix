@@ -26,7 +26,10 @@ let
   };
 in
 {
-  # home.packages is omitted so Brave is never installed as a standalone launcher or binary in $PATH
+  # Expose webAppEngine to all Home Manager modules
+  _module.args = {
+    inherit webAppEngine;
+  };
 
   xdg.desktopEntries = {
     "app-chatgpt" = {

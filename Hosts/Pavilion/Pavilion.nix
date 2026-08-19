@@ -1,4 +1,4 @@
-{ ... }:
+{ webAppEngine, ... }:
 
 {
   programs.plasma = {
@@ -11,11 +11,11 @@
 
   # Desktop Entries allow applications to be shown in your desktop environment's app launcher.
   xdg.desktopEntries = {
-    "brave-canva" = {
+    "app-canva" = {
       name = "Canva";
       genericName = "Graphic design platform";
       comment = "Open Canva as an application";
-      exec = "brave-origin --start-maximized --app=https://www.canva.com/";
+      exec = "${webAppEngine}/bin/brave-origin --start-maximized --app=https://www.canva.com/";
       icon = "${../../Packages/Icons/Canva.svg}";
       terminal = false;
       type = "Application";
@@ -25,11 +25,11 @@
       ];
     };
 
-    "brave-classroom" = {
+    "app-classroom" = {
       name = "Classroom";
       genericName = "Virtual classroom platform";
       comment = "Open Google Classroom as an application";
-      exec = "brave-origin --start-maximized --app=https://classroom.google.com/";
+      exec = "${webAppEngine}/bin/brave-origin --start-maximized --app=https://classroom.google.com/";
       icon = "${../../Packages/Icons/Classroom.svg}";
       terminal = false;
       type = "Application";
@@ -39,11 +39,11 @@
       ];
     };
 
-    "brave-meet" = {
+    "app-meet" = {
       name = "Meet";
       genericName = "Video Conferencing";
       comment = "Open Meet as an application";
-      exec = "brave-origin --start-maximized --app=https://meet.google.com/";
+      exec = "${webAppEngine}/bin/brave-origin --start-maximized --app=https://meet.google.com/";
       icon = "google-meet";
       terminal = false;
       type = "Application";
