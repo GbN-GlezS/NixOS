@@ -17,7 +17,7 @@ let
       "--enable-low-end-device-mode"
       "--aggressive-tab-discard"
 
-      # --- Privacy & Minimal Telemetry ---
+      # --- Privacy & Telemetry ---
       "--disable-background-networking"
       "--disable-breakpad"
       "--disable-component-update"
@@ -26,9 +26,7 @@ let
   };
 in
 {
-  home.packages = [
-    webAppEngine
-  ];
+  # home.packages is omitted so Brave is never installed as a standalone launcher or binary in $PATH
 
   xdg.desktopEntries = {
     "app-chatgpt" = {
