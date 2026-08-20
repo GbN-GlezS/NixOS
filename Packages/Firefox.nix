@@ -6,6 +6,11 @@
   programs.firefox = {
     enable = true;
 
+    # Connector for FirefoxPWA communication
+    nativeMessagingHosts = [
+      pkgs.firefoxpwa
+    ];
+
     profiles.NixOS = {
       id = 0;
       name = "NixOS";
@@ -15,6 +20,7 @@
         ublock-origin
         sponsorblock
         darkreader
+        pwas-for-firefox
       ];
 
       settings = {
@@ -50,7 +56,7 @@
     };
   };
 
-  # FirefoxPWA
+  # Progressive Web Apps configuration
   programs.firefoxpwa = {
     enable = true;
 
@@ -59,6 +65,7 @@
         name = "PWAs";
 
         sites = {
+          # Sites with known manifests
           "01M0E8HBAGVCB7AMQMQG4PGAS3" = {
             name = "GitHub";
             url = "https://github.com/";
@@ -76,12 +83,41 @@
             url = "https://www.youtube.com/";
             manifestUrl = "https://www.youtube.com/manifest.webmanifest";
           };
+
+          # Sites without a manifest (manifestUrl omitted; synthetic manifest generated automatically)
+          "01M0E8HDNIXOSWIKI000000001" = {
+            name = "NixOS Wiki";
+            url = "https://wiki.nixos.org/wiki/NixOS_Wiki";
+            desktopEntry = {
+              enable = true;
+              icon = "nix-snowflake";
+              categories = [
+                "Development"
+                "Documentation"
+                "Network"
+              ];
+            };
+          };
+
+          "01M0E8HDNOTEBOOKLM00000001" = {
+            name = "NotebookLM";
+            url = "https://notebooklm.google.com/";
+            desktopEntry = {
+              enable = true;
+              icon = "google";
+              categories = [
+                "Office"
+                "Utility"
+                "Network"
+              ];
+            };
+          };
         };
       };
     };
   };
 
-  # Set Firefox as the system-wide default handler
+  # Set Firefox as the default handler for web URLs and MIME types
   xdg.mimeApps = {
     enable = true;
 
