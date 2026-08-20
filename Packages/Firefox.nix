@@ -84,8 +84,8 @@
             manifestUrl = "https://www.youtube.com/manifest.webmanifest";
           };
 
-          # Sites without a manifest (manifestUrl omitted; synthetic manifest generated automatically)
-          "01M0E8HDNIXOSWIKI000000001" = {
+          # Sites without explicit public manifests (using valid Base32 ULIDs)
+          "01M0E8HDN1X0SW1K1000000001" = {
             name = "NixOS Wiki";
             url = "https://wiki.nixos.org/wiki/NixOS_Wiki";
             desktopEntry = {
@@ -99,7 +99,7 @@
             };
           };
 
-          "01M0E8HDNOTEBOOKLM00000001" = {
+          "01M0E8HDN0TEB00K1M00000001" = {
             name = "NotebookLM";
             url = "https://notebooklm.google.com/";
             desktopEntry = {
