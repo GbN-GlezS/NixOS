@@ -65,7 +65,7 @@
         name = "PWAs";
 
         sites = {
-          # Sites with known manifests
+          # Sites with public manifests
           "01M0E8HBAGVCB7AMQMQG4PGAS3" = {
             name = "GitHub";
             url = "https://github.com/";
@@ -84,10 +84,11 @@
             manifestUrl = "https://www.youtube.com/manifest.webmanifest";
           };
 
-          # Sites without explicit public manifests (using valid Base32 ULIDs)
+          # Sites without public manifests (explicitly assigned null)
           "01M0E8HDN1X0SW1K1000000001" = {
             name = "NixOS Wiki";
             url = "https://wiki.nixos.org/wiki/NixOS_Wiki";
+            manifestUrl = null;
             desktopEntry = {
               enable = true;
               icon = "nix-snowflake";
@@ -102,6 +103,7 @@
           "01M0E8HDN0TEB00K1M00000001" = {
             name = "NotebookLM";
             url = "https://notebooklm.google.com/";
+            manifestUrl = null;
             desktopEntry = {
               enable = true;
               icon = "google";
