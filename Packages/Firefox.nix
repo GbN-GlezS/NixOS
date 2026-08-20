@@ -84,11 +84,11 @@
             manifestUrl = "https://www.youtube.com/manifest.webmanifest";
           };
 
-          # Sites without public manifests (explicitly assigned null)
+          # Sites without public manifests (using empty string "" and valid Crockford Base32 ULIDs)
           "01M0E8HDN1X0SW1K1000000001" = {
             name = "NixOS Wiki";
             url = "https://wiki.nixos.org/wiki/NixOS_Wiki";
-            manifestUrl = null;
+            manifestUrl = "";
             desktopEntry = {
               enable = true;
               icon = "nix-snowflake";
@@ -103,7 +103,7 @@
           "01M0E8HDN0TEB00K1M00000001" = {
             name = "NotebookLM";
             url = "https://notebooklm.google.com/";
-            manifestUrl = null;
+            manifestUrl = "";
             desktopEntry = {
               enable = true;
               icon = "google";
