@@ -54,38 +54,6 @@
   programs.firefoxpwa = {
     enable = true;
 
-    profiles = {
-      personal = {
-        name = "Personal";
-
-        sites = {
-          chatgpt = {
-            name = "ChatGPT";
-            url = "https://chatgpt.com/";
-          };
-
-          gemini = {
-            name = "Gemini";
-            url = "https://gemini.google.com/";
-          };
-
-          whatsapp = {
-            name = "WhatsApp";
-            url = "https://web.whatsapp.com/";
-          };
-
-          gmail = {
-            name = "Gmail";
-            url = "https://mail.google.com/";
-          };
-
-          youtube = {
-            name = "YouTube";
-            url = "https://www.youtube.com/";
-          };
-        };
-      };
-    };
   };
 
   # Set Firefox as the system-wide default handler
